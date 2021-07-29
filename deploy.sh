@@ -3,7 +3,7 @@ cd "$(dirname "$0")"
 
 for pkg in "$@"
 do
-    stow "$pkg"
+    stow --restow "$pkg"
     req="$pkg/requirements.txt"
     if [[ -f $req ]]; then
         echo "Requirements for $pkg:"
