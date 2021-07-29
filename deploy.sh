@@ -10,8 +10,8 @@ do
     if [[ -f $req ]]; then
         echo -e "\nRequirements for $pkg:"
         cat "$req"
-        echo
     fi
+    echo
     if [[ -f $readme ]]; then
         echo -e "Please refer to $pkg/$readme for more information.\n"
     fi 
