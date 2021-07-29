@@ -6,7 +6,7 @@ do
     stow --restow "$pkg"
     req="$pkg/requirements.txt"
     if [[ -f $req ]]; then
-        echo "Requirements for $pkg:"
+        echo -e "\nRequirements for $pkg:"
         cat "$req"
     fi
 done
