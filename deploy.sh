@@ -13,7 +13,7 @@ do
         echo
     fi
     if [[ -f $readme ]]; then
-        echo -e "\nPlease refer to $pkg/$readme for more information.\n"
+        echo -e "Please refer to $pkg/$readme for more information.\n"
     fi 
     cd ..
 done
