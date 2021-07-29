@@ -1,4 +1,4 @@
-Package:
+Packages:
 exa
 base-devel
 yay
@@ -6,5 +6,5 @@ pacman-contrib
 proxychains-ng
 ncmpcpp
 
-Config:
+Services:
 HTTP Proxy (Privoxy): listen on 8118
