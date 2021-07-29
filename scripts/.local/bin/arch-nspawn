@@ -1,0 +1,39 @@
+#!/bin/bash
+
+start() {
+    xhost +local: > /dev/null
+    machinectl start arch-nspawn
+}
+
+stop() {
+    machinectl poweroff arch-nspawn
+    xhost - > /dev/null
+}
+
+case $1 in
+    start)
+        start
+        ;;
+    stop)
+        stop
+        ;;
+    start-gaming)
+        mode boost
+        systemctl --no-block start xow
+        start
+        ;;
+    stop-gaming)
+        stop
+        systemctl --no-block stop xow
+        mode normal
+        latte-dock --replace & disown
+        ;;
+    login)
+        machinectl login arch-nspawn
+        ;;
+    *)
+        echo "usage: $0 {start|stop|start-gaming|stop-gaming|login}"
+        exit 1
+        ;;
+esac
+exit 0

@@ -1,0 +1,33 @@
+#!/bin/bash
+
+case $1 in
+    normal|0)
+        rog-core -f normal -c 90
+        ;;
+    boost|1)
+        rog-core -f boost -c 70
+        ;;
+    silent|2)
+        rog-core -f silent -c 100
+        ;;
+    "")
+        MODE=$(cat /sys/devices/platform/asus-nb-wmi/throttle_thermal_policy)
+        case $MODE in
+            0)
+                MODE=normal
+                ;;
+            1)
+                MODE=boost
+                ;;
+            2)
+                MODE=silent
+                ;;
+        esac
+        echo "Current mode: $MODE"
+        ;;
+    *)
+        echo "Modes available: normal, boost, silent" >&2
+        exit 1
+        ;;
+esac
+exit 0
