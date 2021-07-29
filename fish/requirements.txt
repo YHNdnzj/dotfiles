@@ -1,0 +1,10 @@
+Package:
+exa
+base-devel
+yay
+pacman-contrib
+proxychains-ng
+ncmpcpp
+
+Config:
+HTTP Proxy (Privoxy): listen on 8118
