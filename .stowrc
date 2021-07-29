@@ -2,3 +2,5 @@
 --no-folding
 --restow
 --verbose
+--ignore requirements.txt
+--ignore README.md
