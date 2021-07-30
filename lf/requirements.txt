@@ -1,0 +1,7 @@
+Packages:
+vim
+fzf
+unarchiver
+
+Extra:
+File system: support reflink to use Y(cp --reflink)
