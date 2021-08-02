@@ -1,0 +1,12 @@
+[Unit]
+Description=Pull dotfiles repo automatically
+Documentation=https://github.com/YHNdnzj/dotfiles
+
+[Service]
+Type=oneshot
+WorkingDirectory=%h/dotfiles
+ExecStart=/usr/bin/git pull
+RemainAfterExit=yes
+
+[Install]
+WantedBy=default.target
