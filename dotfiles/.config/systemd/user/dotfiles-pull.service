@@ -6,7 +6,6 @@ Documentation=https://github.com/YHNdnzj/dotfiles
 Type=oneshot
 WorkingDirectory=%h/dotfiles
 ExecStart=/usr/bin/git pull
-RemainAfterExit=yes
 
 [Install]
 WantedBy=default.target
