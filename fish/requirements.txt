@@ -5,7 +5,6 @@ base-devel
 yay
 pacman-contrib
 proxychains-ng
-ncmpcpp
 
 Services:
 HTTP Proxy (Privoxy): listen on 8118
