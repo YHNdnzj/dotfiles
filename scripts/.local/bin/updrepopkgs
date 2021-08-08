@@ -1,5 +1,5 @@
 #!/bin/bash -e
-cd "$HOME/Repo/AUR"
+cd "$HOME/repo/AUR"
 
 for pkg in *
 do
