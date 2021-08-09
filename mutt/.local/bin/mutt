@@ -1,0 +1,7 @@
+#!/bin/bash -e
+if systemctl --user -q is-active mutt.service; then
+    screen -r mutt
+else
+    echo "mutt.service isn't active."
+    echo "Use systemctl --user enable --now mutt.service to enable it."
+fi
