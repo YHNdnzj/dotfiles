@@ -1,13 +1,16 @@
 #!/bin/bash -e
+xauth_file="/tmp/arch-nspawn_xauth"
 
 start() {
-    xhost +local: > /dev/null
+    if [[ ! -f "$xauth_file" ]]; then
+        touch "$xauth_file"
+        xauth nextract - "$DISPLAY" | sed -e 's/^..../ffff/' | xauth -f "$xauth_file" nmerge -
+    fi
     machinectl start arch-nspawn
 }
 
 stop() {
     machinectl poweroff arch-nspawn
-    xhost - > /dev/null
 }
 
 case $1 in
