@@ -28,8 +28,8 @@ case $1 in
     stop-gaming)
         stop
         systemctl --no-block stop xow
-        mode normal
-        latte-dock --replace & disown
+        (sleep 20 && mode normal) &
+        #latte-dock --replace &
         ;;
     login)
         machinectl login arch-nspawn
