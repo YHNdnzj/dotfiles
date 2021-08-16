@@ -20,6 +20,10 @@ case $1 in
     stop)
         stop
         ;;
+    restart)
+        stop
+        start
+        ;;
     start-gaming)
         mode boost
         systemctl --no-block start xow
@@ -35,7 +39,7 @@ case $1 in
         machinectl login arch-nspawn
         ;;
     *)
-        echo "usage: $0 {start|stop|start-gaming|stop-gaming|login}"
+        echo "usage: $0 {start|stop|restart|start-gaming|stop-gaming|login}"
         exit 1
         ;;
 esac
