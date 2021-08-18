@@ -1,5 +1,5 @@
 #!/bin/bash -e
-run_host="$XDG_RUNTIME_DIR"
+run_host="${XDG_RUNTIME_DIR:-/run/user/$(id -u)}"
 run_bind=/run/user/host
 
 xauth_file=arch-nspawn_xauth
