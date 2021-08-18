@@ -6,7 +6,7 @@ boot() {
 }
 
 run() {
-    $nspawn --as-pid2 --user=yhndnzj "$@"
+    $nspawn --as-pid2 --user="$USER" "$@"
 }
 
 case $1 in
@@ -15,11 +15,6 @@ case $1 in
         ;;
     run)
         run "$@"
-        ;;
-    start-gaming)
-        mode boost
-        systemctl --no-block start xow
-        start
         ;;
     *)
         echo "usage: $0 {boot|run [option] command}"

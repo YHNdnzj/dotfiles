@@ -1,5 +1,9 @@
 #!/bin/bash -e
 run_bind=/run/user/host
-
 options=("--bind=$HOME/steamapps:$run_bind/steamapps")
-exec arch-nspawn-run-gui "${options[@]}" prime-run steam-native
+
+mode boost
+systemctl --no-block start xow
+arch-nspawn-run-gui "${options[@]}" prime-run steam-native || true
+sleep 1m
+mode normal
