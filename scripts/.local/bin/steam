@@ -8,7 +8,7 @@ systemctl --no-block start xow.service
 
 arch-nspawn-run-gui "${options[@]}" prime-run steam-native || true
 
-sleep 1m
+sleep 2m
 mode normal
 
 exit 0
