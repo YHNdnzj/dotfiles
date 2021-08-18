@@ -11,7 +11,8 @@ run_bind=/run/user/host
 binds_ro=(/tmp/.X11-unix "$run_host/pulse:$run_bind/pulse" "$run_host/bus:$run_bind/bus" /usr/share/icons)
 binds=("$xauth_file" /dev/dri /dev/nvidia0 /dev/nvidiactl /dev/nvidia-modeset /dev/shm /dev/input)
 devices_allow=("char-drm rw" "char-nvidia-frontend rw" "/dev/shm rw" "char-input r")
-envvars=("DISPLAY=$DISPLAY" "PULSE_SERVER=unix:$run_bind/pulse/native" "DBUS_SESSION_BUS_ADDRESS=unix:path=$run_bind/bus")
+envvars=("DISPLAY=$DISPLAY" "XAUTHORITY=$xauth_file" "PULSE_SERVER=unix:$run_bind/pulse/native" "DBUS_SESSION_BUS_ADDRESS=unix:path=$run_bind/bus")
+envvars+=("GDK_SCALE=1.5")
 
 options=()
 for path_ro in "${binds_ro[@]}"; do
