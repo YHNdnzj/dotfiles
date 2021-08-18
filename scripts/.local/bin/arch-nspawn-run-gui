@@ -27,6 +27,4 @@ for envvar in "${envvars[@]}"; do
     options+=("--setenv=$envvar")
 done
 
-echo "${options[@]}"
-
-#exec arch-nspawn run "${options[@]}" "$@"
+exec arch-nspawn run "${options[@]}" "$@"
