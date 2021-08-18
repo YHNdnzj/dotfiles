@@ -22,7 +22,7 @@ case $1 in
         start
         ;;
     *)
-        echo "usage: $0 {boot|run (command)}"
+        echo "usage: $0 {boot|run [option] command}"
         exit 1
         ;;
 esac
