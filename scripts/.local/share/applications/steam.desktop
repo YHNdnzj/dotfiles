@@ -1,0 +1,9 @@
+[Desktop Entry]
+Type=Application
+Name=Steam (Container)
+Comment=Application for managing and playing games on Steam
+Exec=steam
+Icon=steam
+Terminal=false
+Categories=Network;Game;
+MimeType=x-scheme-handler/steam;x-scheme-handler/steamlink;
