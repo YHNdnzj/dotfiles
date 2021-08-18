@@ -2,11 +2,16 @@
 run_bind=/run/user/host
 options=("--bind=$HOME/steamapps:$run_bind/steamapps")
 
+steam="$(basename "$0")"
+if [[ $steam == "steam" ]]; then
+    steam="steam-native"
+fi
+
 mode boost
 # No need for root (/etc/polkit-1/rules.d/xow.rules)
 systemctl --no-block start xow.service
 
-arch-nspawn-run-gui "${options[@]}" prime-run steam-native || true
+(set -x; arch-nspawn-run-gui "${options[@]}" prime-run "$steam") || true
 
 sleep 2m
 mode normal
