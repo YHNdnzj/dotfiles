@@ -4,13 +4,17 @@
 
 ## arch-nspawn
 
-Used to control `systemd-nspawn@arch-nspawn.service` with `machinectl`
+Used to control `/var/lib/machines/arch-nspawn` using `systemd-nspawn`
+
+## arch-nspawn-run-gui
+
+Start GUI application in `arch-nspawn`
 
 *Black magic involved*
 
 ## steam
 
-Start Steam in `arch-nspawn`
+Start Steam with `arch-nspawn-run-gui`
 
 ## updrepopkgs
 
