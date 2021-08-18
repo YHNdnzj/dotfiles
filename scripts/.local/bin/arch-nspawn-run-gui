@@ -1,17 +1,19 @@
 #!/bin/bash -e
-xauth_file=/tmp/arch-nspawn_xauth
-if [[ ! -f "$xauth_file" ]]; then
-    touch "$xauth_file"
-    xauth nextract - "$DISPLAY" | sed -e 's/^..../ffff/' | xauth -f "$xauth_file" nmerge -
-fi
-
-run_host="/run/user/$(id -u)"
+run_host="$XDG_RUNTIME_DIR"
 run_bind=/run/user/host
 
+xauth_file=arch-nspawn_xauth
+xauth_host="$run_host/$xauth_file"
+xauth_bind="$run_bind/$xauth_file"
+if [[ ! -f "$xauth_host" ]]; then
+    touch "$xauth_host"
+    xauth nextract - "$DISPLAY" | sed -e 's/^..../ffff/' | xauth -f "$xauth_host" nmerge -
+fi
+
 binds_ro=(/tmp/.X11-unix "$run_host/pulse:$run_bind/pulse" "$run_host/bus:$run_bind/bus" /usr/share/icons)
-binds=("$xauth_file" /dev/dri /dev/nvidia0 /dev/nvidiactl /dev/nvidia-modeset /dev/shm /dev/input)
+binds=("$xauth_host:$xauth_bind" /dev/dri /dev/nvidia0 /dev/nvidiactl /dev/nvidia-modeset /dev/shm /dev/input)
 devices_allow=("char-drm rw" "char-nvidia-frontend rw" "/dev/shm rw" "char-input r")
-envvars=("DISPLAY=$DISPLAY" "XAUTHORITY=$xauth_file" "PULSE_SERVER=unix:$run_bind/pulse/native" "DBUS_SESSION_BUS_ADDRESS=unix:path=$run_bind/bus")
+envvars=("DISPLAY=$DISPLAY" "XAUTHORITY=$xauth_bind" "PULSE_SERVER=unix:$run_bind/pulse/native" "DBUS_SESSION_BUS_ADDRESS=unix:path=$run_bind/bus")
 envvars+=("GDK_SCALE=1.5")
 
 options=()
