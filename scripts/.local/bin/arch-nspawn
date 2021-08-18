@@ -1,46 +1,28 @@
 #!/bin/bash -e
-xauth_file="/tmp/arch-nspawn_xauth"
+nspawn="pkexec systemd-nspawn -M arch-nspawn"
 
-start() {
-    if [[ ! -f "$xauth_file" ]]; then
-        touch "$xauth_file"
-        xauth nextract - "$DISPLAY" | sed -e 's/^..../ffff/' | xauth -f "$xauth_file" nmerge -
-    fi
-    machinectl start arch-nspawn
+boot() {
+    $nspawn --boot
 }
 
-stop() {
-    machinectl poweroff arch-nspawn
+run() {
+    $nspawn --as-pid2 --user=yhndnzj "$@"
 }
 
 case $1 in
-    start)
-        start
+    boot)
+        boot
         ;;
-    stop)
-        stop
-        ;;
-    restart)
-        stop
-        sleep 5
-        start
+    run)
+        run "$@"
         ;;
     start-gaming)
         mode boost
         systemctl --no-block start xow
         start
         ;;
-    stop-gaming)
-        stop
-        systemctl --no-block stop xow
-        (sleep 20 && mode normal) &
-        #latte-dock --replace &
-        ;;
-    login)
-        machinectl login arch-nspawn
-        ;;
     *)
-        echo "usage: $0 {start|stop|restart|start-gaming|stop-gaming|login}"
+        echo "usage: $0 {boot|run (command)}"
         exit 1
         ;;
 esac

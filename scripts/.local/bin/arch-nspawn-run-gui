@@ -1,0 +1,31 @@
+#!/bin/bash -e
+xauth_file=/tmp/arch-nspawn_xauth
+if [[ ! -f "$xauth_file" ]]; then
+    touch "$xauth_file"
+    xauth nextract - "$DISPLAY" | sed -e 's/^..../ffff/' | xauth -f "$xauth_file" nmerge -
+fi
+
+export run_host="/run/user/$(id -u)"
+export run_bind=/run/user/host
+
+binds_ro=(/tmp/.X11-unix "$run_host/pulse:$run_bind/pulse" "$run_host/bus:$run_bind/bus" /usr/share/icons)
+binds=("$xauth_file" /dev/dri /dev/nvidia0 /dev/nvidiactl /dev/nvidia-modeset /dev/shm /dev/input)
+
+devices_allow=("char-drm rw" "char-nvidia-frontend rw" "/dev/shm rw" "char-input r")
+
+envvars=("DISPLAY=$DISPLAY" "PULSE_SERVER=unix:$run_bind/pulse/native" "DBUS_SESSION_BUS_ADDRESS=unix:path=$run_bind/bus")
+
+options=()
+for path_ro in "${binds_ro[@]}"; do
+    options+=("--bind-ro=$path_ro")
+done
+for path_rw in "${binds[@]}"; do
+    options+=("--bind=$path_rw")
+done
+for envvar in "${envvars[@]}"; do
+    options+=("--setenv=$envvar")
+done
+
+echo "${options[@]}"
+
+#exec arch-nspawn run "${options[@]}" "$@"

@@ -1,2 +1,3 @@
 #!/bin/bash -e
-systemd-run --user -M @arch-nspawn --wait --pipe --unit=steam.service --service-type=exec steam-native
+options=("--bind=$HOME/steamapps:$run_bind/steamapps")
+exec arch-nspawn-run-gui "${options[@]}" prime-run steam-native
