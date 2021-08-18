@@ -6,7 +6,7 @@ boot() {
 }
 
 run() {
-    $nspawn --as-pid2 --user="$USER" "$@"
+    (set -x; $nspawn --as-pid2 --user="$USER" "$@")
 }
 
 case $1 in
