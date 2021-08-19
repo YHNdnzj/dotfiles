@@ -1,33 +1,70 @@
-#!/bin/bash -e
-run_host="${XDG_RUNTIME_DIR:-/run/user/$(id -u)}"
-run_bind=/run/user/host
+#!/usr/bin/python
+import os
+import sys
+from subprocess import run
+from pathlib import Path
 
-xauth_file=arch-nspawn_xauth
-xauth_host="$run_host/$xauth_file"
-xauth_bind="$run_bind/$xauth_file"
-if [[ ! -f "$xauth_host" ]]; then
-    touch "$xauth_host"
-    xauth nextract - "$DISPLAY" | sed -e 's/^..../ffff/' | xauth -f "$xauth_host" nmerge -
-fi
+run_host = os.getenv("XDG_RUNTIME_DIR")
+if not run_host:
+    run_host = "/run/user/" + os.getuid()
+run_bind = "/run/user/host"
 
-binds_ro=(/tmp/.X11-unix "$run_host/pulse:$run_bind/pulse" "$run_host/bus:$run_bind/bus" /usr/share/icons)
-binds=("$xauth_host:$xauth_bind" /dev/dri /dev/nvidia0 /dev/nvidiactl /dev/nvidia-modeset /dev/shm /dev/input)
-devices_allow=("char-drm rw" "char-nvidia-frontend rw" "/dev/shm rw" "char-input r")
-envvars=("DISPLAY=$DISPLAY" "XAUTHORITY=$xauth_bind" "PULSE_SERVER=unix:$run_bind/pulse/native" "DBUS_SESSION_BUS_ADDRESS=unix:path=$run_bind/bus")
-envvars+=("GDK_SCALE=1.5")
+xdisplay = os.getenv("DISPLAY")
+xauth_file = "arch-nspawn_xauth"
+xauth_host = f"{run_host}/{xauth_file}"
+xauth_bind = f"{run_bind}/{xauth_file}"
+del xauth_file
 
-options=()
-for path_ro in "${binds_ro[@]}"; do
-    options+=("--bind-ro=$path_ro")
-done
-for path_rw in "${binds[@]}"; do
-    options+=("--bind=$path_rw")
-done
-for device in "${devices_allow[@]}"; do
-    options+=("--property=DeviceAllow=$device")
-done
-for envvar in "${envvars[@]}"; do
-    options+=("--setenv=$envvar")
-done
+xauth_host_path = Path(xauth_host)
+if not xauth_host_path.is_file():
+    xauth_host_path.touch()
+    run(
+        'xauth nextract - "{}" | sed -e "s/^..../ffff/" | xauth -f "{}" nmerge -'
+        .format(xdisplay, xauth_host), shell=True)
+del xauth_host_path
 
-exec arch-nspawn run "${options[@]}" "$@"
+binds_ro = [
+    "/tmp/.X11-unix",
+    "{}/pulse:{}/pulse".format(run_host, run_bind),
+    "{}/bus:{}/bus".format(run_host, run_bind),
+    "/usr/share/icons"
+]
+binds = [
+    f"{xauth_host}:{xauth_bind}",
+    "/dev/dri", "/dev/nvidia0", "/dev/nvidiactl", "/dev/nvidia-modeset",
+    "/dev/shm", "/dev/input"
+]
+devices_allow = [
+    "char-drm rw", "char-nvidia-frontend rw",
+    "/dev/shm rw", "char-input r"
+]
+envvars = [
+    f"DISPLAY={xdisplay}", f"XAUTHORITY={xauth_bind}",
+    f"PULSE_SERVER=unix:{run_bind}/pulse/native",
+    f"DBUS_SESSION_BUS_ADDRESS=unix:path={run_bind}/bus",
+    "GDK_SCALE=1.5"
+]
+
+options_map = {
+    "binds_ro": "--bind-ro=",
+    "binds": "--bind=",
+    "devices_allow": "--property=DeviceAllow=",
+    "envvars": "--setenv="
+}
+
+options = []
+for _key in options_map:
+    _option = options_map[_key]
+    for _param in globals()[_key]:
+        options.append("{}{}".format(_option, _param))
+
+nspawn_cmd = ["arch-nspawn", "run"]
+nspawn_cmd.extend(options)
+cmd = sys.argv[1:]
+if cmd:
+    nspawn_cmd.extend(cmd)
+else:
+    print("No command provided, exiting...", file=sys.stderr)
+    sys.exit(1)
+
+os.execvp(nspawn_cmd[0], nspawn_cmd)
