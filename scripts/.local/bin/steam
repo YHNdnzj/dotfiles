@@ -12,9 +12,4 @@ mode boost
 systemctl --no-block start xow.service
 
 set -x
-arch-nspawn-run-gui "${options[@]}" prime-run "$steam" "$@" || true
-
-sleep 2m
-mode normal
-
-exit 0
+exec arch-nspawn-run-gui "${options[@]}" prime-run "$steam" "$@"
