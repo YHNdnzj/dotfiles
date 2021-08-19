@@ -13,49 +13,53 @@ xdisplay = os.getenv("DISPLAY")
 xauth_file = "arch-nspawn_xauth"
 xauth_host = f"{run_host}/{xauth_file}"
 xauth_bind = f"{run_bind}/{xauth_file}"
-del xauth_file
 
 xauth_host_path = Path(xauth_host)
 if not xauth_host_path.is_file():
     xauth_host_path.touch()
-    run(
-        'xauth nextract - "{}" | sed -e "s/^..../ffff/" | xauth -f "{}" nmerge -'
+    run('xauth nextract - "{}" | sed -e "s/^..../ffff/" | xauth -f "{}" nmerge -'
         .format(xdisplay, xauth_host), shell=True)
-del xauth_host_path
+del xauth_file, xauth_host_path
 
-binds_ro = [
-    "/tmp/.X11-unix",
-    "{}/pulse:{}/pulse".format(run_host, run_bind),
-    "{}/bus:{}/bus".format(run_host, run_bind),
-    "/usr/share/icons"
-]
-binds = [
-    f"{xauth_host}:{xauth_bind}",
-    "/dev/dri", "/dev/nvidia0", "/dev/nvidiactl", "/dev/nvidia-modeset",
-    "/dev/shm", "/dev/input"
-]
-devices_allow = [
-    "char-drm rw", "char-nvidia-frontend rw",
-    "/dev/shm rw", "char-input r"
-]
-envvars = [
-    f"DISPLAY={xdisplay}", f"XAUTHORITY={xauth_bind}",
-    f"PULSE_SERVER=unix:{run_bind}/pulse/native",
-    f"DBUS_SESSION_BUS_ADDRESS=unix:path={run_bind}/bus",
-    "GDK_SCALE=1.5"
-]
-
-options_map = {
-    "binds_ro": "--bind-ro=",
-    "binds": "--bind=",
-    "devices_allow": "--property=DeviceAllow=",
-    "envvars": "--setenv="
+binds_ro = {
+    "option": "--bind-ro=",
+    "param": [
+        "/tmp/.X11-unix",
+        "{}/pulse:{}/pulse".format(run_host, run_bind),
+        "{}/bus:{}/bus".format(run_host, run_bind),
+        "/usr/share/icons"
+    ]
+}
+binds = {
+    "option": "--bind=",
+    "param": [
+        f"{xauth_host}:{xauth_bind}",
+        "/dev/dri", "/dev/nvidia0", "/dev/nvidiactl", "/dev/nvidia-modeset",
+        "/dev/shm", "/dev/input"
+    ]
+}
+devices_allow = {
+    "option": "--property=DeviceAllow=",
+    "param": [
+        "char-drm rw", "char-nvidia-frontend rw",
+        "/dev/shm rw", "char-input r"
+    ]
+}
+envvars = {
+    "option": "--setenv=",
+    "param": [
+        f"DISPLAY={xdisplay}", f"XAUTHORITY={xauth_bind}",
+        f"PULSE_SERVER=unix:{run_bind}/pulse/native",
+        f"DBUS_SESSION_BUS_ADDRESS=unix:path={run_bind}/bus",
+        "GDK_SCALE=1.5"
+    ]
 }
 
+optlists = [binds_ro, binds, devices_allow, envvars]
 options = []
-for _key in options_map:
-    _option = options_map[_key]
-    for _param in globals()[_key]:
+for _optlist in optlists:
+    _option = _optlist.get("option")
+    for _param in _optlist.get("param"):
         options.append("{}{}".format(_option, _param))
 
 nspawn_cmd = ["arch-nspawn", "run"]
@@ -66,5 +70,4 @@ if cmd:
 else:
     print("No command provided, exiting...", file=sys.stderr)
     sys.exit(1)
-
 os.execvp(nspawn_cmd[0], nspawn_cmd)
