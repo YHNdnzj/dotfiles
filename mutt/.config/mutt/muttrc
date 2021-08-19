@@ -19,8 +19,9 @@ set smtp_pass = $my_pass
 set send_charset = "us-ascii:utf-8"
 
 set ssl_force_tls = yes
-set postponed = +[Gmail]/草稿
+set postponed = '+[Gmail]/草稿'
 unset record
+set trash = '+[Gmail]/垃圾桶'
 
 set mail_check = 180
 set sleep_time = 0
