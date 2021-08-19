@@ -5,6 +5,7 @@ Description=(Neo)Mutt on screen
 Type=forking
 Environment=http_proxy=http://127.0.0.1:8118
 Environment=https_proxy=http://127.0.0.1:8118
+ExecStartPre=/usr/bin/nm-online -q
 ExecStart=/usr/bin/screen -dmS mutt neomutt
 ExecStop=/usr/bin/screen -S mutt -X quit
 TimeoutStopSec=5
