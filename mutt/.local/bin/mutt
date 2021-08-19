@@ -1,4 +1,7 @@
 #!/bin/bash -e
-systemctl --user start mutt.service
-(set -x; sleep 2)
+if ! systemctl --user -q is-active mutt.service; then
+    systemctl --user start mutt.service
+    (set -x; sleep 2)
+fi
+
 screen -r mutt
