@@ -6,12 +6,11 @@ fi
 steamapps_host="$HOME/steamapps"
 
 options=()
-if [[ $steamapps ]]; then
+if [[ -d "$steamapps_host" ]]; then
     options+=("--bind=$steamapps_host:/home/yhndnzj/.local/share/Steam/steamapps")
 fi
-options+=("--bind=/dev/snd" "--property=DeviceAllow=char-alsa rw")
+#options+=("--bind=/dev/snd" "--property=DeviceAllow=char-alsa rw")
 
-mode boost
 # No need for root (/etc/polkit-1/rules.d/xow.rules)
 systemctl --no-block start xow.service
 
