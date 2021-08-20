@@ -1,9 +1,13 @@
 #!/bin/bash -e
-options=("--bind=$HOME/steamapps:/home/yhndnzj/.local/share/Steam/steamapps")
-
 steam="$(basename "$0")"
 if [[ $steam == "steam" ]]; then
     steam="steam-native"
+fi
+steamapps_host="$HOME/steamapps"
+
+options=()
+if [[ $steamapps ]]; then
+    options+=("--bind=$steamapps_host:/home/yhndnzj/.local/share/Steam/steamapps")
 fi
 
 mode boost
