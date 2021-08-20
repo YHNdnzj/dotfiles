@@ -1,8 +1,26 @@
 #!/usr/bin/python
 import os
 import sys
+import getopt
 from subprocess import run
 from pathlib import Path
+
+
+def die(msg: str, code: int = 1):
+    print(msg, file=sys.stderr)
+    sys.exit(code)
+
+
+nvidia = False
+try:
+    opts, args = getopt.getopt(sys.argv[1:], "", ["nvidia"])
+except getopt.GetoptError as e:
+    die(e.msg, 2)
+for opt, arg in opts:
+    if opt == "--nvidia":
+        nvidia = True
+if not args:
+    die("No command provided, exiting...")
 
 run_host = os.getenv("XDG_RUNTIME_DIR")
 if not run_host:
@@ -11,16 +29,14 @@ run_bind = "/run/user/host"
 
 xdisplay = os.getenv("DISPLAY")
 xcursor = os.getenv("XCURSOR_THEME")
-xauth_file = "arch-nspawn_xauth"
-xauth_host = f"{run_host}/{xauth_file}"
-xauth_bind = f"{run_bind}/{xauth_file}"
+xauth_host = f"{run_host}/arch-nspawn_xauth"
+xauth_bind = f"{run_bind}/arch-nspawn_xauth"
 
 xauth_host_path = Path(xauth_host)
 if not xauth_host_path.is_file():
     xauth_host_path.touch()
     run('xauth nextract - "{}" | sed -e "s/^..../ffff/" | xauth -f "{}" nmerge -'
         .format(xdisplay, xauth_host), shell=True)
-del xauth_file, xauth_host_path
 
 binds_ro = {
     "option": "--bind-ro=",
@@ -35,14 +51,14 @@ binds = {
     "option": "--bind=",
     "param": [
         f"{xauth_host}:{xauth_bind}",
-        "/dev/dri", "/dev/nvidia0", "/dev/nvidiactl", "/dev/nvidia-modeset",
+        "/dev/dri",  # "/dev/nvidia0", "/dev/nvidiactl", "/dev/nvidia-modeset",
         "/dev/shm", "/dev/input", "/dev/uinput"
     ]
 }
 devices_allow = {
     "option": "--property=DeviceAllow=",
     "param": [
-        "char-drm rw", "char-nvidia-frontend rw",
+        "char-drm rw",  # "char-nvidia-frontend rw",
         "/dev/shm rw", "char-input rw", "/dev/uinput rw"
     ]
 }
@@ -57,6 +73,20 @@ envvars = {
     ]
 }
 
+if nvidia:
+    if Path("/dev/nvidia0").is_char_device():
+        binds.get("param").extend(
+            ["/dev/nvidia0", "/dev/nvidiactl", "/dev/nvidia-modeset"])
+        devices_allow.get("param").extend(["char-nvidia-frontend rw"])
+        envvars.get("param").extend([
+            "__NV_PRIME_RENDER_OFFLOAD=1",
+            "__VK_LAYER_NV_optimus=NVIDIA_only",
+            "__GLX_VENDOR_LIBRARY_NAME=nvidia"
+        ])
+    else:
+        die("/dev/nvidia0 doesn't exist or isn't a character device.\n"
+            + "Check your NVIDIA driver or remove '--nvidia'")
+
 optlists = [binds_ro, binds, devices_allow, envvars]
 options = []
 for _optlist in optlists:
@@ -66,10 +96,5 @@ for _optlist in optlists:
 
 nspawn_cmd = ["arch-nspawn", "run"]
 nspawn_cmd.extend(options)
-cmd = sys.argv[1:]
-if cmd:
-    nspawn_cmd.extend(cmd)
-else:
-    print("No command provided, exiting...", file=sys.stderr)
-    sys.exit(1)
+nspawn_cmd.extend(args)
 os.execvp(nspawn_cmd[0], nspawn_cmd)
