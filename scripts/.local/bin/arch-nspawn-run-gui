@@ -11,11 +11,12 @@ def die(msg: str, code: int = 1):
     sys.exit(code)
 
 
-nvidia = False
 try:
     opts, args = getopt.getopt(sys.argv[1:], "", ["nvidia"])
 except getopt.GetoptError as e:
     die(e.msg, 2)
+
+nvidia = False
 for opt, arg in opts:
     if opt == "--nvidia":
         nvidia = True
