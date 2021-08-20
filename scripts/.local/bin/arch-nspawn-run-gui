@@ -10,6 +10,7 @@ if not run_host:
 run_bind = "/run/user/host"
 
 xdisplay = os.getenv("DISPLAY")
+xcursor = os.getenv("XCURSOR_THEME")
 xauth_file = "arch-nspawn_xauth"
 xauth_host = f"{run_host}/{xauth_file}"
 xauth_bind = f"{run_bind}/{xauth_file}"
@@ -51,6 +52,7 @@ envvars = {
         f"DISPLAY={xdisplay}", f"XAUTHORITY={xauth_bind}",
         f"PULSE_SERVER=unix:{run_bind}/pulse/native",
         f"DBUS_SESSION_BUS_ADDRESS=unix:path={run_bind}/bus",
+        f"XCURSOR_THEME={xcursor}",
         "GDK_SCALE=1.5"
     ]
 }
