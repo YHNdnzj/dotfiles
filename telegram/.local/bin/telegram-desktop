@@ -1,0 +1,6 @@
+#!/bin/bash -e
+if ! systemctl --user -q is-active telegram-desktop.service; then
+    systemctl --user start telegram-desktop.service
+else
+    /usr/bin/telegram-desktop "$@"
+fi
