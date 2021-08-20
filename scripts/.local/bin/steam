@@ -9,7 +9,7 @@ options=()
 if [[ $steamapps ]]; then
     options+=("--bind=$steamapps_host:/home/yhndnzj/.local/share/Steam/steamapps")
 fi
-options+=("--bind=/dev/snd" "--property=DeviceAllow=char-alsa r")
+options+=("--bind=/dev/snd" "--property=DeviceAllow=char-alsa rw")
 
 mode boost
 # No need for root (/etc/polkit-1/rules.d/xow.rules)
