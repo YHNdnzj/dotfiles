@@ -1,6 +1,5 @@
 #!/bin/bash -e
-run_bind=/run/user/host
-options=("--bind=$HOME/steamapps:$run_bind/steamapps")
+options=("--bind=$HOME/steamapps:/home/yhndnzj/.local/share/Steam/steamapps")
 
 steam="$(basename "$0")"
 if [[ $steam == "steam" ]]; then
