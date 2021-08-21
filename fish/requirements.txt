@@ -1,5 +1,6 @@
 Packages:
 exa
+bat
 vim
 base-devel
 yay
