@@ -6,7 +6,7 @@ boot() {
 }
 
 run() {
-    (set -x; $nspawn --as-pid2 --user=yhndnzj --property=LimitNOFILE=infinity "$@")
+    (set -x; $nspawn --as-pid2 --user=yhndnzj "$@")
 }
 
 case $1 in
