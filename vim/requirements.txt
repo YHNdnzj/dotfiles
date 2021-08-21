@@ -1,3 +1,2 @@
 Packages:
 vi-vim-symlink
-vimpager
