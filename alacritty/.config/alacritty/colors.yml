@@ -1,0 +1,25 @@
+# Colors (Panda)
+colors:
+  primary:
+    background: '#292A2B'
+    foreground: '#E6E6E6'
+
+  normal:
+    black:   '#292A2B'
+    red:     '#FF2C6D'
+    green:   '#19f9d8'
+    yellow:  '#FFB86C'
+    blue:    '#45A9F9'
+    magenta: '#FF75B5'
+    cyan:    '#67d3c2'
+    orange:  '#B084EB'
+    white:   '#E6E6E6'
+  bright:
+    black:   '#292A2B'
+    red:     '#FF2C6D'
+    green:   '#19f9d8'
+    yellow:  '#ffcc95'
+    blue:    '#6FC1FF'
+    magenta: '#FF9AC1'
+    cyan:    '#67d3c2'
+    white:   '#ffffff'

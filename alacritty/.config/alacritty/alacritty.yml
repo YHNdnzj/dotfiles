@@ -8,8 +8,8 @@
 #
 # All imports must either be absolute paths starting with `/`, or paths relative
 # to the user's home directory starting with `~/`.
-#import:
-#  - /path/to/alacritty.yml
+import:
+  - ~/.config/alacritty/colors.yml
 
 # Any items in the `env` entry below will be added as
 # environment variables. Some entries may override variables
@@ -128,7 +128,7 @@ font:
     style: SemiBold
 
   # Italic font face
-  italic:
+  #italic:
     # Font family
     #
     # If the italic family is not specified, it will fall back to the
@@ -136,7 +136,7 @@ font:
     #family: monospace
 
     # The `style` can be specified to pick a specific face.
-    style: Italic
+    #style: Italic
 
   # Bold italic font face
   bold_italic:
@@ -312,51 +312,6 @@ draw_bold_text_with_bright_colors: true
   #
   #indexed_colors: []
 
-# KDE Breeze (Ported from Konsole)
-colors:
-  # Default colors
-  primary:
-    background: '#232627'
-    foreground: '#fcfcfc'
-
-    dim_foreground: '#eff0f1'
-    bright_foreground: '#ffffff'
-    dim_background: '#31363b'
-    bright_background: '#000000'
-
-  # Normal colors
-  normal:
-    black: '#232627'
-    red: '#ed1515'
-    green: '#11d116'
-    yellow: '#f67400'
-    blue: '#1d99f3'
-    magenta: '#9b59b6'
-    cyan: '#1abc9c'
-    white: '#fcfcfc'
-
-  # Bright colors
-  bright:
-    black: '#7f8c8d'
-    red: '#c0392b'
-    green: '#1cdc9a'
-    yellow: '#fdbc4b'
-    blue: '#3daee9'
-    magenta: '#8e44ad'
-    cyan: '#16a085'
-    white: '#ffffff'
-
-  # Dim colors
-  dim:
-    black: '#31363b'
-    red: '#783228'
-    green: '#17a262'
-    yellow: '#b65619'
-    blue: '#1b668f'
-    magenta: '#614a73'
-    cyan: '#186c60'
-    white: '#63686d'
-
 # Bell
 #
 # The bell is rung every time the BEL control character is received.
@@ -402,7 +357,7 @@ colors:
 #
 # Window opacity as a floating point number from `0.0` to `1.0`.
 # The value `0.0` is completely transparent and `1.0` is opaque.
-background_opacity: 0.31
+background_opacity: 0.28
 
 #selection:
   # This string contains all characters that are used as separators for
