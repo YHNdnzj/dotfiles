@@ -12,9 +12,9 @@ Start GUI application in `arch-nspawn`
 
 *Black magic involved*
 
-## steam
+## steam / lutris
 
-Start Steam with `arch-nspawn-run-gui`
+Start Steam / Lutris with `arch-nspawn-run-gui`
 
 ## updrepopkgs
 

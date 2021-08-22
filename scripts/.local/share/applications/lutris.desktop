@@ -1,0 +1,9 @@
+[Desktop Entry]
+Type=Application
+Name=Lutris (Container)
+Comment=open source gaming platform
+Exec=lutris
+Icon=lutris
+Terminal=false
+Categories=Game;
+MimeType=x-scheme-handler/lutris;
