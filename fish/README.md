@@ -2,6 +2,6 @@
 
 ```console
 $ px curl -L https://get.oh-my.fish | fish
-$ omf install agnoster
-$ omf theme agnoster
 ```
+
+Check `$OMF_CONFIG` for installed packages and use `omf (install|update)` to operate.
