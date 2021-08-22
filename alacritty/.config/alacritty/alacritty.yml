@@ -125,7 +125,7 @@ font:
     #family: monospace
 
     # The `style` can be specified to pick a specific face.
-    style: Bold
+    style: SemiBold
 
   # Italic font face
   italic:
@@ -147,7 +147,7 @@ font:
     #family: monospace
 
     # The `style` can be specified to pick a specific face.
-    style: Bold Italic
+    style: SemiBold Italic
 
   # Point size
   size: 10
