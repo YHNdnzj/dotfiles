@@ -5,6 +5,6 @@ export https_proxy=$http_proxy
 if ! pidof -q neomutt; then
     exec neomutt
 else
-    echo "Mutt is already running, exiting..."
+    echo "Mutt is already running, exiting..." >&2
     exit 1
 fi
