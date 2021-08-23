@@ -6,5 +6,8 @@ if ! pidof -q neomutt; then
     exec neomutt
 else
     echo "Mutt is already running, exiting..." >&2
+    if [[ $(ps -o comm= -q $PPID) == konsole ]]; then
+        sleep 5
+    fi
     exit 1
 fi
