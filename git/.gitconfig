@@ -2,13 +2,21 @@
     name = Mike Yuan
     email = me@yhndnzj.com
     signingkey = 8BA0CFCBBC7B196AF0F4C6943DC99CD82A711C5A
+
 [commit]
     gpgsign = true
+
 [color]
     ui = auto
+
 [core]
     autocrlf = input
+
 [pull]
     rebase = false
+
+[push]
+    followTags = true
+
 [http]
     proxy = http://127.0.0.1:8118
