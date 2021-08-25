@@ -1,2 +1,3 @@
 Services:
+NetworkManager
 systemd --user: dotfiles-pull.service
