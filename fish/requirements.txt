@@ -3,7 +3,7 @@ exa
 bat
 vim
 base-devel
-yay
+paru
 pacman-contrib
 proxychains-ng
 
