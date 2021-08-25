@@ -1,7 +1,0 @@
-Packages:
-fcitx5-im
-fcitx5-chinese-addons
-fcitx5-lua
-fcitx5-material-color
-fcitx5-pinyin-zhwiki
-fcitx5-pinyin-moegirl

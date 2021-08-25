@@ -1,6 +1,0 @@
-Packages:
-noto-fonts
-noto-fonts-cjk
-ttf-cascadia-code
-ttf-joypixels
-ttf-nerd-fonts-symbols

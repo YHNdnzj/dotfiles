@@ -1,6 +1,4 @@
 Packages:
-exa
-bat
 vim
 base-devel
 paru

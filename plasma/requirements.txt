@@ -1,3 +1,0 @@
-Packages:
-plasma-meta
-kde-applications-meta
