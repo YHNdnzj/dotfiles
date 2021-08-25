@@ -1,8 +1,0 @@
-[Unit]
-Description=Official Telegram Desktop client
-Documentation=https://desktop.telegram.org
-
-[Service]
-ExecStart=/usr/bin/telegram-desktop
-Restart=on-failure
-RestartSec=3

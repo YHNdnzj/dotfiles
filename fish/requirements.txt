@@ -1,11 +1,5 @@
 Packages:
-exa
-bat
 vim
 base-devel
 paru
 pacman-contrib
-proxychains-ng
-
-Services:
-HTTP Proxy (Privoxy): listen on 8118

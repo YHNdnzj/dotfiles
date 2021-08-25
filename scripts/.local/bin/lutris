@@ -1,9 +1,0 @@
-#!/bin/bash -e
-options=("--setenv=http_proxy=http://127.0.0.1:8118"
-         "--setenv=https_proxy=http://127.0.0.1:8118")
-
-# No need for root (/etc/polkit-1/rules.d/xow.rules)
-systemctl --no-block start xow.service
-
-set -x
-exec arch-nspawn-run-gui --nvidia -- "${options[@]}" lutris "$@"

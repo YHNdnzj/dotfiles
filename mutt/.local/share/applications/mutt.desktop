@@ -1,9 +1,0 @@
-[Desktop Entry]
-Type=Application
-Name=Mutt
-Comment=Mutt is a text-based mail client renowned for its powerful features.
-TryExec=konsole
-Exec=konsole -e mutt
-Icon=internet-mail
-Terminal=false
-Categories=Network;Email;
