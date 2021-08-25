@@ -4,6 +4,7 @@ Documentation=https://github.com/YHNdnzj/dotfiles
 
 [Service]
 WorkingDirectory=%h/dotfiles
+ExecStartPre=/usr/bin/nm-online -q
 ExecStart=/usr/bin/git pull
 
 [Install]
