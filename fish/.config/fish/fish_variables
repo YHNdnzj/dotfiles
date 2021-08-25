@@ -5,6 +5,7 @@ SETUVAR __fish_init_2_39_8:\x1d
 SETUVAR __fish_init_2_3_0:\x1d
 SETUVAR __fish_init_3_x:\x1d
 SETUVAR __fish_initialized:3100
+SETUVAR _fish_abbr_irssi:screen\x20\x2dr\x20irssi
 SETUVAR _fish_abbr_pcq:proxychains\x20\x2dq
 SETUVAR _fish_abbr_pcs:proxychains
 SETUVAR fish_color_autosuggestion:555\x1ebrblack
