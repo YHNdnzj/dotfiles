@@ -86,7 +86,7 @@ if nvidia:
         ])
     else:
         die("/dev/nvidia0 doesn't exist or isn't a character device.\n"
-            + "Check your NVIDIA driver or remove '--nvidia'")
+            + "Check your NVIDIA driver or remove '--nvidia'", 2)
 
 optlists = [binds_ro, binds, devices_allow, envvars]
 options = []
