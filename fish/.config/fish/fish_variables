@@ -6,6 +6,7 @@ SETUVAR __fish_init_2_39_8:\x1d
 SETUVAR __fish_init_2_3_0:\x1d
 SETUVAR __fish_init_3_x:\x1d
 SETUVAR __fish_initialized:3100
+SETUVAR _fish_abbr_fcpb:curl\x20\x2dF\x20c\x3d\x40\x2d\x20https\x3a//fars\x2eee/
 SETUVAR _fish_abbr_la:exa\x20\x2dla
 SETUVAR _fish_abbr_ll:exa\x20\x2dl
 SETUVAR _fish_abbr_ls:exa
