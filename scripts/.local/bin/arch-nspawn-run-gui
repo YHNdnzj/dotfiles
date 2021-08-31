@@ -53,14 +53,14 @@ binds = {
     "param": [
         f"{xauth_host}:{xauth_bind}",
         "/dev/dri",  # "/dev/nvidia0", "/dev/nvidiactl", "/dev/nvidia-modeset",
-        "/dev/shm", "/dev/input", "/dev/uinput"
+        "/dev/input", "/dev/uinput"
     ]
 }
 devices_allow = {
     "option": "--property=DeviceAllow=",
     "param": [
         "char-drm rw",  # "char-nvidia-frontend rw",
-        "/dev/shm rw", "char-input rw", "/dev/uinput rw"
+        "char-input rw", "/dev/uinput rw"
     ]
 }
 envvars = {
