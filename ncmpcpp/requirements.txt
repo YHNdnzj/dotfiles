@@ -1,4 +1,4 @@
 Services:
 MPD: running on arch-server.local
-PulseAudio: load module-native-protocol-tcp
+PulseAudio: module-native-protocol-tcp support
 HTTP Proxy (Privoxy): listen on 8118
