@@ -1,5 +1,3 @@
 Packages:
 vim
-base-devel
-paru
 pacman-contrib
