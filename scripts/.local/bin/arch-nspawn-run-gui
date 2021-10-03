@@ -79,11 +79,6 @@ if nvidia:
         binds.get("param").extend(
             ["/dev/nvidia0", "/dev/nvidiactl", "/dev/nvidia-modeset"])
         devices_allow.get("param").extend(["char-nvidia-frontend rw"])
-        envvars.get("param").extend([
-            "__NV_PRIME_RENDER_OFFLOAD=1",
-            "__VK_LAYER_NV_optimus=NVIDIA_only",
-            "__GLX_VENDOR_LIBRARY_NAME=nvidia"
-        ])
     else:
         die("/dev/nvidia0 doesn't exist or isn't a character device.\n"
             + "Check your NVIDIA driver or remove '--nvidia'", 2)
