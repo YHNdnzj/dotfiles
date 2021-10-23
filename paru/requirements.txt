@@ -1,5 +1,9 @@
 Packages:
 base-devel
+kbfs
+rsync
+index-generator
 
 Services:
 HTTP Proxy (Privoxy): listen on 8118
+systemd --user: repo-sync-to-kbfs.path

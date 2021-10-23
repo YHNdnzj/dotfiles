@@ -1,0 +1,10 @@
+[Unit]
+Description=Sync Local repo to KBFS
+Requires=kbfs.service
+After=kbfs.service
+
+[Service]
+Type=oneshot
+ExecCondition=/bin/bash -c "! pgrep 'repo-add|repo-remove' &>/dev/null"
+ExecStart=/usr/bin/rsync -a --delete %h/repo/Local/. %h/repo/KBFS
+ExecStart=/home/yhndnzj/.local/bin/index-generator --human %h/repo/KBFS
