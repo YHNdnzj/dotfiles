@@ -1,0 +1,2 @@
+Services:
+[arch-server:/data/ssd/music]: mounted on ~/Music/nfs
