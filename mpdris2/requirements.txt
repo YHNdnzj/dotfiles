@@ -1,5 +1,2 @@
 Packages:
 mpd
-
-Services:
-XDG Autostart: mpdris2.desktop
