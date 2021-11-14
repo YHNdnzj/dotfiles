@@ -1,5 +1,6 @@
 Packages:
 mpd
+mpdris2
 
 Services:
 HTTP Proxy (Privoxy): listen on 8118
