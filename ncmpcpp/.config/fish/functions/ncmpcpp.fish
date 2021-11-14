@@ -2,7 +2,7 @@
 function ncmpcpp --wraps ncmpcpp --description 'Start mpd, mpdris2 & Run ncmpcpp with proxy'
     systemctl --user start mpd.service
     and begin
-        if not pidof -q mpDris2
+        if not pgrep -f mpDris2 &>/dev/null
             mpDris2 >/dev/null & disown
         end
         px ncmpcpp
