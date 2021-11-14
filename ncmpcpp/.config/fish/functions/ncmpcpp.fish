@@ -3,7 +3,7 @@ function ncmpcpp --wraps ncmpcpp --description 'Start mpd, mpdris2 & Run ncmpcpp
     systemctl --user start mpd.service
     and begin
         if not pgrep -f mpDris2 &>/dev/null
-            mpDris2 >/dev/null & disown
+            mpDris2 &>/dev/null & disown
         end
         px ncmpcpp
     end
