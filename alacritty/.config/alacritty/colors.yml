@@ -24,3 +24,5 @@ colors:
     magenta: '#FF9AC1'
     cyan:    '#67d3c2'
     white:   '#ffffff'
+
+  transparent_background_colors: true

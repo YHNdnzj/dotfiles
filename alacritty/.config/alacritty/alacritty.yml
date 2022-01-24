@@ -323,7 +323,7 @@ draw_bold_text_with_bright_colors: true
   # Whether or not `window.opacity` applies to all cell backgrounds or only to
   # the default background. When set to `true` all cells will be transparent
   # regardless of their background color.
-  transparent_background_colors: true
+  #transparent_background_colors: true
 
 # Bell
 #
