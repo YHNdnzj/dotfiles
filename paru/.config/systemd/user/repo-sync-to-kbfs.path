@@ -1,8 +1,0 @@
-[Unit]
-Description=Sync Local repo to KBFS after each database update
-
-[Path]
-PathChanged=%h/repo/Local/x86_64/yhndnzj.db.tar.gz
-
-[Install]
-WantedBy=default.target
