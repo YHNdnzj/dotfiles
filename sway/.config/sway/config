@@ -18,12 +18,12 @@ set $term alacritty
 # Your preferred application launcher
 # Note: pass the final command to swaymsg so that the resulting window can be opened
 # on the original workspace that the command was run on.
-set $menu j4-dmenu-desktop --dmenu='bemenu -i --nb "#3f3f3f" --nf "#dcdccc" --fn "sans 13"' --term='alacritty' | xargs swaymsg exec --
+set $menu j4-dmenu-desktop --dmenu='bemenu -i --no-exec --nb "#3f3f3f" --nf "#dcdccc" --fn "sans 12"' --term=$term --wrapper='swaymsg exec --'
 
 ### Output configuration
 #
 # Default wallpaper (more resolutions are available in /usr/share/backgrounds/sway/)
-output * bg /usr/share/backgrounds/sway/Sway_Wallpaper_Blue_1920x1080.png fill
+output * bg ~/Pictures/background fill
 #
 # Example configuration:
 #
@@ -57,7 +57,9 @@ output eDP-1 scale 1.5
 #
 # You can get the names of your inputs by running: swaymsg -t get_inputs
 # Read `man 5 sway-input` for more information about this section.
-
+input type:touchpad {
+    tap enabled
+}
 ### Key bindings
 #
 # Basics:
@@ -201,18 +203,20 @@ bindsym $mod+r mode "resize"
 #
 # Read `man 5 sway-bar` for more information about this section.
 bar {
-    font sans 11, FontAwesome 11
+    font sans 10, Font Awesome 5 Free 10
 
     position top
 
-    # When the status_command prints a new line to stdout, swaybar updates.
-    # The default just shows the current date and time.
     status_command i3status-rs
 
     colors {
-        statusline #ffffff
-        background #323232
-        inactive_workspace #32323200 #32323200 #5c5c5c
+        separator #666666
+        background #222222
+        statusline #dddddd
+        focused_workspace #0088CC #0088CC #ffffff
+        active_workspace #333333 #333333 #ffffff
+        inactive_workspace #333333 #333333 #888888
+        urgent_workspace #2f343a #900000 #ffffff
     }
 }
 
