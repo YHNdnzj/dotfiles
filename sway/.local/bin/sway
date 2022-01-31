@@ -2,10 +2,12 @@
 
 (
 cd ~/.config/sway/env || exit 0
-if find . -name "*.sh" -maxdepth 1 | grep -q "."; then
-    set -x
-    source ./*.sh
-fi
+envfiles=(*.sh)
+set -x
+for envfile in "${envfiles[@]}"
+do
+    source "$envfile"
+done
 )
 
 for card in /dev/dri/card*
