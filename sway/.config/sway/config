@@ -46,7 +46,7 @@ output eDP-1 scale 1.5
 exec swayidle -w \
         timeout 600 'swaylock -f -c 000000' \
         timeout 900 'swaymsg "output * dpms off"' resume 'swaymsg "output * dpms on"' \
-        before-sleep 'swaylock -f -c 000000'
+        before-sleep 'playerctl pause' before-sleep 'swaylock -f -c 000000'
 ### Input configuration
 #
 # Example configuration:
