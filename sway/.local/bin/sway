@@ -1,10 +1,12 @@
 #!/bin/bash -e
 
-export QT_QPA_PLATFORM=wayland QT_QPA_PLATFORMTHEME=qt5ct
-export SDL_VIDEODRIVER=wayland
-
-export LANG=zh_TW.UTF-8
-export LANGUAGE=zh_TW:zh_CN:zh:en_US:en
+(
+cd ~/.config/sway/env || exit 0
+if find . -name "*.sh" -maxdepth 1 | grep -q "."; then
+    set -x
+    source ./*.sh
+fi
+)
 
 for card in /dev/dri/card*
 do
