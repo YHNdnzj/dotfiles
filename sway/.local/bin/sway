@@ -1,14 +1,13 @@
 #!/bin/bash -e
 
-(
-cd ~/.config/sway/env || exit 0
+cd ~/.config/sway/env
 envfiles=(*.sh)
 set -x
 for envfile in "${envfiles[@]}"
 do
     source "$envfile"
 done
-)
+set +x
 
 for card in /dev/dri/card*
 do
