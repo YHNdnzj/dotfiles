@@ -1,0 +1,64 @@
+theme = "dracula"
+icons = "awesome"
+
+[[block]]
+block = "net"
+device = "eth0"
+format = "{ip}"
+hide_inactive = true
+
+[[block]]
+block = "net"
+device = "wlan0"
+format = "{ssid} {signal_strength} {ip}"
+hide_inactive = true
+
+[[block]]
+block = "backlight"
+cycle = [50, 70, 0, 30]
+invert_icons = true
+
+[[block]]
+block = "battery"
+format = "{percentage}{power} {time}"
+
+[[block]]
+block = "disk_space"
+path = "/"
+info_type = "free"
+unit = "GB"
+format = "{icon} {used}/{total}"
+warning = 35
+alert = 20
+interval = 300
+
+[[block]]
+block = "bluetooth"
+mac = "D8:35:28:A5:FA:F7"
+hide_disconnected = true
+
+[[block]]
+block = "load"
+interval = 1
+format = "{1m}"
+
+[[block]]
+block = "temperature"
+
+[[block]]
+block = "cpu"
+format = "{utilization} {frequency}"
+
+[[block]]
+block = "music"
+max_width = 15
+buttons = ["prev", "play", "next"]
+hide_when_empty = true
+
+[[block]]
+block = "sound"
+
+[[block]]
+block = "time"
+interval = 1
+format = "%a %v %T"

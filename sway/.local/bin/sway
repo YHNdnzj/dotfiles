@@ -1,0 +1,17 @@
+#!/bin/bash -e
+
+export QT_QPA_PLATFORM=wayland QT_QPA_PLATFORMTHEME=qt5ct
+export SDL_VIDEODRIVER=wayland
+
+export LANG=zh_TW.UTF-8
+export LANGUAGE=zh_TW:zh_CN:zh:en_US:en
+
+for card in /dev/dri/card*
+do
+    if (( $(udevadm info -an "$card" | grep boot_vga | rev | cut -c 2) )); then
+        WLR_DRM_DEVICES="$card" exec /usr/bin/sway --unsupported-gpu
+    fi
+done
+
+echo "No available GPU found!" >&2
+exit 1
