@@ -1,0 +1,3 @@
+#!/bin/bash
+export XDG_SESSION_DESKTOP=sway
+export XDG_CURRENT_DESKTOP=$XDG_SESSION_DESKTOP
