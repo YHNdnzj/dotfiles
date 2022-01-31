@@ -13,7 +13,7 @@ cd ~
 for card in /dev/dri/card*
 do
     if (( $(udevadm info -an "$card" | grep boot_vga | rev | cut -c 2) )); then
-        WLR_DRM_DEVICES="$card" exec dbus-run-session -- /usr/bin/sway --unsupported-gpu
+        WLR_DRM_DEVICES="$card" exec /usr/bin/sway --unsupported-gpu
     fi
 done
 
