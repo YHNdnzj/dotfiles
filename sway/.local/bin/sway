@@ -8,6 +8,7 @@ do
     source "$envfile"
 done
 set +x
+cd ~
 
 for card in /dev/dri/card*
 do
