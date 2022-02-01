@@ -238,7 +238,7 @@ bar {
     }
 }
 
-xwayland disable
+xwayland enable
 
 include /etc/sway/config.d/*
 include ~/.config/sway/autostart/*
