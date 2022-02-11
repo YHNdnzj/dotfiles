@@ -159,6 +159,10 @@ input type:touchpad {
     # Assign application to workspace
     assign [app_id="firefox"] workspace $ws2
     assign [app_id="telegramdesktop"] workspace $ws3
+
+    # Change settings for windows
+    for_window [app_id="firefox"] border none
+    for_window [app_id="telegramdesktop"] border none
 #
 # Layout stuff:
 #
