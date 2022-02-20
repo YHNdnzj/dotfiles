@@ -1,3 +1,5 @@
+-- https://github.com/zc62/mpv-scripts/blob/master/exit-fullscreen.lua
+
 -- Exit fullscreen when playback ends, if keep-open=yes
 
 mp.observe_property("eof-reached", "bool", function(name, value)
