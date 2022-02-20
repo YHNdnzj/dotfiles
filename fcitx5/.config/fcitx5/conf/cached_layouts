@@ -4,32 +4,32 @@ Language=en
 Label=apl
 
 [keyboard-apl-dyalog]
-Description="鍵盤 - APL - APL symbols (Dyalog APL)"
+Description="鍵盤 - APL - APL 符号（Dyalog APL）"
 Language=en
 Label=dlg
 
 [keyboard-apl-sax]
-Description="鍵盤 - APL - APL symbols (SAX, Sharp APL for Unix)"
+Description="鍵盤 - APL - APL 符号（SAX，Sharp APL for Unix）"
 Language=en
 Label=sax
 
 [keyboard-apl-unified]
-Description="鍵盤 - APL - APL symbols (unified)"
+Description="鍵盤 - APL - APL 符号（统一）"
 Language=en
 Label=ufd
 
 [keyboard-apl-apl2]
-Description="鍵盤 - APL - APL symbols (IBM APL2)"
+Description="鍵盤 - APL - APL 符号（IBM APL2）"
 Language=en
 Label=apl2
 
 [keyboard-apl-aplplusII]
-Description="鍵盤 - APL - APL symbols (Manugistics APL*PLUS II)"
+Description="鍵盤 - APL - APL 符号（Manugistics APL*PLUS II）"
 Language=en
 Label=aplII
 
 [keyboard-apl-aplx]
-Description="鍵盤 - APL - APL symbols (APLX unified)"
+Description="鍵盤 - APL - APL 符号（APLX 统一）"
 Language=en
 Label=aplx
 
@@ -49,22 +49,22 @@ Language=
 Label=brl
 
 [keyboard-brai-left_hand]
-Description="鍵盤 - 盲人點字符號 - 盲文（left-handed)）"
+Description="鍵盤 - 盲人點字符號 - 盲文（左手）"
 Language=
 Label=brai
 
 [keyboard-brai-left_hand_invert]
-Description="鍵盤 - 盲人點字符號 - 盲文（left-handed inverted thumb）"
+Description="鍵盤 - 盲人點字符號 - 盲文（左手，大拇指反转）"
 Language=
 Label=brai
 
 [keyboard-brai-right_hand]
-Description="鍵盤 - 盲人點字符號 - 盲文（right-handed）"
+Description="鍵盤 - 盲人點字符號 - 盲文（右手）"
 Language=
 Label=brai
 
 [keyboard-brai-right_hand_invert]
-Description="鍵盤 - 盲人點字符號 - 盲文（right-handed inverted thumb）"
+Description="鍵盤 - 盲人點字符號 - 盲文（右手，大拇指反转）"
 Language=
 Label=brai
 
@@ -149,7 +149,7 @@ Language=en
 Label=gb
 
 [keyboard-gb-dvorakukp]
-Description="鍵盤 - 英語 (英式) - 英语（英国，带英国标点的 Dvorak 布局）"
+Description="鍵盤 - 英語 (英式) - 英语（英国，Dvorak，带英国标点）"
 Language=en
 Label=gb
 
@@ -159,7 +159,7 @@ Language=en
 Label=gb
 
 [keyboard-gb-mac_intl]
-Description="鍵盤 - 英語 (英式) - 英语（英国，Mac，国际）"
+Description="鍵盤 - 英語 (英式) - 英语（英国，Macintosh，国际）"
 Language=en
 Label=gb
 
@@ -169,14 +169,19 @@ Language=en
 Label=gb
 
 [keyboard-gb-colemak_dh]
-Description="鍵盤 - 英語 (英式) - 英语（英国，Colemak-DH 布局）"
+Description="鍵盤 - 英語 (英式) - 英语（英国，Colemak-DH）"
 Language=en
 Label=gb
 
 [keyboard-gb-pl]
-Description="鍵盤 - 英語 (英式) - 波兰语（大不列颠键盘）"
+Description="鍵盤 - 英語 (英式) - 波兰语（英式键盘）"
 Language=pl
 Label=pl
+
+[keyboard-gb-gla]
+Description="鍵盤 - 英語 (英式) - 苏格兰盖尔语"
+Language=en
+Label=gd
 
 [keyboard-gb-sun_type6]
 Description="鍵盤 - 英語 (英式) - 英語 (英式，昇陽 Type 6/7)"
@@ -186,7 +191,7 @@ Label=gb
 [keyboard-ua]
 Description="鍵盤 - 烏克蘭語"
 Language=uk
-Label=k
+Label=uk
 
 [keyboard-ua-phonetic]
 Description="鍵盤 - 烏克蘭語 - 烏克蘭語 (音標)"
@@ -200,6 +205,11 @@ Label=ua
 
 [keyboard-ua-winkeys]
 Description="鍵盤 - 烏克蘭語 - 乌克兰语（Windows）"
+Language=uk
+Label=ua
+
+[keyboard-ua-macOS]
+Description="鍵盤 - 烏克蘭語 - 乌克兰语（macOS）"
 Language=uk
 Label=ua
 
@@ -222,6 +232,21 @@ Label=ua
 Description="鍵盤 - 烏克蘭語 - 烏克蘭語 (homophonic)"
 Language=uk
 Label=ua
+
+[keyboard-ua-crh]
+Description="鍵盤 - 烏克蘭語 - 克里米亞韃靼語 (土耳其語 Q)"
+Language=crh
+Label=crh
+
+[keyboard-ua-crh_f]
+Description="鍵盤 - 烏克蘭語 - 克里米亞韃靼語 (土耳其語 F)"
+Language=crh
+Label=crh
+
+[keyboard-ua-crh_alt]
+Description="鍵盤 - 烏克蘭語 - 克里米亞韃靼語 (土耳其語 Alt-Q)"
+Language=crh
+Label=crh
 
 [keyboard-ua-sun_type6]
 Description="鍵盤 - 烏克蘭語 - 烏克蘭語 (昇陽 Type 6/7)"
@@ -248,11 +273,6 @@ Description="鍵盤 - 迪貝喜語"
 Language=dv
 Label=dv
 
-[keyboard-nec_vndr/jp]
-Description="鍵盤 - 日语（PC-98 系列）"
-Language=ja
-Label=ja
-
 [keyboard-tj]
 Description="鍵盤 - 塔吉克語"
 Language=tg
@@ -274,12 +294,12 @@ Language=sk
 Label=sk
 
 [keyboard-sk-qwerty]
-Description="鍵盤 - 斯洛伐克 - 斯洛伐克语（QWERTY 布局）"
+Description="鍵盤 - 斯洛伐克 - 斯洛伐克语（QWERTY）"
 Language=sk
 Label=sk
 
 [keyboard-sk-qwerty_bksl]
-Description="鍵盤 - 斯洛伐克 - 斯洛伐克语（QWERTY 布局, 扩展反斜杠）"
+Description="鍵盤 - 斯洛伐克 - 斯洛伐克语（QWERTY，扩展反斜杠）"
 Language=sk
 Label=sk
 
@@ -304,12 +324,12 @@ Language=ru
 Label=ru
 
 [keyboard-ru-phonetic_winkeys]
-Description="鍵盤 - 俄語 - 俄语（音标，Windows）"
+Description="鍵盤 - 俄語 - 俄语（语音助记，Windows）"
 Language=ru
 Label=ru
 
 [keyboard-ru-phonetic_YAZHERTY]
-Description="鍵盤 - 俄語 - 俄语（音标，YAZHERTY 布局）"
+Description="鍵盤 - 俄語 - 俄语（语音助记，YAZHERTY）"
 Language=ru
 Label=ru
 
@@ -399,17 +419,17 @@ Language=chm
 Label=ru
 
 [keyboard-ru-phonetic_azerty]
-Description="鍵盤 - 俄語 - 俄语（音标，AZERTY 布局）"
+Description="鍵盤 - 俄語 - 俄语（语音助记，AZERTY）"
 Language=ru
 Label=ru
 
 [keyboard-ru-phonetic_dvorak]
-Description="鍵盤 - 俄語 - 俄语（音标，Dvorak 布局）"
+Description="鍵盤 - 俄語 - 俄语（语音助记，Dvorak）"
 Language=ru
 Label=ru
 
 [keyboard-ru-phonetic_fr]
-Description="鍵盤 - 俄語 - 俄语（音标，法国）"
+Description="鍵盤 - 俄語 - 俄语（语音助记，法语）"
 Language=ru
 Label=ru
 
@@ -424,12 +444,12 @@ Language=ru
 Label=ru
 
 [keyboard-ru-rulemak]
-Description="鍵盤 - 俄語 - 俄语（Rulemak，带音标 Colemak 布局）"
+Description="鍵盤 - 俄語 - 俄语（Rulemak，语音助记 Colemak）"
 Language=ru
 Label=ru
 
 [keyboard-ru-phonetic_mac]
-Description="鍵盤 - 俄語 - 俄语（带音标 Mac）"
+Description="鍵盤 - 俄語 - 俄语（语音助记 Macintosh）"
 Language=ru
 Label=ru
 
@@ -439,17 +459,17 @@ Language=ru
 Label=ru
 
 [keyboard-ru-unipunct]
-Description="鍵盤 - 俄語 - 俄语（带美国标点）"
+Description="鍵盤 - 俄語 - 俄语（带美式标点）"
 Language=ru
 Label=ru
 
 [keyboard-ru-gost-6431-75-48]
-Description="鍵盤 - 俄語 - Russian (GOST 6431-75, 48-key)"
+Description="鍵盤 - 俄語 - 俄语（GOST 6431-75）"
 Language=ru
 Label=ru
 
 [keyboard-ru-gost-14289-88]
-Description="鍵盤 - 俄語 - Russian (GOST 14289-88)"
+Description="鍵盤 - 俄語 - 俄语（GOST 14289-88）"
 Language=ru
 Label=ru
 
@@ -461,10 +481,10 @@ Label=ru
 [keyboard-trans]
 Description="鍵盤 - 国际音标"
 Language=
-Label=trans
+Label=ipa
 
 [keyboard-trans-qwerty]
-Description="鍵盤 - 国际音标 - International Phonetic Alphabet (QWERTY)"
+Description="鍵盤 - 国际音标 - 国际音标（QWERTY）"
 Language=
 Label=trans
 
@@ -529,7 +549,7 @@ Language=is
 Label=is
 
 [keyboard-is-mac_legacy]
-Description="鍵盤 - 冰島語 - 冰岛语（Mac，传统）"
+Description="鍵盤 - 冰島語 - 冰岛语（Macintosh，传统）"
 Language=is
 Label=is
 
@@ -559,7 +579,7 @@ Language=es
 Label=es
 
 [keyboard-es-deadtilde]
-Description="鍵盤 - 西班牙語 - 西班牙语（dead tilde）"
+Description="鍵盤 - 西班牙語 - 西班牙语（波浪号为死键）"
 Language=es
 Label=es
 
@@ -569,7 +589,7 @@ Language=es
 Label=es
 
 [keyboard-es-ast]
-Description="鍵盤 - 西班牙語 - 阿斯图里亚斯语（西班牙，with bottom-dot H and L）"
+Description="鍵盤 - 西班牙語 - 阿斯图里亚斯语（西班牙，带底部加点的 H 和 L）"
 Language=ast
 Label=ast
 
@@ -619,7 +639,7 @@ Language=nl
 Label=nl
 
 [keyboard-nl-us]
-Description="鍵盤 - 荷蘭語 - Dutch (US)"
+Description="鍵盤 - 荷蘭語 - 荷兰语（美国）"
 Language=nl
 Label=nl
 
@@ -649,17 +669,17 @@ Language=cs
 Label=cz
 
 [keyboard-cz-qwerty]
-Description="鍵盤 - 捷克語 - 捷克语（QWERTY 布局）"
+Description="鍵盤 - 捷克語 - 捷克语（QWERTY）"
 Language=cs
 Label=cz
 
 [keyboard-cz-qwerty_bksl]
-Description="鍵盤 - 捷克語 - 捷克语（QWERTY 布局，扩展反斜杠）"
+Description="鍵盤 - 捷克語 - 捷克语（QWERTY，扩展反斜杠）"
 Language=cs
 Label=cz
 
 [keyboard-cz-qwerty-mac]
-Description="鍵盤 - 捷克語 - 捷克语（QWERTY 布局，Mac）"
+Description="鍵盤 - 捷克語 - 捷克语（QWERTY，Macintosh）"
 Language=cs
 Label=cz
 
@@ -669,12 +689,12 @@ Language=cs
 Label=cz
 
 [keyboard-cz-dvorak-ucw]
-Description="鍵盤 - 捷克語 - 捷克语（美国，Dvorak 布局，支持 UCW）"
+Description="鍵盤 - 捷克語 - 捷克语（美国，Dvorak，支持 UCW）"
 Language=cs
 Label=cz
 
 [keyboard-cz-rus]
-Description="鍵盤 - 捷克語 - 俄语（捷克，音标）"
+Description="鍵盤 - 捷克語 - 俄语（捷克，语音助记）"
 Language=ru
 Label=ru
 
@@ -699,7 +719,7 @@ Language=cs
 Label=cz
 
 [keyboard-cz-prog_typo]
-Description="鍵盤 - 捷克語 - 捷克语（programming, typographic）"
+Description="鍵盤 - 捷克語 - 捷克语（programming，typographic）"
 Language=cs
 Label=cz
 
@@ -724,7 +744,7 @@ Language=ru
 Label=ru
 
 [keyboard-se-rus_nodeadkeys]
-Description="鍵盤 - 瑞典語 - 俄语（瑞典，音标，无死键）"
+Description="鍵盤 - 瑞典語 - 俄语（瑞典，语音助记，无死键）"
 Language=ru
 Label=ru
 
@@ -744,7 +764,7 @@ Language=sv
 Label=se
 
 [keyboard-se-us_dvorak]
-Description="鍵盤 - 瑞典語 - 瑞典语（Dvorak 布局，国际）"
+Description="鍵盤 - 瑞典語 - 瑞典语（Dvorak，国际）"
 Language=sv
 Label=se
 
@@ -759,7 +779,7 @@ Language=swl
 Label=se
 
 [keyboard-se-dvorak_a5]
-Description="鍵盤 - 瑞典語 - 瑞典语（Dvorak A5 布局）"
+Description="鍵盤 - 瑞典語 - 瑞典语（Dvorak A5）"
 Language=sv
 Label=se
 
@@ -769,7 +789,7 @@ Language=sv
 Label=se
 
 [keyboard-se-ovd]
-Description="鍵盤 - 瑞典語 - Elfdalian 语（瑞典，with combining ogonek）"
+Description="鍵盤 - 瑞典語 - Elfdalian 语（瑞典，带组合 ogonek）"
 Language=
 Label=se
 
@@ -789,7 +809,7 @@ Language=bg
 Label=bg
 
 [keyboard-bg-bekl]
-Description="鍵盤 - 保加利亞語 - 保加利亚语（enhanced）"
+Description="鍵盤 - 保加利亞語 - 保加利亚语（改进）"
 Language=bg
 Label=bg
 
@@ -849,12 +869,12 @@ Language=en
 Label=us
 
 [keyboard-us-colemak_dh]
-Description="鍵盤 - 英語 (美式) - English (Colemak-DH)"
+Description="鍵盤 - 英語 (美式) - 英语（Colemak-DH）"
 Language=en
 Label=us
 
 [keyboard-us-colemak_dh_iso]
-Description="鍵盤 - 英語 (美式) - English (Colemak-DH ISO)"
+Description="鍵盤 - 英語 (美式) - 英语（Colemak-DH ISO）"
 Language=en
 Label=us
 
@@ -864,22 +884,22 @@ Language=en
 Label=us
 
 [keyboard-us-dvorak-intl]
-Description="鍵盤 - 英語 (美式) - 英语（Dvorak 布局，国际，带死键）"
+Description="鍵盤 - 英語 (美式) - 英语（Dvorak，国际，带死键）"
 Language=en
 Label=us
 
 [keyboard-us-dvorak-alt-intl]
-Description="鍵盤 - 英語 (美式) - 英语（Dvorak 布局，替代，国际）"
+Description="鍵盤 - 英語 (美式) - 英语（Dvorak，替代，国际）"
 Language=en
 Label=us
 
 [keyboard-us-dvorak-l]
-Description="鍵盤 - 英語 (美式) - 英语（左手 Dvorak 布局）"
+Description="鍵盤 - 英語 (美式) - 英语（Dvorak，左手）"
 Language=en
 Label=us
 
 [keyboard-us-dvorak-r]
-Description="鍵盤 - 英語 (美式) - 英语（右手 Dvorak 布局）"
+Description="鍵盤 - 英語 (美式) - 英语（Dvorak，右手）"
 Language=en
 Label=us
 
@@ -894,7 +914,7 @@ Language=en
 Label=us
 
 [keyboard-us-dvorak-mac]
-Description="鍵盤 - 英語 (美式) - English (Dvorak, Macintosh)"
+Description="鍵盤 - 英語 (美式) - 英语（Dvorak，Macintosh）"
 Language=en
 Label=us
 
@@ -919,7 +939,7 @@ Language=en
 Label=us
 
 [keyboard-us-olpc2]
-Description="鍵盤 - 英語 (美式) - 英语（可切换乘/除布局）"
+Description="鍵盤 - 英語 (美式) - 英语（除/乘键切换布局）"
 Language=en
 Label=us
 
@@ -929,7 +949,7 @@ Language=en
 Label=us
 
 [keyboard-us-norman]
-Description="鍵盤 - 英語 (美式) - 英语（Norman 布局）"
+Description="鍵盤 - 英語 (美式) - 英语（Norman）"
 Language=en
 Label=us
 
@@ -939,17 +959,17 @@ Language=en
 Label=us
 
 [keyboard-us-workman-intl]
-Description="鍵盤 - 英語 (美式) - 英语（Workman 布局，国际，带死键）"
+Description="鍵盤 - 英語 (美式) - 英语（Workman，国际，带死键）"
 Language=en
 Label=us
 
 [keyboard-us-intl-unicode]
-Description="鍵盤 - 英語 (美式) - 英语（美国，国际，AltGr Unicode combining）"
+Description="鍵盤 - 英語 (美式) - 英语（美国，国际，AltGr Unicode 组合字符）"
 Language=en
 Label=us
 
 [keyboard-us-alt-intl-unicode]
-Description="鍵盤 - 英語 (美式) - 英语（美国，国际，AltGr Unicode combining，替代）"
+Description="鍵盤 - 英語 (美式) - 英语（美国，国际，AltGr Unicode 组合字符，替代）"
 Language=en
 Label=us
 
@@ -959,7 +979,7 @@ Language=en
 Label=us
 
 [keyboard-us-crd]
-Description="鍵盤 - 英語 (美式) - Coeur d'Alene Salish"
+Description="鍵盤 - 英語 (美式) - 科达莲萨利希语"
 Language=crd
 Label=us
 
@@ -969,12 +989,12 @@ Language=en
 Label=us
 
 [keyboard-us-cz_sk_pl_de_es_fi_sv]
-Description="鍵盤 - 英語 (美式) - Czech, Slovak, Polish, Spanish, Finnish, Swedish and German (US)"
+Description="鍵盤 - 英語 (美式) - 捷克语、斯洛伐克语、波兰语、西班牙语、芬兰语、瑞典语和德语（美国）"
 Language=en
 Label=us
 
 [keyboard-us-drix]
-Description="鍵盤 - 英語 (美式) - 英语（Drix 布局）"
+Description="鍵盤 - 英語 (美式) - 英语（Drix）"
 Language=en
 Label=us
 
@@ -994,32 +1014,32 @@ Language=en
 Label=us
 
 [keyboard-us-carpalx]
-Description="鍵盤 - 英語 (美式) - 英语（Carpalx 布局）"
+Description="鍵盤 - 英語 (美式) - 英语（Carpalx）"
 Language=en
 Label=us
 
 [keyboard-us-carpalx-intl]
-Description="鍵盤 - 英語 (美式) - 英语（Carpalx 布局，国际，带死键）"
+Description="鍵盤 - 英語 (美式) - 英语（Carpalx，国际，带死键）"
 Language=en
 Label=us
 
 [keyboard-us-carpalx-altgr-intl]
-Description="鍵盤 - 英語 (美式) - 英语（Carpalx 布局，国际，带 AltGr 死键）"
+Description="鍵盤 - 英語 (美式) - 英语（Carpalx，国际，带 AltGr 死键）"
 Language=en
 Label=us
 
 [keyboard-us-carpalx-full]
-Description="鍵盤 - 英語 (美式) - 英语（Carpalx 布局，完全优化）"
+Description="鍵盤 - 英語 (美式) - 英语（Carpalx，完全优化）"
 Language=en
 Label=us
 
 [keyboard-us-carpalx-full-intl]
-Description="鍵盤 - 英語 (美式) - 英语（Carpalx 布局，完全优化，国际，带死键）"
+Description="鍵盤 - 英語 (美式) - 英语（Carpalx，完全优化，国际，带死键）"
 Language=en
 Label=us
 
 [keyboard-us-carpalx-full-altgr-intl]
-Description="鍵盤 - 英語 (美式) - 英语（Carpalx 布局，完全优化，国际，带 AltGr 死键）"
+Description="鍵盤 - 英語 (美式) - 英语（Carpalx，完全优化，国际，带 AltGr 死键）"
 Language=en
 Label=us
 
@@ -1029,17 +1049,22 @@ Language=en
 Label=us
 
 [keyboard-us-3l-cros]
-Description="鍵盤 - 英語 (美式) - mebook)"
+Description="鍵盤 - 英語 (美式) - 英语（3l，Chromebook）"
 Language=en
 Label=us
 
 [keyboard-us-3l-emacs]
-Description="鍵盤 - 英語 (美式) - 英语（3l, emacs）"
+Description="鍵盤 - 英語 (美式) - 英语（3l，emacs）"
 Language=en
 Label=us
 
 [keyboard-us-scn]
 Description="鍵盤 - 英語 (美式) - 西西里语（美式键盘）"
+Language=en
+Label=us
+
+[keyboard-us-altgr-weur]
+Description="鍵盤 - 英語 (美式) - 英语（西欧 AltGr 死键）"
 Language=en
 Label=us
 
@@ -1074,12 +1099,12 @@ Language=hr
 Label=hr
 
 [keyboard-hr-alternatequotes]
-Description="鍵盤 - 克羅埃西亞語 - 克罗地亚语（with guillemets）"
+Description="鍵盤 - 克羅埃西亞語 - 克罗地亚语（带书名号引号）"
 Language=hr
 Label=hr
 
 [keyboard-hr-unicode]
-Description="鍵盤 - 克羅埃西亞語 - 克罗地亚语（带克罗地亚二重字）"
+Description="鍵盤 - 克羅埃西亞語 - 克罗地亚语（带克罗地亚语二重字）"
 Language=hr
 Label=hr
 
@@ -1125,7 +1150,7 @@ Label=ku
 
 [keyboard-ma]
 Description="鍵盤 - 阿拉伯語 (摩洛哥)"
-Language=
+Language=ary
 Label=ar
 
 [keyboard-ma-french]
@@ -1139,12 +1164,12 @@ Language=
 Label=ber
 
 [keyboard-ma-tifinagh-alt]
-Description="鍵盤 - 阿拉伯語 (摩洛哥) - 柏柏尔语（摩洛哥，Tifinagh alt.）"
+Description="鍵盤 - 阿拉伯語 (摩洛哥) - 柏柏尔语（摩洛哥，提非纳，替代）"
 Language=
 Label=ber
 
 [keyboard-ma-tifinagh-alt-phonetic]
-Description="鍵盤 - 阿拉伯語 (摩洛哥) - 柏柏尔语（摩洛哥，Tifinagh phonetic，替代）"
+Description="鍵盤 - 阿拉伯語 (摩洛哥) - 柏柏尔语（摩洛哥，提非纳语音助记，替代）"
 Language=
 Label=ber
 
@@ -1163,63 +1188,68 @@ Description="鍵盤 - 阿拉伯語 (摩洛哥) - 柏柏爾語 (摩洛哥，提�
 Language=
 Label=ber
 
+[keyboard-ma-rif]
+Description="鍵盤 - 阿拉伯語 (摩洛哥) - 里夫语"
+Language=rif
+Label=rif
+
 [keyboard-af]
-Description="鍵盤 - 阿富汗尼"
-Language=
+Description="鍵盤 - 达里语"
+Language=drs
 Label=fa
 
 [keyboard-af-ps]
-Description="鍵盤 - 阿富汗尼 - 普什圖語"
+Description="鍵盤 - 达里语 - 普什圖語"
 Language=ps
 Label=ps
 
 [keyboard-af-uz]
-Description="鍵盤 - 阿富汗尼 - 烏茲別克語 (阿富汗)"
+Description="鍵盤 - 达里语 - 烏茲別克語 (阿富汗)"
 Language=uz
 Label=uz
 
-[keyboard-af-olpc-ps]
-Description="鍵盤 - 阿富汗尼 - 普什圖語 (阿富汗，OLPC)"
+[keyboard-af-ps-olpc]
+Description="鍵盤 - 达里语 - 普什圖語 (阿富汗，OLPC)"
 Language=ps
 Label=ps
 
 [keyboard-af-fa-olpc]
-Description="鍵盤 - 阿富汗尼 - 波斯語 (阿富汗，Dari OLPC)"
-Language=
+Description="鍵盤 - 达里语 - 达里语（阿富汗，OLPC）"
+Language=drs
 Label=fa
 
 [keyboard-af-uz-olpc]
-Description="鍵盤 - 阿富汗尼 - 烏茲別克語 (阿富汗，OLPC)"
+Description="鍵盤 - 达里语 - 烏茲別克語 (阿富汗，OLPC)"
 Language=uz
 Label=uz
 
 [keyboard-dz]
-Description="鍵盤 - Berber (Algeria, Latin)"
-Language=
+Description="鍵盤 - 柏柏尔语（阿尔及利亚，拉丁）"
+Language=tzm
 Label=kab
 
 [keyboard-dz-azerty-deadkeys]
-Description="鍵盤 - Berber (Algeria, Latin) - Kabyle (AZERTY, with dead keys)"
+Description="鍵盤 - 柏柏尔语（阿尔及利亚，拉丁） - 卡拜尔语（AZERTY，带死键）"
 Language=kab
 Label=kab
 
 [keyboard-dz-qwerty-gb-deadkeys]
-Description="鍵盤 - Berber (Algeria, Latin) - Kabyle (QWERTY, UK, with dead keys)"
+Description="鍵盤 - 柏柏尔语（阿尔及利亚，拉丁） - 卡拜尔语（QWERTY，英国，带死键）"
 Language=kab
 Label=kab
 
 [keyboard-dz-qwerty-us-deadkeys]
-Description="鍵盤 - Berber (Algeria, Latin) - Kabyle (QWERTY, US, with dead keys)"
+Description="鍵盤 - 柏柏尔语（阿尔及利亚，拉丁） - 卡拜尔语（QWERTY，美国，带死键）"
 Language=kab
 Label=kab
 
 [keyboard-dz-ber]
-Description="鍵盤 - Berber (Algeria, Latin) - Berber (Algeria, Tifinagh)"
+Description="鍵盤 - 柏柏尔语（阿尔及利亚，拉丁） - 柏柏尔语（阿尔及利亚，提非纳）"
 Language=kab
 Label=kab
 
 [keyboard-dz-ar]
-Description="鍵盤 - Berber (Algeria, Latin) - 阿拉伯语（阿尔及利亚）"
+Description="鍵盤 - 柏柏尔语（阿尔及利亚，拉丁） - 阿拉伯语（阿尔及利亚）"
 Language=ar
 Label=ar
 
@@ -1254,7 +1284,7 @@ Language=sd
 Label=sd
 
 [keyboard-pk-urd-navees]
-Description="鍵盤 - 烏爾都語 (巴基斯坦) - Urdu (Navees, Pakistan)"
+Description="鍵盤 - 烏爾都語 (巴基斯坦) - 乌尔都语（巴基斯坦，Navees）"
 Language=ur
 Label=pk
 
@@ -1274,7 +1304,7 @@ Language=fr
 Label=fr
 
 [keyboard-ml-us-mac]
-Description="鍵盤 - 班巴拉語 - 英语（马里，美国，Mac）"
+Description="鍵盤 - 班巴拉語 - 英语（马里，美国，Macintosh）"
 Language=en
 Label=en
 
@@ -1299,12 +1329,12 @@ Language=vi
 Label=vn
 
 [keyboard-vn-aderty]
-Description="鍵盤 - 越南語 - 越南语（AÐERTY 布局）"
+Description="鍵盤 - 越南語 - 越南语（AÐERTY）"
 Language=vi
 Label=vn
 
 [keyboard-vn-qderty]
-Description="鍵盤 - 越南語 - 越南语（QĐERTY 布局）"
+Description="鍵盤 - 越南語 - 越南语（QĐERTY）"
 Language=vi
 Label=vn
 
@@ -1314,12 +1344,12 @@ Language=ar
 Label=ar
 
 [keyboard-ara-azerty]
-Description="鍵盤 - 阿拉伯語 - 阿拉伯语（AZERTY 布局）"
+Description="鍵盤 - 阿拉伯語 - 阿拉伯语（AZERTY）"
 Language=ar
 Label=ara
 
 [keyboard-ara-azerty_digits]
-Description="鍵盤 - 阿拉伯語 - s)"
+Description="鍵盤 - 阿拉伯語 - 阿拉伯语（AZERTY，东阿拉伯语数字）"
 Language=ar
 Label=ara
 
@@ -1329,12 +1359,12 @@ Language=ar
 Label=ara
 
 [keyboard-ara-qwerty]
-Description="鍵盤 - 阿拉伯語 - 阿拉伯语（QWERTY 布局）"
+Description="鍵盤 - 阿拉伯語 - 阿拉伯语（QWERTY）"
 Language=ar
 Label=ara
 
 [keyboard-ara-qwerty_digits]
-Description="鍵盤 - 阿拉伯語 - 阿拉伯语（QWERTY 布局，东阿拉伯语数字）"
+Description="鍵盤 - 阿拉伯語 - 阿拉伯语（QWERTY，东阿拉伯语数字）"
 Language=ar
 Label=ara
 
@@ -1349,7 +1379,7 @@ Language=ar
 Label=ara
 
 [keyboard-ara-mac]
-Description="鍵盤 - 阿拉伯語 - 阿拉伯语（Mac）"
+Description="鍵盤 - 阿拉伯語 - 阿拉伯语（Macintosh）"
 Language=ar
 Label=ara
 
@@ -1359,22 +1389,22 @@ Language=ar
 Label=ara
 
 [keyboard-ara-basic_ext]
-Description="鍵盤 - 阿拉伯語 - 阿拉伯语（阿拉伯数字，第 4 层扩展）"
+Description="鍵盤 - 阿拉伯語 - 阿拉伯语（阿拉伯数字，第 4 层带扩展）"
 Language=ar
 Label=ara
 
 [keyboard-ara-basic_ext_digits]
-Description="鍵盤 - 阿拉伯語 - 阿拉伯语（东阿拉伯数字，第 4 层扩展）"
+Description="鍵盤 - 阿拉伯語 - 阿拉伯语（东阿拉伯数字，第 4 层带扩展）"
 Language=ar
 Label=ara
 
 [keyboard-ara-uga]
-Description="鍵盤 - 阿拉伯語 - Ugaritic instead of Arabic"
+Description="鍵盤 - 阿拉伯語 - 乌加里特语而不是阿拉伯语"
 Language=ar
 Label=ara
 
 [keyboard-ara-ergoarabic]
-Description="鍵盤 - 阿拉伯語 - Arabic (Ergoarabic)"
+Description="鍵盤 - 阿拉伯語 - 阿拉伯语（ErgoArabic）"
 Language=ar
 Label=ara
 
@@ -1414,17 +1444,17 @@ Language=fr
 Label=cm
 
 [keyboard-cm-qwerty]
-Description="鍵盤 - 英語 (喀麥隆) - 喀麦隆多语言（QWERTY 布局，国际）"
+Description="鍵盤 - 英語 (喀麥隆) - 喀麦隆多语言（QWERTY，国际）"
 Language=en
 Label=cm
 
 [keyboard-cm-azerty]
-Description="鍵盤 - 英語 (喀麥隆) - 喀麦隆（AZERTY 布局，国际）"
+Description="鍵盤 - 英語 (喀麥隆) - 喀麦隆（AZERTY，国际）"
 Language=fr
 Label=cm
 
 [keyboard-cm-dvorak]
-Description="鍵盤 - 英語 (喀麥隆) - 喀麦隆（Dvorak 布局，国际）"
+Description="鍵盤 - 英語 (喀麥隆) - 喀麦隆（Dvorak，国际）"
 Language=en
 Label=cm
 
@@ -1449,47 +1479,47 @@ Language=fil
 Label=ph
 
 [keyboard-ph-qwerty-bay]
-Description="鍵盤 - 菲律賓語 - 菲律宾语（QWERTY 布局，Baybayin）"
+Description="鍵盤 - 菲律賓語 - 菲律宾语（QWERTY，Baybayin）"
 Language=fil
 Label=ph
 
 [keyboard-ph-capewell-dvorak]
-Description="鍵盤 - 菲律賓語 - 菲律宾语（Capewell-Dvorak 布局，拉丁）"
+Description="鍵盤 - 菲律賓語 - 菲律宾语（Capewell-Dvorak，拉丁）"
 Language=fil
 Label=ph
 
 [keyboard-ph-capewell-dvorak-bay]
-Description="鍵盤 - 菲律賓語 - 菲律宾语（Capewell-Dvorak 布局，Baybayin）"
+Description="鍵盤 - 菲律賓語 - 菲律宾语（Capewell-Dvorak，Baybayin）"
 Language=fil
 Label=ph
 
 [keyboard-ph-capewell-qwerf2k6]
-Description="鍵盤 - 菲律賓語 - 菲律宾语（Capewell-QWERF 2006 布局，拉丁）"
+Description="鍵盤 - 菲律賓語 - 菲律宾语（Capewell-QWERF 2006，拉丁）"
 Language=fil
 Label=ph
 
 [keyboard-ph-capewell-qwerf2k6-bay]
-Description="鍵盤 - 菲律賓語 - 菲律宾语（Capewell-QWERF 2006 布局，Baybayin）"
+Description="鍵盤 - 菲律賓語 - 菲律宾语（Capewell-QWERF 2006，Baybayin）"
 Language=fil
 Label=ph
 
 [keyboard-ph-colemak]
-Description="鍵盤 - 菲律賓語 - 菲律宾语（Colemak 布局，拉丁）"
+Description="鍵盤 - 菲律賓語 - 菲律宾语（Colemak，拉丁）"
 Language=fil
 Label=ph
 
 [keyboard-ph-colemak-bay]
-Description="鍵盤 - 菲律賓語 - 菲律宾语（Colemak 布局，Baybayin）"
+Description="鍵盤 - 菲律賓語 - 菲律宾语（Colemak，Baybayin）"
 Language=fil
 Label=ph
 
 [keyboard-ph-dvorak]
-Description="鍵盤 - 菲律賓語 - 菲律宾语（Dvorak 布局，拉丁）"
+Description="鍵盤 - 菲律賓語 - 菲律宾语（Dvorak，拉丁）"
 Language=fil
 Label=ph
 
 [keyboard-ph-dvorak-bay]
-Description="鍵盤 - 菲律賓語 - 菲律宾语（Dvorak 布局，Baybayin）"
+Description="鍵盤 - 菲律賓語 - 菲律宾语（Dvorak，Baybayin）"
 Language=fil
 Label=ph
 
@@ -1514,7 +1544,7 @@ Language=ta
 Label=ta
 
 [keyboard-lk-tam_TAB]
-Description="鍵盤 - 錫蘭僧加羅語 (音標) - 泰米尔语（斯里兰卡，TamilNet '99, TAB 编码）"
+Description="鍵盤 - 錫蘭僧加羅語 (音標) - 泰米尔语（斯里兰卡，TamilNet '99，TAB 编码）"
 Language=ta
 Label=lk
 
@@ -1574,22 +1604,22 @@ Language=sr
 Label=rs
 
 [keyboard-rs-latinyz]
-Description="鍵盤 - 塞爾維亞語 - 塞尔维亚（拉丁，QWERTY 布局）"
+Description="鍵盤 - 塞爾維亞語 - 塞尔维亚（拉丁，QWERTY）"
 Language=sr
 Label=rs
 
 [keyboard-rs-latinunicodeyz]
-Description="鍵盤 - 塞爾維亞語 - 塞尔维亚（拉丁，Unicode，QWERTY 布局）"
+Description="鍵盤 - 塞爾維亞語 - 塞尔维亚（拉丁，Unicode，QWERTY）"
 Language=sr
 Label=rs
 
 [keyboard-rs-alternatequotes]
-Description="鍵盤 - 塞爾維亞語 - 塞尔维亚语（西里尔，with guillemets）"
+Description="鍵盤 - 塞爾維亞語 - 塞尔维亚语（西里尔，带书名号引号）"
 Language=sr
 Label=rs
 
 [keyboard-rs-latinalternatequotes]
-Description="鍵盤 - 塞爾維亞語 - 塞尔维亚语（拉丁，with guillemets）"
+Description="鍵盤 - 塞爾維亞語 - 塞尔维亚语（拉丁，带书名号引号）"
 Language=sr
 Label=rs
 
@@ -1624,7 +1654,7 @@ Language=da
 Label=dk
 
 [keyboard-dk-mac_nodeadkeys]
-Description="鍵盤 - 丹麥語 - 丹麦语（Mac，无死键）"
+Description="鍵盤 - 丹麥語 - 丹麦语（Macintosh，无死键）"
 Language=da
 Label=dk
 
@@ -1659,9 +1689,29 @@ Language=my
 Label=my
 
 [keyboard-mm-zawgyi]
-Description="鍵盤 - 緬甸語 - 缅甸语"
+Description="鍵盤 - 緬甸語 - 缅甸语（Zawgyi）"
 Language=my
 Label=zg
+
+[keyboard-mm-shn]
+Description="鍵盤 - 緬甸語 - 掸语"
+Language=shn
+Label=shn
+
+[keyboard-mm-zgt]
+Description="鍵盤 - 緬甸語 - 掸语（Zawgyi Tai）"
+Language=shn
+Label=zgt
+
+[keyboard-mm-mnw]
+Description="鍵盤 - 緬甸語 - 孟语"
+Language=mnw
+Label=mon
+
+[keyboard-mm-mnw-a1]
+Description="鍵盤 - 緬甸語 - 孟语（A1）"
+Language=mnw
+Label=mon-a1
 
 [keyboard-si]
 Description="鍵盤 - 斯洛維尼亞語"
@@ -1669,7 +1719,7 @@ Language=sl
 Label=sl
 
 [keyboard-si-alternatequotes]
-Description="鍵盤 - 斯洛維尼亞語 - 斯洛文尼亚语（with guillemets）"
+Description="鍵盤 - 斯洛維尼亞語 - 斯洛文尼亚语（带书名号引号）"
 Language=sl
 Label=si
 
@@ -1689,7 +1739,7 @@ Language=hy
 Label=am
 
 [keyboard-am-phonetic-alt]
-Description="鍵盤 - 亞美尼亞語 - 亚美尼亚语（替代，音标）"
+Description="鍵盤 - 亞美尼亞語 - 亚美尼亚语（替代，语音助记）"
 Language=hy
 Label=am
 
@@ -1709,7 +1759,7 @@ Language=hy
 Label=am
 
 [keyboard-am-olpc-phonetic]
-Description="鍵盤 - 亞美尼亞語 - 亚美尼亚语（OLPC，音标）"
+Description="鍵盤 - 亞美尼亞語 - 亚美尼亚语（OLPC，语音助记）"
 Language=hy
 Label=am
 
@@ -1759,7 +1809,7 @@ Language=pt
 Label=br
 
 [keyboard-br-nativo-us]
-Description="鍵盤 - 葡萄牙 (巴西) - 葡萄牙语（巴西，Nativo for US keyboards）"
+Description="鍵盤 - 葡萄牙 (巴西) - 葡萄牙语（巴西，用于美式键盘的 Nativo）"
 Language=pt
 Label=br
 
@@ -1769,7 +1819,7 @@ Language=eo
 Label=br
 
 [keyboard-br-thinkpad]
-Description="鍵盤 - 葡萄牙 (巴西) - 葡萄牙语（巴西，IBM/Lenovo ThinkPad）"
+Description="鍵盤 - 葡萄牙 (巴西) - 葡萄牙语（巴西，IBM/联想 ThinkPad）"
 Language=pt
 Label=br
 
@@ -1780,7 +1830,7 @@ Label=br
 
 [keyboard-in]
 Description="鍵盤 - 印度語"
-Language=
+Language=hi
 Label=in
 
 [keyboard-in-ben]
@@ -1809,7 +1859,7 @@ Language=bn
 Label=in
 
 [keyboard-in-ben_inscript]
-Description="鍵盤 - 印度語 - Bangla (India, Baishakhi InScript)"
+Description="鍵盤 - 印度語 - 孟加拉语（印度，Baishakhi InScript）"
 Language=bn
 Label=in
 
@@ -1839,7 +1889,7 @@ Language=kn
 Label=kn
 
 [keyboard-in-kan-kagapa]
-Description="鍵盤 - 印度語 - 卡纳达语（KaGaPa，音标）"
+Description="鍵盤 - 印度語 - 卡纳达语（KaGaPa，语音助记）"
 Language=kn
 Label=kn
 
@@ -1854,7 +1904,7 @@ Language=ml
 Label=ml
 
 [keyboard-in-mal_enhanced]
-Description="鍵盤 - 印度語 - Malayalam (enhanced InScript, with rupee)"
+Description="鍵盤 - 印度語 - 马拉雅拉姆语（改进的 InScript，带卢比符号）"
 Language=ml
 Label=ml
 
@@ -1864,17 +1914,17 @@ Language=or
 Label=or
 
 [keyboard-in-ori-bolnagri]
-Description="鍵盤 - 印度語 - Oriya (Bolnagri)"
+Description="鍵盤 - 印度語 - 奥里亚语（Bolnagri）"
 Language=or
 Label=or
 
 [keyboard-in-ori-wx]
-Description="鍵盤 - 印度語 - Oriya (Wx)"
+Description="鍵盤 - 印度語 - 奥里亚语（Wx）"
 Language=or
 Label=or
 
 [keyboard-in-olck]
-Description="鍵盤 - 印度語 - Ol Chiki"
+Description="鍵盤 - 印度語 - 桑塔利文"
 Language=sat
 Label=sat
 
@@ -1884,22 +1934,22 @@ Language=ta
 Label=ta
 
 [keyboard-in-tam_tamilnet_with_tam_nums]
-Description="鍵盤 - 印度語 - 泰米尔语（TamilNet '99 with Tamil numerals）"
+Description="鍵盤 - 印度語 - 泰米尔语（TamilNet '99，带泰米尔数字）"
 Language=ta
 Label=ta
 
 [keyboard-in-tam_tamilnet_TAB]
-Description="鍵盤 - 印度語 - 泰米尔语（TamilNet '99, TAB 编码）"
+Description="鍵盤 - 印度語 - 泰米尔语（TamilNet '99，TAB 编码）"
 Language=ta
 Label=ta
 
 [keyboard-in-tam_tamilnet_TSCII]
-Description="鍵盤 - 印度語 - 泰米尔语（TamilNet '99, TSCII 编码）"
+Description="鍵盤 - 印度語 - 泰米尔语（TamilNet '99，TSCII 编码）"
 Language=ta
 Label=ta
 
 [keyboard-in-tam]
-Description="鍵盤 - 印度語 - Tamil (InScript)"
+Description="鍵盤 - 印度語 - 泰米尔语（InScript）"
 Language=ta
 Label=ta
 
@@ -1909,7 +1959,7 @@ Language=te
 Label=te
 
 [keyboard-in-tel-kagapa]
-Description="鍵盤 - 印度語 - 泰卢固语（KaGaPa，音标）"
+Description="鍵盤 - 印度語 - 泰卢固语（KaGaPa，语音助记）"
 Language=te
 Label=te
 
@@ -1924,7 +1974,7 @@ Language=ur
 Label=ur
 
 [keyboard-in-urd-phonetic3]
-Description="鍵盤 - 印度語 - 乌尔都语（替代，音标）"
+Description="鍵盤 - 印度語 - 乌尔都语（替代，语音助记）"
 Language=ur
 Label=ur
 
@@ -1944,17 +1994,17 @@ Language=hi
 Label=hi
 
 [keyboard-in-hin-kagapa]
-Description="鍵盤 - 印度語 - 印地语（KaGaPa，音标）"
+Description="鍵盤 - 印度語 - 印地语（KaGaPa，语音助记）"
 Language=hi
 Label=hi
 
 [keyboard-in-san-kagapa]
-Description="鍵盤 - 印度語 - 梵语（KaGaPa，音标）"
+Description="鍵盤 - 印度語 - 梵语（KaGaPa，语音助记）"
 Language=sa
 Label=sa
 
 [keyboard-in-mar-kagapa]
-Description="鍵盤 - 印度語 - 马拉地语（KaGaPa，音标）"
+Description="鍵盤 - 印度語 - 马拉地语（KaGaPa，语音助记）"
 Language=mr
 Label=mr
 
@@ -1964,27 +2014,27 @@ Language=en
 Label=en
 
 [keyboard-in-iipa]
-Description="鍵盤 - 印度語 - Indic IPA"
+Description="鍵盤 - 印度語 - 印度语支 IPA"
 Language=en
 Label=in
 
 [keyboard-in-marathi]
-Description="鍵盤 - 印度語 - Marathi (enhanced InScript)"
+Description="鍵盤 - 印度語 - 马拉地语（改进的 InScript）"
 Language=mr
 Label=in
 
 [keyboard-in-modi-kagapa]
-Description="鍵盤 - 印度語 - Modi (KaGaPa phonetic)"
+Description="鍵盤 - 印度語 - Modi（KaGaPa 语音助记）"
 Language=mr
 Label=mr
 
 [keyboard-in-san-misc]
-Description="鍵盤 - 印度語 - Sanskrit symbols"
+Description="鍵盤 - 印度語 - 梵文符号"
 Language=sa
 Label=sas
 
 [keyboard-in-urd-navees]
-Description="鍵盤 - 印度語 - Urdu (Navees)"
+Description="鍵盤 - 印度語 - 乌尔都语（Navees）"
 Language=ur
 Label=ur
 
@@ -2014,7 +2064,7 @@ Language=de
 Label=be
 
 [keyboard-be-wang]
-Description="鍵盤 - 比利時語 - 比利时语（王安 724 型 AZERTY 布局）"
+Description="鍵盤 - 比利時語 - 比利时语（王安 724 型 AZERTY）"
 Language=de
 Label=be
 
@@ -2026,7 +2076,7 @@ Label=be
 [keyboard-eg]
 Description="鍵盤 - 科普特语"
 Language=cop
-Label=eg
+Label=cop
 
 [keyboard-cd]
 Description="鍵盤 - 法語 (剛果民主共和國)"
@@ -2039,7 +2089,7 @@ Language=bs
 Label=bs
 
 [keyboard-ba-alternatequotes]
-Description="鍵盤 - 波士尼亞語 - 波斯尼亚语（with guillemets）"
+Description="鍵盤 - 波士尼亞語 - 波斯尼亚语（带书名号引号）"
 Language=bs
 Label=ba
 
@@ -2064,12 +2114,12 @@ Language=lv
 Label=lv
 
 [keyboard-lv-apostrophe]
-Description="鍵盤 - 拉脫維亞語 - 拉脱维亚语（apostrophe）"
+Description="鍵盤 - 拉脫維亞語 - 拉脱维亚语（撇号）"
 Language=lv
 Label=lv
 
 [keyboard-lv-tilde]
-Description="鍵盤 - 拉脫維亞語 - 拉脱维亚语（tilde）"
+Description="鍵盤 - 拉脫維亞語 - 拉脱维亚语（波浪号）"
 Language=lv
 Label=lv
 
@@ -2094,42 +2144,42 @@ Language=lv
 Label=lv
 
 [keyboard-lv-dvorak]
-Description="鍵盤 - 拉脫維亞語 - 拉脱维亚语（Dvorak 布局）"
+Description="鍵盤 - 拉脫維亞語 - 拉脱维亚语（Dvorak）"
 Language=lv
 Label=lv
 
 [keyboard-lv-ykeydvorak]
-Description="鍵盤 - 拉脫維亞語 - 拉脱维亚语（Dvorak 布局，带 Y）"
+Description="鍵盤 - 拉脫維亞語 - 拉脱维亚语（Dvorak，带 Y）"
 Language=lv
 Label=lv
 
 [keyboard-lv-minuskeydvorak]
-Description="鍵盤 - 拉脫維亞語 - 拉脱维亚语（Dvorak 布局，带 -）"
+Description="鍵盤 - 拉脫維亞語 - 拉脱维亚语（Dvorak，带减号）"
 Language=lv
 Label=lv
 
 [keyboard-lv-dvorakprogr]
-Description="鍵盤 - 拉脫維亞語 - 拉脱维亚语（适合程序员的 Dvorak 布局）"
+Description="鍵盤 - 拉脫維亞語 - 拉脱维亚语（适合程序员的 Dvorak）"
 Language=lv
 Label=lv
 
 [keyboard-lv-ykeydvorakprogr]
-Description="鍵盤 - 拉脫維亞語 - 拉脱维亚语（适合程序员的 Dvorak 布局，带 Y）"
+Description="鍵盤 - 拉脫維亞語 - 拉脱维亚语（适合程序员的 Dvorak，带 Y）"
 Language=lv
 Label=lv
 
 [keyboard-lv-minuskeydvorakprogr]
-Description="鍵盤 - 拉脫維亞語 - 拉脱维亚语（适合程序员的 Dvorak 布局，带 -）"
+Description="鍵盤 - 拉脫維亞語 - 拉脱维亚语（适合程序员的 Dvorak，带减号）"
 Language=lv
 Label=lv
 
 [keyboard-lv-colemak]
-Description="鍵盤 - 拉脫維亞語 - 拉脱维亚语（Colemak 布局）"
+Description="鍵盤 - 拉脫維亞語 - 拉脱维亚语（Colemak）"
 Language=lv
 Label=lv
 
 [keyboard-lv-apostrophecolemak]
-Description="鍵盤 - 拉脫維亞語 - 拉脱维亚语（Colemak 布局，带撇号）"
+Description="鍵盤 - 拉脫維亞語 - 拉脱维亚语（Colemak，带撇号）"
 Language=lv
 Label=lv
 
@@ -2139,7 +2189,7 @@ Language=lv
 Label=lv
 
 [keyboard-lv-apostrophe-deadquotes]
-Description="鍵盤 - 拉脫維亞語 - Latvian (apostrophe, dead quotes)"
+Description="鍵盤 - 拉脫維亞語 - 拉脱维亚语（带撇号，引号为死键）"
 Language=lv
 Label=lv
 
@@ -2164,22 +2214,22 @@ Language=sr
 Label=me
 
 [keyboard-me-latinyz]
-Description="鍵盤 - 蒙特內哥羅語 - 黑山语（拉丁，QWERTY 布局）"
+Description="鍵盤 - 蒙特內哥羅語 - 黑山语（拉丁，QWERTY）"
 Language=sr
 Label=me
 
 [keyboard-me-latinunicodeyz]
-Description="鍵盤 - 蒙特內哥羅語 - 黑山语（拉丁，Unicode，QWERTY 布局）"
+Description="鍵盤 - 蒙特內哥羅語 - 黑山语（拉丁，Unicode，QWERTY）"
 Language=sr
 Label=me
 
 [keyboard-me-cyrillicalternatequotes]
-Description="鍵盤 - 蒙特內哥羅語 - 黑山语（西里尔，with guillemets）"
+Description="鍵盤 - 蒙特內哥羅語 - 黑山语（西里尔，带书名号引号）"
 Language=sr
 Label=me
 
 [keyboard-me-latinalternatequotes]
-Description="鍵盤 - 蒙特內哥羅語 - 黑山语（拉丁，with guillemets）"
+Description="鍵盤 - 蒙特內哥羅語 - 黑山语（拉丁，带书名号引号）"
 Language=sr
 Label=me
 
@@ -2355,7 +2405,7 @@ Label=cn
 
 [keyboard-cn-tib]
 Description="鍵盤 - 漢語 - 藏語"
-Language=
+Language=bo
 Label=cn
 
 [keyboard-cn-tib_asciinum]
@@ -2369,7 +2419,7 @@ Language=ug
 Label=ug
 
 [keyboard-cn-altgr-pinyin]
-Description="鍵盤 - 漢語 - 汉语拼音（带 AltGr 死键）"
+Description="鍵盤 - 漢語 - 汉语拼音字母（带 AltGr 死键）"
 Language=zh
 Label=cn
 
@@ -2389,17 +2439,17 @@ Language=fr
 Label=fr
 
 [keyboard-ca-multix]
-Description="鍵盤 - 法語 (加拿大) - Canadian (intl.)"
+Description="鍵盤 - 法語 (加拿大) - 加拿大（国际）"
 Language=fr
 Label=ca
 
 [keyboard-ca-multi]
-Description="鍵盤 - 法語 (加拿大) - Canadian (intl., 1st part)"
+Description="鍵盤 - 法語 (加拿大) - 加拿大（国际，第一部分）"
 Language=fr
 Label=ca
 
 [keyboard-ca-multi-2gr]
-Description="鍵盤 - 法語 (加拿大) - Canadian (intl., 2nd part)"
+Description="鍵盤 - 法語 (加拿大) - 加拿大（国际，第二部分）"
 Language=fr
 Label=ca
 
@@ -2489,7 +2539,7 @@ Language=fr
 Label=fr
 
 [keyboard-fr-oss_latin9]
-Description="鍵盤 - 法語 - 法语（替代，只有拉丁-9）"
+Description="鍵盤 - 法語 - 法语（替代，只包含拉丁-9 字符）"
 Language=fr
 Label=fr
 
@@ -2514,12 +2564,12 @@ Language=fr
 Label=fr
 
 [keyboard-fr-bepo_latin9]
-Description="鍵盤 - 法語 - 法语（BEPO，只有拉丁-9）"
+Description="鍵盤 - 法語 - 法语（BEPO，只包含拉丁-9 字符）"
 Language=fr
 Label=fr
 
 [keyboard-fr-bepo_afnor]
-Description="鍵盤 - 法語 - 法语（BEPO, AFNOR）"
+Description="鍵盤 - 法語 - 法语（BEPO，AFNOR）"
 Language=fr
 Label=fr
 
@@ -2534,12 +2584,12 @@ Language=fr
 Label=fr
 
 [keyboard-fr-azerty]
-Description="鍵盤 - 法語 - 法语（AZERTY 布局）"
+Description="鍵盤 - 法語 - 法语（AZERTY）"
 Language=fr
 Label=fr
 
 [keyboard-fr-afnor]
-Description="鍵盤 - 法語 - 法语（AZERTY 布局，AFNOR）"
+Description="鍵盤 - 法語 - 法语（AZERTY，AFNOR）"
 Language=fr
 Label=fr
 
@@ -2574,14 +2624,14 @@ Language=fr
 Label=fr
 
 [keyboard-fr-us-azerty]
-Description="鍵盤 - 法語 - 法语（美国，AZERTY 布局）"
+Description="鍵盤 - 法語 - 法语（美国，AZERTY）"
 Language=fr
 Label=fr
 
 [keyboard-gn]
-Description="鍵盤 - N'Ko (AZERTY)"
+Description="鍵盤 - 西非书面字母（AZERTY）"
 Language=nqo
-Label=gn
+Label=nqo
 
 [keyboard-uz]
 Description="鍵盤 - 烏茲別克語"
@@ -2634,7 +2684,7 @@ Language=fi
 Label=fi
 
 [keyboard-fi-fidvorak]
-Description="鍵盤 - 芬蘭語 - 芬兰语（Dvorak 布局）"
+Description="鍵盤 - 芬蘭語 - 芬兰语（Dvorak）"
 Language=fi
 Label=fi
 
@@ -2674,12 +2724,12 @@ Language=sgs
 Label=lt
 
 [keyboard-lt-ratise]
-Description="鍵盤 - 立陶宛語 - Lithuanian (Ratise)"
+Description="鍵盤 - 立陶宛語 - 立陶宛语（Ratise）"
 Language=lt
 Label=lt
 
 [keyboard-lt-us_dvorak]
-Description="鍵盤 - 立陶宛語 - 立陶宛语（Dvorak 布局）"
+Description="鍵盤 - 立陶宛語 - 立陶宛语（Dvorak）"
 Language=lt
 Label=lt
 
@@ -2689,12 +2739,12 @@ Language=lt
 Label=lt
 
 [keyboard-my]
-Description="鍵盤 - 马来语（爪夷，阿拉伯小键盘）"
+Description="鍵盤 - 马来语（爪夷，阿拉伯键盘）"
 Language=id
 Label=ms
 
 [keyboard-my-phonetic]
-Description="鍵盤 - 马来语（爪夷，阿拉伯小键盘） - 马来语（爪夷，音标）"
+Description="鍵盤 - 马来语（爪夷，阿拉伯键盘） - 马来语（爪夷，语音助记）"
 Language=id
 Label=my
 
@@ -2714,7 +2764,7 @@ Language=pt
 Label=pt
 
 [keyboard-pt-mac_nodeadkeys]
-Description="鍵盤 - 葡萄牙語 - 葡萄牙语（Mac，无死键）"
+Description="鍵盤 - 葡萄牙語 - 葡萄牙语（Macintosh，无死键）"
 Language=pt
 Label=pt
 
@@ -2724,7 +2774,7 @@ Language=pt
 Label=pt
 
 [keyboard-pt-nativo-us]
-Description="鍵盤 - 葡萄牙語 - 葡萄牙语（Nativo for US keyboards）"
+Description="鍵盤 - 葡萄牙語 - 葡萄牙语（用于美式键盘的 Nativo）"
 Language=pt
 Label=pt
 
@@ -2739,17 +2789,22 @@ Language=pt
 Label=pt
 
 [keyboard-pt-colemak]
-Description="鍵盤 - 葡萄牙語 - 葡萄牙语（Colemak 布局）"
+Description="鍵盤 - 葡萄牙語 - 葡萄牙语（Colemak）"
 Language=pt
 Label=pt
 
 [keyboard-id]
-Description="鍵盤 - Indonesian (Latin)"
+Description="鍵盤 - 印尼语（拉丁）"
+Language=id
+Label=id
+
+[keyboard-id-phonetic]
+Description="鍵盤 - 印尼语（拉丁） - 印尼语（Arab Pegon，语音助记）"
 Language=id
 Label=id
 
 [keyboard-id-phoneticx]
-Description="鍵盤 - Indonesian (Latin) - Indonesian (Arab Pegon, extended phonetic)"
+Description="鍵盤 - 印尼语（拉丁） - 印尼语（Arab Pegon，扩展语音助记）"
 Language=id
 Label=id
 
@@ -2819,7 +2874,7 @@ Language=de
 Label=de
 
 [keyboard-de-mac_nodeadkeys]
-Description="鍵盤 - 德語 - 德语（Mac，无死键）"
+Description="鍵盤 - 德語 - 德语（Macintosh，无死键）"
 Language=de
 Label=de
 
@@ -2829,12 +2884,12 @@ Language=dsb
 Label=de
 
 [keyboard-de-dsb_qwertz]
-Description="鍵盤 - 德語 - 下索布语（QWERTZ 布局）"
+Description="鍵盤 - 德語 - 下索布语（QWERTZ）"
 Language=dsb
 Label=de
 
 [keyboard-de-qwerty]
-Description="鍵盤 - 德語 - 德语（QWERTY 布局）"
+Description="鍵盤 - 德語 - 德语（QWERTY）"
 Language=de
 Label=de
 
@@ -2849,7 +2904,7 @@ Language=ru
 Label=ru
 
 [keyboard-de-deadtilde]
-Description="鍵盤 - 德語 - 德语（dead tilde）"
+Description="鍵盤 - 德語 - 德语（波浪号为死键）"
 Language=de
 Label=de
 
@@ -2884,17 +2939,17 @@ Language=de
 Label=de
 
 [keyboard-de-bone_eszett_home]
-Description="鍵盤 - 德語 - 德语（Bone, eszett in the home row）"
+Description="鍵盤 - 德語 - 德语（Bone，eszett 在中间行）"
 Language=de
 Label=de
 
 [keyboard-de-neo_qwertz]
-Description="鍵盤 - 德語 - 德语（Neo，QWERTZ 布局）"
+Description="鍵盤 - 德語 - 德语（Neo，QWERTZ）"
 Language=de
 Label=de
 
 [keyboard-de-neo_qwerty]
-Description="鍵盤 - 德語 - 德语（Neo，QWERTY 布局）"
+Description="鍵盤 - 德語 - 德语（Neo，QWERTY）"
 Language=de
 Label=de
 
@@ -2904,7 +2959,7 @@ Language=ru
 Label=ru
 
 [keyboard-de-ru-translit]
-Description="鍵盤 - 德語 - 俄语（德国，音译）"
+Description="鍵盤 - 德語 - 俄语（德国，转写）"
 Language=ru
 Label=ru
 
@@ -2944,7 +2999,7 @@ Language=el
 Label=gr
 
 [keyboard-gr-colemak]
-Description="鍵盤 - 希臘語 - 希腊语（Colemak 布局）"
+Description="鍵盤 - 希臘語 - 希腊语（Colemak）"
 Language=el
 Label=gr
 
@@ -2994,87 +3049,87 @@ Language=hu
 Label=hu
 
 [keyboard-hu-qwerty]
-Description="鍵盤 - 匈牙利語 - 匈牙利语（QWERTY 布局）"
+Description="鍵盤 - 匈牙利語 - 匈牙利语（QWERTY）"
 Language=hu
 Label=hu
 
 [keyboard-hu-101_qwertz_comma_dead]
-Description="鍵盤 - 匈牙利語 - 匈牙利语（QWERTZ 布局，101 键，逗号，死键）"
+Description="鍵盤 - 匈牙利語 - 匈牙利语（QWERTZ，101 键，逗号，死键）"
 Language=hu
 Label=hu
 
 [keyboard-hu-101_qwertz_comma_nodead]
-Description="鍵盤 - 匈牙利語 - 匈牙利语（QWERTZ 布局，101 键，逗号，无死键）"
+Description="鍵盤 - 匈牙利語 - 匈牙利语（QWERTZ，101 键，逗号，无死键）"
 Language=hu
 Label=hu
 
 [keyboard-hu-101_qwertz_dot_dead]
-Description="鍵盤 - 匈牙利語 - 匈牙利语（QWERTZ 布局，101 键，点，死键）"
+Description="鍵盤 - 匈牙利語 - 匈牙利语（QWERTZ，101 键，点，死键）"
 Language=hu
 Label=hu
 
 [keyboard-hu-101_qwertz_dot_nodead]
-Description="鍵盤 - 匈牙利語 - 匈牙利语（QWERTZ 布局，101 键，点，无死键）"
+Description="鍵盤 - 匈牙利語 - 匈牙利语（QWERTZ，101 键，点，无死键）"
 Language=hu
 Label=hu
 
 [keyboard-hu-101_qwerty_comma_dead]
-Description="鍵盤 - 匈牙利語 - 匈牙利语（QWERTY 布局，101 键，逗号，死键）"
+Description="鍵盤 - 匈牙利語 - 匈牙利语（QWERTY，101 键，逗号，死键）"
 Language=hu
 Label=hu
 
 [keyboard-hu-101_qwerty_comma_nodead]
-Description="鍵盤 - 匈牙利語 - 匈牙利语（QWERTY 布局，101 键，逗号，无死键）"
+Description="鍵盤 - 匈牙利語 - 匈牙利语（QWERTY，101 键，逗号，无死键）"
 Language=hu
 Label=hu
 
 [keyboard-hu-101_qwerty_dot_dead]
-Description="鍵盤 - 匈牙利語 - 匈牙利语（QWERTY 布局，101 键，点，死键）"
+Description="鍵盤 - 匈牙利語 - 匈牙利语（QWERTY，101 键，点，死键）"
 Language=hu
 Label=hu
 
 [keyboard-hu-101_qwerty_dot_nodead]
-Description="鍵盤 - 匈牙利語 - 匈牙利语（QWERTY 布局，101 键，点，无死键）"
+Description="鍵盤 - 匈牙利語 - 匈牙利语（QWERTY，101 键，点，无死键）"
 Language=hu
 Label=hu
 
 [keyboard-hu-102_qwertz_comma_dead]
-Description="鍵盤 - 匈牙利語 - 匈牙利语（QWERTZ 布局，102 键，逗号，死键）"
+Description="鍵盤 - 匈牙利語 - 匈牙利语（QWERTZ，102 键，逗号，死键）"
 Language=hu
 Label=hu
 
 [keyboard-hu-102_qwertz_comma_nodead]
-Description="鍵盤 - 匈牙利語 - 匈牙利语（QWERTZ 布局，102 键，逗号，无死键）"
+Description="鍵盤 - 匈牙利語 - 匈牙利语（QWERTZ，102 键，逗号，无死键）"
 Language=hu
 Label=hu
 
 [keyboard-hu-102_qwertz_dot_dead]
-Description="鍵盤 - 匈牙利語 - 匈牙利语（QWERTZ 布局,，102 键，点，死键）"
+Description="鍵盤 - 匈牙利語 - 匈牙利语（QWERTZ，102 键，点，死键）"
 Language=hu
 Label=hu
 
 [keyboard-hu-102_qwertz_dot_nodead]
-Description="鍵盤 - 匈牙利語 - 匈牙利语（QWERTZ 布局,，102 键，点，无死键）"
+Description="鍵盤 - 匈牙利語 - 匈牙利语（QWERTZ，102 键，点，无死键）"
 Language=hu
 Label=hu
 
 [keyboard-hu-102_qwerty_comma_dead]
-Description="鍵盤 - 匈牙利語 - 匈牙利语（QWERTY 布局，102 键，逗号，死键）"
+Description="鍵盤 - 匈牙利語 - 匈牙利语（QWERTY，102 键，逗号，死键）"
 Language=hu
 Label=hu
 
 [keyboard-hu-102_qwerty_comma_nodead]
-Description="鍵盤 - 匈牙利語 - 匈牙利语（QWERTY 布局，102 键，逗号，无死键）"
+Description="鍵盤 - 匈牙利語 - 匈牙利语（QWERTY，102 键，逗号，无死键）"
 Language=hu
 Label=hu
 
 [keyboard-hu-102_qwerty_dot_dead]
-Description="鍵盤 - 匈牙利語 - 匈牙利语（QWERTY 布局，102 键，点，死键）"
+Description="鍵盤 - 匈牙利語 - 匈牙利语（QWERTY，102 键，点，死键）"
 Language=hu
 Label=hu
 
 [keyboard-hu-102_qwerty_dot_nodead]
-Description="鍵盤 - 匈牙利語 - 匈牙利语（QWERTY 布局，102 键，点，无死键）"
+Description="鍵盤 - 匈牙利語 - 匈牙利语（QWERTY，102 键，点，无死键）"
 Language=hu
 Label=hu
 
@@ -3084,7 +3139,7 @@ Language=hu
 Label=oldhun
 
 [keyboard-hu-oldhunlig]
-Description="鍵盤 - 匈牙利語 - 旧匈牙利语（for ligatures）"
+Description="鍵盤 - 匈牙利語 - 旧匈牙利语（含连字）"
 Language=hu
 Label=oldhun(lig)
 
@@ -3123,43 +3178,33 @@ Description="鍵盤 - 土耳其語 - 土耳其语（国际，带死键）"
 Language=tr
 Label=tr
 
-[keyboard-tr-crh]
-Description="鍵盤 - 土耳其語 - 克里米亞韃靼語 (土耳其語 Q)"
-Language=crh
-Label=crh
-
-[keyboard-tr-crh_f]
-Description="鍵盤 - 土耳其語 - 克里米亞韃靼語 (土耳其語 F)"
-Language=crh
-Label=crh
-
-[keyboard-tr-crh_alt]
-Description="鍵盤 - 土耳其語 - 克里米亞韃靼語 (土耳其語 Alt-Q)"
-Language=crh
-Label=crh
-
 [keyboard-tr-ot]
-Description="鍵盤 - 土耳其語 - Ottoman"
+Description="鍵盤 - 土耳其語 - 奥斯曼土耳其语（Q）"
 Language=tr
 Label=tr
 
 [keyboard-tr-otf]
-Description="鍵盤 - 土耳其語 - Ottoman (F)"
+Description="鍵盤 - 土耳其語 - 奥斯曼土耳其语（F）"
 Language=tr
 Label=tr
 
 [keyboard-tr-otk]
-Description="鍵盤 - 土耳其語 - 旧突厥语"
+Description="鍵盤 - 土耳其語 - 古代突厥语"
 Language=tr
 Label=tr
 
 [keyboard-tr-otkf]
-Description="鍵盤 - 土耳其語 - Old Turkic (F)"
+Description="鍵盤 - 土耳其語 - 古代突厥语（F）"
 Language=tr
 Label=tr
 
 [keyboard-tr-sun_type6]
 Description="鍵盤 - 土耳其語 - 土耳其語 (昇陽 Type 6/7)"
+Language=tr
+Label=tr
+
+[keyboard-tr-us]
+Description="鍵盤 - 土耳其語 - 士耳其语（土耳其，拉丁 Q，交换 i 和 ı）"
 Language=tr
 Label=tr
 
@@ -3249,7 +3294,7 @@ Language=it
 Label=it_lld
 
 [keyboard-it-dvorak]
-Description="鍵盤 - 義大利語 - Italian (Dvorak)"
+Description="鍵盤 - 義大利語 - 意大利语（Dvorak）"
 Language=it
 Label=it
 
@@ -3304,27 +3349,27 @@ Language=es
 Label=es
 
 [keyboard-latam-nodeadkeys]
-Description="鍵盤 - 西班牙語 (拉丁美洲) - erican, no dead keys)"
+Description="鍵盤 - 西班牙語 (拉丁美洲) - 西班牙语（拉丁美洲，无死键）"
 Language=es
 Label=latam
 
 [keyboard-latam-deadtilde]
-Description="鍵盤 - 西班牙語 (拉丁美洲) - 西班牙语（拉丁美洲，dead tilde）"
+Description="鍵盤 - 西班牙語 (拉丁美洲) - 西班牙语（拉丁美洲，波浪号为死键）"
 Language=es
 Label=latam
 
 [keyboard-latam-dvorak]
-Description="鍵盤 - 西班牙語 (拉丁美洲) - 西班牙语（拉丁美洲，Dvorak 布局）"
+Description="鍵盤 - 西班牙語 (拉丁美洲) - 西班牙语（拉丁美洲，Dvorak）"
 Language=es
 Label=latam
 
 [keyboard-latam-colemak]
-Description="鍵盤 - 西班牙語 (拉丁美洲) - 西班牙语（拉丁美洲，Colemak 布局）"
+Description="鍵盤 - 西班牙語 (拉丁美洲) - 西班牙语（拉丁美洲，Colemak）"
 Language=es
 Label=latam
 
 [keyboard-latam-colemak-gaming]
-Description="鍵盤 - 西班牙語 (拉丁美洲) - 西班牙语（拉丁美洲，为游戏优化的 Colemak 布局）"
+Description="鍵盤 - 西班牙語 (拉丁美洲) - 西班牙语（拉丁美洲，为游戏优化的 Colemak）"
 Language=es
 Label=latam
 
@@ -3339,17 +3384,17 @@ Language=mt
 Label=mt
 
 [keyboard-mt-alt-us]
-Description="鍵盤 - 馬爾他語 - Maltese (US, with AltGr overrides)"
+Description="鍵盤 - 馬爾他語 - 马耳他语（美国，带 AltGr 覆盖）"
 Language=mt
 Label=mt
 
 [keyboard-mt-alt-gb]
-Description="鍵盤 - 馬爾他語 - 马耳他语（英国，with AltGr overrides）"
+Description="鍵盤 - 馬爾他語 - 马耳他语（英国，带 AltGr 覆盖）"
 Language=mt
 Label=mt
 
 [keyboard-custom]
-Description="鍵盤 - A user-defined custom Layout"
+Description="鍵盤 - 用户自定义布局"
 Language=
 Label=custom
 
@@ -3389,7 +3434,7 @@ Language=no
 Label=no
 
 [keyboard-no-mac_nodeadkeys]
-Description="鍵盤 - 挪威語 - 挪威语（Mac，无死键）"
+Description="鍵盤 - 挪威語 - 挪威语（Macintosh，无死键）"
 Language=no
 Label=no
 
@@ -3414,7 +3459,7 @@ Language=pl
 Label=pl
 
 [keyboard-pl-qwertz]
-Description="鍵盤 - 波蘭語 - 波兰语（QWERTZ 布局）"
+Description="鍵盤 - 波蘭語 - 波兰语（QWERTZ）"
 Language=pl
 Label=pl
 
@@ -3424,12 +3469,12 @@ Language=pl
 Label=pl
 
 [keyboard-pl-dvorak_quotes]
-Description="鍵盤 - 波蘭語 - 波兰语（Dvorak 布局，波兰语引号在引号键上）"
+Description="鍵盤 - 波蘭語 - 波兰语（Dvorak，波兰语引号在引号键上）"
 Language=pl
 Label=pl
 
 [keyboard-pl-dvorak_altquotes]
-Description="鍵盤 - 波蘭語 - 波兰语（Dvorak 布局，波兰语引号在 1 键上）"
+Description="鍵盤 - 波蘭語 - 波兰语（Dvorak，波兰语引号在 1 键上）"
 Language=pl
 Label=pl
 
@@ -3464,7 +3509,7 @@ Language=pl
 Label=pl
 
 [keyboard-pl-colemak_dh]
-Description="鍵盤 - 波蘭語 - Polish (Colemak-DH)"
+Description="鍵盤 - 波蘭語 - 波兰语（Colemak-DH）"
 Language=pl
 Label=pl
 
@@ -3479,7 +3524,7 @@ Language=pl
 Label=pl
 
 [keyboard-pl-lefty]
-Description="鍵盤 - 波蘭語 - Polish (lefty)"
+Description="鍵盤 - 波蘭語 - 波兰语（Lefty）"
 Language=pl
 Label=pl
 
