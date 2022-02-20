@@ -243,7 +243,7 @@ bindsym $mod+r mode "resize"
 #
 # Read `man 5 sway-bar` for more information about this section.
 bar {
-    font pango:sans 10, pango:Font Awesome 5 Free 10
+    font pango:sans 10, pango:Font Awesome 6 Free 10
 
     position top
 
