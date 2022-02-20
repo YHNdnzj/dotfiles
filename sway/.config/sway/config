@@ -260,6 +260,15 @@ bar {
     }
 }
 
+#
+# Cursor Theme:
+#
+seat seat0 xcursor_theme Graphite-dark-cursors 28
+exec_always {
+    gsettings set org.gnome.desktop.interface cursor-theme Graphite-dark-cursors
+    gsettings set org.gnome.desktop.interface cursor-size 28
+}
+
 xwayland enable
 
 include /etc/sway/config.d/*

@@ -10,3 +10,4 @@ polkit-gnome
 playerctl
 lm_sensors
 xorg-xwayland
+graphite-cursor-theme-git

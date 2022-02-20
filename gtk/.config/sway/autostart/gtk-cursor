@@ -1,1 +1,0 @@
-exec_always gsettings set org.gnome.desktop.interface cursor-size 28
