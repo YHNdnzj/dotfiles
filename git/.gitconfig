@@ -1,0 +1,8 @@
+[color]
+    ui = auto
+
+[core]
+    autocrlf = input
+
+[pull]
+    rebase = false
