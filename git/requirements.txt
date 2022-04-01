@@ -1,3 +1,2 @@
 Services:
-SSH agent: use gpg-agent
 HTTP Proxy (Privoxy): listen on 8118
