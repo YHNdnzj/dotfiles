@@ -1,4 +1,4 @@
-#!/bin/bash -e
+#!/usr/local/bin/bash -e
 req="requirements.txt"
 readme="README.md"
 cd "$(dirname "$0")"
