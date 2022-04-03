@@ -20,7 +20,7 @@ set $web firefox
 # Your preferred application launcher
 # Note: pass the final command to swaymsg so that the resulting window can be opened
 # on the original workspace that the command was run on.
-set $menu j4-dmenu-desktop --dmenu='bemenu -i --nb "#3f3f3f" --nf "#dcdccc" --fn "pango:sans 12"' --term=$term --wrapper='swaymsg exec --'
+set $menu env LANG=en_US.UTF-8 j4-dmenu-desktop --dmenu='bemenu -i --nb "#3f3f3f" --nf "#dcdccc" --fn "pango:sans 12"' --term=$term --wrapper='swaymsg exec --'
 # Workspace names
 set $ws1 1
 set $ws2 2:Web
