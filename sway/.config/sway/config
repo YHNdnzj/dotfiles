@@ -30,7 +30,7 @@ set $ws5 5
 set $ws6 6
 set $ws7 7
 set $ws8 8
-set $ws9 9
+set $ws9 9:Class
 set $ws10 10:VM
 # Cursor theme and size
 set $cursor_theme Graphite-dark-cursors
@@ -163,10 +163,13 @@ input type:touchpad {
     assign [app_id="firefox"] workspace $ws2
     assign [app_id="telegramdesktop"] workspace $ws3
     assign [app_id="virt-manager"] workspace $ws10
+    assign [class="wemeetapp"] workspace $ws9
 
     # Change settings for windows
     for_window [app_id="firefox"] border none
     for_window [app_id="telegramdesktop"] border none
+    for_window [class="wemeetapp"] floating disable
+    for_window [class="wemeetapp" title="腾讯会议" window_type="dialog"] floating enable
 #
 # Layout stuff:
 #
