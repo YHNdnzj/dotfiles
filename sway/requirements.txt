@@ -12,3 +12,7 @@ playerctl
 lm_sensors
 xorg-xwayland
 graphite-cursor-theme-git
+flameshot
+grim
+xdg-desktop-portal
+xdg-desktop-portal-wlr
