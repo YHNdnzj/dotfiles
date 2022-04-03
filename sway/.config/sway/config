@@ -168,6 +168,7 @@ input type:touchpad {
     # Change settings for windows
     for_window [app_id="firefox"] border none
     for_window [app_id="telegramdesktop"] border none
+    for_window [app_id="pavucontrol"] floating enable
     for_window [class="wemeetapp"] floating disable
     for_window [class="wemeetapp" title="腾讯会议" window_type="dialog"] floating enable
 #
