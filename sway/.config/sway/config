@@ -169,7 +169,7 @@ input type:touchpad {
     for_window [app_id="firefox"] border none
     for_window [app_id="telegramdesktop"] border none
     for_window [app_id="pavucontrol"] floating enable
-    for_window [class="wemeetapp"] floating enable
+    for_window [class="wemeetapp"] layout tabbed
 #
 # Layout stuff:
 #
