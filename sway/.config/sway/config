@@ -25,7 +25,7 @@ set $menu env LANG=en_US.UTF-8 j4-dmenu-desktop --dmenu='bemenu -i --nb "#3f3f3f
 set $ws1 1
 set $ws2 2:Web
 set $ws3 3:TG
-set $ws4 4
+set $ws4 4:Office
 set $ws5 5
 set $ws6 6
 set $ws7 7
@@ -163,12 +163,14 @@ input type:touchpad {
     assign [app_id="firefox"] workspace $ws2
     assign [app_id="telegramdesktop"] workspace $ws3
     assign [app_id="virt-manager"] workspace $ws10
+    assign [class="wps"] workspace $ws4
     assign [class="wemeetapp"] workspace $ws9
 
     # Change settings for windows
     for_window [app_id="firefox"] border none
     for_window [app_id="telegramdesktop"] border none
     for_window [app_id="pavucontrol"] floating enable
+    for_window [class="wps"] layout tabbed
     for_window [class="wemeetapp"] layout tabbed
 #
 # Layout stuff:
