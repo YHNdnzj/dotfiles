@@ -153,7 +153,6 @@ input type:touchpad {
     bindsym $mod+9 workspace $ws9
     bindsym $mod+0 workspace $ws10
     # Move focused container to workspace
-    bindsym $mod+Shift+z move container to workspace current
     bindsym $mod+Shift+1 move container to workspace $ws1; workspace $ws1
     bindsym $mod+Shift+2 move container to workspace $ws2; workspace $ws2
     bindsym $mod+Shift+3 move container to workspace $ws3; workspace $ws3
@@ -168,7 +167,6 @@ input type:touchpad {
     # We just use 1-10 as the default.
 
     # Move focused workspace to output
-    bindsym $mod+Ctrl+z move workspace to output current
     bindsym $mod+Ctrl+1 move workspace to output $out1
     bindsym $mod+Ctrl+2 move workspace to output $out2
 
