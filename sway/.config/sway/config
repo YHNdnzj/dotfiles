@@ -187,7 +187,7 @@ input type:touchpad {
     for_window [app_id="firefox"] border none
     for_window [app_id="telegramdesktop"] border none
     for_window [app_id="pavucontrol"] floating enable
-    for_window [app_id="flameshot"] border none; floating enable; fullscreen disable; move container to output current
+    for_window [app_id="flameshot"] border none; floating enable; fullscreen disable; move absolute position 0 0
     for_window [class="wps"] layout tabbed
     for_window [class="wemeetapp"] layout tabbed
 #
