@@ -32,6 +32,9 @@ set $ws7 7
 set $ws8 8
 set $ws9 9:Class
 set $ws10 10:VM
+# Output names
+set $out1 eDP-1
+set $out2 HDMI-A-1
 # Cursor theme and size
 set $cursor_theme Graphite-dark-cursors
 set $cursor_size 28
@@ -46,8 +49,11 @@ output * bg ~/Pictures/background fill
 #   output HDMI-A-1 resolution 1920x1080 position 1920,0
 #
 # You can get the names of your outputs by running: swaymsg -t get_outputs
-output eDP-1 res 2560x1440 scale 1.5 adaptive_sync on position 1920 0
-output HDMI-A-1 res 3840x2160 scale 2 position 0 0
+output $out1 res 2560x1440 scale 1.5 adaptive_sync on position 1920 0
+output $out2 res 3840x2160 scale 2 position 0 0
+# Workspace configuration
+workspace_auto_back_and_forth on
+workspace $ws9 output $out2
 ### Idle configuration
 #
 # Example configuration:
@@ -147,6 +153,7 @@ input type:touchpad {
     bindsym $mod+9 workspace $ws9
     bindsym $mod+0 workspace $ws10
     # Move focused container to workspace
+    bindsym $mod+Shift+z move container to workspace current
     bindsym $mod+Shift+1 move container to workspace $ws1; workspace $ws1
     bindsym $mod+Shift+2 move container to workspace $ws2; workspace $ws2
     bindsym $mod+Shift+3 move container to workspace $ws3; workspace $ws3
@@ -159,6 +166,11 @@ input type:touchpad {
     bindsym $mod+Shift+0 move container to workspace $ws10; workspace $ws10
     # Note: workspaces can have any name you want, not just numbers.
     # We just use 1-10 as the default.
+
+    # Move focused workspace to output
+    bindsym $mod+Ctrl+z move workspace to output current
+    bindsym $mod+Ctrl+1 move workspace to output $out1
+    bindsym $mod+Ctrl+2 move workspace to output $out2
 
     # Assign application to workspace
     assign [app_id="firefox"] workspace $ws2
