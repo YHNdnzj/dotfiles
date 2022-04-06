@@ -17,6 +17,8 @@ set $right l
 set $term alacritty
 # Your preferred web browser
 set $web firefox
+# Your preferred screen capture tool
+set $shot flameshot gui
 # Your preferred application launcher
 # Note: pass the final command to swaymsg so that the resulting window can be opened
 # on the original workspace that the command was run on.
@@ -102,6 +104,9 @@ input type:touchpad {
     # Start your launcher
     bindsym $mod+Backspace exec $menu
 
+    # Start screen capture tool
+    bindsym Print exec $shot
+
     # Drag floating windows by holding down $mod and left mouse button.
     # Resize them with right mouse button + $mod.
     # Despite the name, also works for non-floating windows.
@@ -182,6 +187,7 @@ input type:touchpad {
     for_window [app_id="firefox"] border none
     for_window [app_id="telegramdesktop"] border none
     for_window [app_id="pavucontrol"] floating enable
+    for_window [app_id="flameshot"] border none; floating enable; fullscreen disable; move container to output current
     for_window [class="wps"] layout tabbed
     for_window [class="wemeetapp"] layout tabbed
 #
