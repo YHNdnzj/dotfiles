@@ -197,6 +197,7 @@ input type:pointer {
     assign [class="wemeetapp"] workspace $ws9
 
     # Change settings for windows
+    for_window [app_id="Alacritty" workspace=$ws1] layout tabbed
     for_window [app_id="firefox"] border none
     for_window [app_id="telegramdesktop"] border none
     for_window [app_id="pavucontrol"] floating enable
