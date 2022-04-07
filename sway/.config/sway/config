@@ -90,6 +90,9 @@ exec swayidle -w \
 input type:touchpad {
     tap enabled
 }
+input type:pointer {
+    map_to_output $out1
+}
 ### Key bindings
 #
 # Basics:
@@ -148,6 +151,11 @@ input type:touchpad {
     bindsym $mod+Shift+Down move down
     bindsym $mod+Shift+Up move up
     bindsym $mod+Shift+Right move right
+
+    # Move cursor to the specific output
+    bindsym $mod+Ctrl+z input type:pointer map_to_output $out1
+    bindsym $mod+Ctrl+x input type:pointer map_to_output $out2
+    bindsym $mod+Ctrl+c input type:pointer map_to_output *
 #
 # Workspaces:
 #
