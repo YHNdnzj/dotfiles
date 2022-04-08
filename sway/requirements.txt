@@ -1,4 +1,5 @@
 Packages:
+dialog
 alacritty
 bemenu
 j4-dmenu-desktop

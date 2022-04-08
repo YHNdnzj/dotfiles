@@ -1,5 +1,25 @@
-#!/bin/bash -e
+#!/bin/bash
 
+config_dual() {
+    dialog --defaultno --yesno "Start sway with dual screen config?" 0 0
+    nodual=$?
+    if (( nodual == 1 )); then
+        config="$HOME/.config/sway/config"
+    elif (( nodual == 0 )); then
+        config="$HOME/.config/sway/config.dual"
+    else
+        echo "Invalid choice!" >&2
+        exit 2
+    fi
+    export config
+    DUAL_CONFIGURED=1 exec systemd-cat --identifier=sway "$0"
+}
+
+if ! (( DUAL_CONFIGURED )); then
+    config_dual
+fi
+
+set -e
 cd "$HOME/.config/sway/env"
 envfiles=(*.sh)
 set -x
@@ -8,13 +28,13 @@ do
     source "$envfile"
 done
 set +x
-cd "$HOME"
 
 for card in /dev/dri/card*
 do
     if (( $(udevadm info -an "$card" | grep boot_vga | rev | cut -c 2) )); then
+        cd "$HOME"
         unset OLDPWD
-        WLR_DRM_DEVICES="$card" exec /usr/bin/sway --unsupported-gpu
+        WLR_DRM_DEVICES="$card" exec /usr/bin/sway --unsupported-gpu --config "$config"
     fi
 done
 
