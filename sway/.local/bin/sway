@@ -1,7 +1,7 @@
 #!/bin/bash
 
 config_dual() {
-    dialog --defaultno --yesno "Start sway with dual screen config?" 0 0
+    DIALOG_TIMEOUT=1 dialog --timeout 3 --defaultno --yesno "Start sway with dual screen config?" 0 0
     nodual=$?
     if (( nodual == 1 )); then
         config="$HOME/.config/sway/config"
