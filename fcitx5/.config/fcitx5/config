@@ -1,11 +1,21 @@
+[Hotkey]
+# 重複觸發鍵時枚舉輸入法
+EnumerateWithTriggerKeys=True
+# 臨時在第一個與當前輸入法中切換
+AltTriggerKeys=
+# 枚舉輸入法向前
+EnumerateForwardKeys=
+# 枚舉輸入法向後
+EnumerateBackwardKeys=
+# 枚舉時略過第一個輸入法
+EnumerateSkipFirst=False
+# 啟用輸入法
+ActivateKeys=
+# 停用輸入法
+DeactivateKeys=
+
 [Hotkey/TriggerKeys]
 0=Control+space
-
-[Hotkey/AltTriggerKeys]
-
-[Hotkey/EnumerateForwardKeys]
-
-[Hotkey/EnumerateBackwardKeys]
 
 [Hotkey/EnumerateGroupForwardKeys]
 0=Super+space
@@ -13,27 +23,46 @@
 [Hotkey/EnumerateGroupBackwardKeys]
 0=Shift+Super+space
 
-[Hotkey/ActivateKeys]
-
-[Hotkey/DeactivateKeys]
-
 [Hotkey/PrevPage]
 0=Up
 
 [Hotkey/NextPage]
 0=Down
 
+[Hotkey/PrevCandidate]
+0=Shift+Tab
+
+[Hotkey/NextCandidate]
+0=Tab
+
+[Hotkey/TogglePreedit]
+0=Control+Alt+P
+
 [Behavior]
 # 預設啟用
 ActiveByDefault=False
+# 共享輸入法狀態
+ShareInputState=No
+# 在應用程式中顯示預編輯
+PreeditEnabledByDefault=True
 # 當切換輸入法時顯示輸入法資訊
 ShowInputMethodInformation=True
-# Show Input Method Information when changing focus
+# 當切換輸入焦點時顯示輸入法資訊
 showInputMethodInformationWhenFocusIn=False
+# 顯示緊湊的輸入法訊息
+CompactInputMethodInformation=True
+# 顯示第一個輸入法資訊
+ShowFirstInputMethodInformation=True
 # 預設頁面大小
 DefaultPageSize=5
+# Override Xkb Option
+OverrideXkbOption=False
+# 自定 Xkb 選項
+CustomXkbOption=
 # Force Enabled Addons
 EnabledAddons=
 # Force Disabled Addons
 DisabledAddons=
+# Preload input method to be used by default
+PreloadInputMethod=True
 
