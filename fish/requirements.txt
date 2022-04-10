@@ -3,6 +3,7 @@ exa
 bat
 vim
 pacman-contrib
+gnu-free-fonts
 
 Services:
 HTTP Proxy (Privoxy): listen on 8118
