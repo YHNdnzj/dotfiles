@@ -1,0 +1,6 @@
+--target=$HOME
+--no-folding
+--verbose
+--ignore requirements.txt
+--ignore README.md
+--ignore .keep

@@ -1,0 +1,5 @@
+Packages:
+base-devel
+
+Services:
+HTTP Proxy (Privoxy): listen on 8118

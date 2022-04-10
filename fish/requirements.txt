@@ -1,0 +1,8 @@
+Packages:
+exa
+bat
+vim
+pacman-contrib
+
+Services:
+HTTP Proxy (Privoxy): listen on 8118
