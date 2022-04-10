@@ -1,4 +1,5 @@
 Packages:
+git
 wait-online(-git)
 
 Services:
