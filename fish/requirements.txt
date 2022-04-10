@@ -4,6 +4,7 @@ bat
 vim
 pacman-contrib
 proxychains-ng
+gnu-free-fonts
 
 Services:
 HTTP Proxy (Privoxy): listen on 8118
