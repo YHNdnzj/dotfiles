@@ -4,7 +4,7 @@ alacritty
 bemenu
 j4-dmenu-desktop
 swayidle
-swaylock
+swaylock-effects(-git)
 i3status-rust
 mako
 polkit-gnome
