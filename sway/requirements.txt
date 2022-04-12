@@ -21,3 +21,4 @@ grim
 xdg-desktop-portal
 xdg-desktop-portal-wlr
 firefox
+telegram-desktop-megumifox
