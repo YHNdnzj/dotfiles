@@ -7,6 +7,9 @@ swayidle
 swaylock-effects(-git)
 i3status-rust
 mako
+qt5-wayland
+qt6-wayland
+qt
 polkit-gnome
 gnome-keyring
 playerctl

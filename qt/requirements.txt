@@ -1,0 +1,4 @@
+Packages:
+qt5ct
+qt6ct
+breeze-icons
