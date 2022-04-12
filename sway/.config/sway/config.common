@@ -181,11 +181,12 @@ input type:touchpad {
 
     # Change settings for windows
     for_window [app_id="Alacritty" workspace=$ws1] layout tabbed
-    for_window [app_id="firefox"] border none
+    for_window [app_id="firefox"] border none; inhibit_idle fullscreen
     for_window [app_id="telegramdesktop"] border none
     for_window [app_id="pavucontrol"] floating enable
+    for_window [app_id="mpv"] inhibit_idle visible
     for_window [class="wps"] layout tabbed
-    for_window [class="wemeetapp"] layout tabbed
+    for_window [class="wemeetapp"] layout tabbed; inhibit_idle open
 #
 # Layout stuff:
 #
