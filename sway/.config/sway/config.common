@@ -261,7 +261,7 @@ bindsym $mod+r mode "resize"
     bindsym --locked XF86AudioPlay exec playerctl play-pause
     bindsym --locked XF86AudioNext exec playerctl next
     bindsym --locked XF86AudioPrev exec playerctl previous
-    bindsym XF86Launch1 exec htop
+    bindsym XF86Launch1 exec $term -e htop
     bindsym XF86Launch4 exec asusctl profile -n
 
 #
