@@ -176,6 +176,7 @@ input type:touchpad {
     assign [app_id="telegramdesktop"] workspace $ws3
     assign [app_id="virt-manager"] workspace $ws10
     assign [app_id="org.kde.okular"] workspace $ws4
+    assign [class="DesktopEditors"] workspace $ws4
     assign [class="wps"] workspace $ws4
     assign [app_id="com.obsproject.Studio"] workspace $ws8
     assign [class="wemeetapp"] workspace $ws9
