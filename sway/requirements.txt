@@ -4,7 +4,7 @@ alacritty
 bemenu
 j4-dmenu-desktop
 swayidle
-swaylock-effects(-git)
+swaylock-effects-git
 i3status-rust
 mako
 qt5-wayland
@@ -22,3 +22,5 @@ xdg-desktop-portal
 xdg-desktop-portal-wlr
 firefox
 telegram-desktop-megumifox
+htop
+asusctl
