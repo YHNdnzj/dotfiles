@@ -2,6 +2,7 @@ Packages:
 dialog
 alacritty
 bemenu
+bemenu-wayland
 j4-dmenu-desktop
 swayidle
 swaylock-effects-git
