@@ -1,5 +1,5 @@
 theme = "dracula"
-icons = "awesome5"
+icons = "awesome6"
 
 [[block]]
 block = "net"
