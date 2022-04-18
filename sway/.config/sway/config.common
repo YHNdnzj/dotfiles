@@ -186,6 +186,7 @@ input type:touchpad {
     for_window [app_id="firefox"] border none; inhibit_idle fullscreen
     for_window [app_id="telegramdesktop"] border none
     for_window [app_id="pavucontrol"] floating enable
+    for_window [app_id="org.rncbc.qpwgraph"] floating enable
     for_window [app_id="mpv"] inhibit_idle visible
     for_window [class="wps"] layout tabbed
     for_window [class="wemeetapp"] layout tabbed; inhibit_idle open
