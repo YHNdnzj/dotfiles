@@ -20,4 +20,4 @@
 
 [http]
     proxy = http://127.0.0.1:8118
-    postBuffer = 524288000
+    postBuffer = 1048576000
