@@ -178,6 +178,7 @@ input type:touchpad {
     assign [app_id="org.kde.okular"] workspace $ws4
     assign [class="DesktopEditors"] workspace $ws4
     assign [class="wps"] workspace $ws4
+    assign [app_id="calibre-gui"] workspace $ws4
     assign [app_id="com.obsproject.Studio"] workspace $ws8
     assign [class="wemeetapp"] workspace $ws9
 
@@ -188,6 +189,7 @@ input type:touchpad {
     for_window [app_id="pavucontrol"] floating enable
     for_window [app_id="org.rncbc.qpwgraph"] floating enable
     for_window [app_id="mpv"] inhibit_idle visible
+    for_window [app_id="calibre-gui"] layout tabbed
     for_window [class="wps"] layout tabbed
     for_window [class="wemeetapp"] layout tabbed; inhibit_idle open
 #
