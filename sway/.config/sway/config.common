@@ -35,7 +35,7 @@ set $ws6 6
 set $ws7 7
 set $ws8 8:OBS
 set $ws9 9:Class
-set $ws10 10:VM
+set $ws10 10:VM/C
 # Cursor theme and size
 set $cursor_theme Graphite-dark-cursors
 set $cursor_size 28
@@ -175,6 +175,7 @@ input type:touchpad {
     assign [app_id="firefox"] workspace $ws2
     assign [app_id="telegramdesktop"] workspace $ws3
     assign [app_id="virt-manager"] workspace $ws10
+    assign [app_id="Waydroid"] workspace $ws10
     assign [app_id="org.kde.okular"] workspace $ws4
     assign [class="DesktopEditors"] workspace $ws4
     assign [class="wps"] workspace $ws4
@@ -188,6 +189,7 @@ input type:touchpad {
     for_window [app_id="telegramdesktop"] border none
     for_window [app_id="pavucontrol"] floating enable
     for_window [app_id="org.rncbc.qpwgraph"] floating enable
+    for_window [app_id="Waydroid"] layout tabbed
     for_window [app_id="mpv"] inhibit_idle visible
     for_window [app_id="calibre-gui"] layout tabbed
     for_window [class="wps"] layout tabbed
