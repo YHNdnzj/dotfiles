@@ -18,7 +18,7 @@ set $term alacritty
 # Your preferred file manager
 set $fm thunar
 # Your preferred web browser
-set $web firefox
+set $web firefox-nightly
 # Your preferred screen capture tool
 set $shot flameshot gui
 # Your preferred application launcher

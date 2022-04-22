@@ -21,7 +21,7 @@ flameshot
 grim
 xdg-desktop-portal
 xdg-desktop-portal-wlr
-firefox
+firefox-nightly-zh-tw
 telegram-desktop-megumifox
 htop
 asusctl
