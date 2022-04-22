@@ -186,6 +186,7 @@ input type:touchpad {
     # Change settings for windows
     for_window [app_id="Alacritty" workspace=$ws1] layout tabbed
     for_window [app_id="firefox"] border none; inhibit_idle fullscreen
+    for_window [app_id="firefox" title="子母畫面"] floating enable; inhibit_idle visible
     for_window [app_id="telegramdesktop"] border none
     for_window [app_id="pavucontrol"] floating enable
     for_window [app_id="org.rncbc.qpwgraph"] floating enable
