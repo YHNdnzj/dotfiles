@@ -28,4 +28,4 @@ input type:pointer {
     bindsym $mod+Ctrl+2 move workspace to output $out2
 
     # Change settings for windows
-    for_window [app_id="flameshot"] border none; floating enable; fullscreen disable; move absolute position 0 0
+    for_window [app_id="flameshot"] border none, floating enable, fullscreen disable, move absolute position 0 0
