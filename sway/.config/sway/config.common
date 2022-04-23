@@ -190,7 +190,7 @@ input type:touchpad {
     for_window [app_id="telegramdesktop"] border none
     for_window [app_id="pavucontrol"] floating enable
     for_window [app_id="org.rncbc.qpwgraph"] floating enable
-    for_window [app_id="Waydroid"] floating enable
+    for_window [app_id="Waydroid"] floating enable, resize set 1080 1920
     for_window [app_id="mpv"] inhibit_idle visible
     for_window [app_id="calibre-gui"] layout tabbed
     for_window [class="wps"] layout tabbed
