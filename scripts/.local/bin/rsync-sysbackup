@@ -1,0 +1,40 @@
+#!/bin/bash -eu
+
+if [[ $# == 2 ]]; then
+    SOURCE=$1 DEST=$2 RUN="--dry-run"
+    run_valid=1
+elif [[ $# == 3 ]]; then
+    SOURCE=$2 DEST=$3
+    if [[ $1 == "--run" ]]; then
+        RUN=""
+        run_valid=1
+    else
+        run_valid=0
+    fi
+fi
+dir_valid=$([[ -d $SOURCE && -d $DEST ]])
+
+if ! (( dir_valid && run_valid )); then
+    echo "usage: $0 [--run] SOURCE DEST" >&2
+    exit 1
+fi
+
+set -x
+
+rsync "$RUN" \
+    --archive --acls --xattrs --hard-links --sparse \
+    --atimes --crtimes \
+    --numeric-ids --inplace \
+    --one-file-system \
+    --delete --delete-excluded \
+    --info=progress2 --itemize-changes \
+    "$SOURCE" "$DEST"
+
+if [[ -d $SOURCE/efi ]]; then
+    rsync "$RUN" \
+        --atimes --crtimes \
+        --one-file-system \
+        --delete --delete-excluded \
+        --info=progress2 \
+        "$SOURCE/efi" "$DEST/efi"
+fi
