@@ -20,19 +20,21 @@ fi
 
 set -ux
 
-rsync "$RUN" \
+sudo rsync "$RUN" \
     --archive --acls --xattrs --hard-links --sparse \
     --atimes --crtimes \
     --numeric-ids --inplace \
     --one-file-system \
+    --exclude-from="$HOME/.sysbackup/rootfs.exclude" --exclude-from="$HOME/.sysbackup/home.exclude" \
     --delete --delete-excluded \
     --info=progress2 --itemize-changes \
     "$SOURCE" "$DEST"
 
 if [[ -d $SOURCE/efi ]]; then
-    rsync "$RUN" \
+    sudo rsync "$RUN" \
         --atimes --crtimes \
         --one-file-system \
+        --exclude loader/random-seed \
         --delete --delete-excluded \
         --info=progress2 --itemize-changes \
         "$SOURCE/efi" "$DEST/efi"
