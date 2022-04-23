@@ -19,7 +19,7 @@ if ! [[ -d $SOURCE && -d $DEST ]] || ! (( run_valid )); then
 fi
 
 if ! [[ -f "$DEST/.sysbackup_dest" ]]; then
-    echo "Please run \`touch $DEST/.sysbackup_dest\' before first run."
+    echo "Please run \`touch $DEST/.sysbackup_dest' before first run."
     echo "This helps to prevent accidental overwrites."
     exit 2
 fi
