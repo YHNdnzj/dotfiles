@@ -12,9 +12,8 @@ elif [[ $# == 3 ]]; then
         run_valid=0
     fi
 fi
-dir_valid=$([[ -d $SOURCE && -d $DEST ]])
 
-if ! (( dir_valid && run_valid )); then
+if ! [[ -d $SOURCE && -d $DEST ]] || ! (( run_valid )); then
     echo "usage: $0 [--run] SOURCE DEST" >&2
     exit 1
 fi
