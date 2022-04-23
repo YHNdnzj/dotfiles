@@ -7,7 +7,7 @@ elif [[ $# == 3 ]]; then
     SOURCE=$2 DEST=$3
     if [[ $1 == "--run" ]]; then
         RUN=("--info=progress2")
-        run_valid=1
+        run_valid=2
     else
         run_valid=0
     fi
@@ -43,4 +43,6 @@ if [[ -d $SOURCE/efi ]]; then
         "$SOURCE/efi" "$DEST/efi"
 fi
 
-sudo touch "$DEST/.sysbackup_dest"
+if (( run_valid == 2 )); then
+    sudo touch "$DEST/.sysbackup_dest"
+fi
