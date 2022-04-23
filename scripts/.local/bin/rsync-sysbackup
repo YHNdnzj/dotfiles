@@ -32,7 +32,7 @@ sudo rsync "$RUN" \
     --one-file-system \
     --exclude-from="$HOME/.sysbackup/rootfs.exclude" --exclude-from="$HOME/.sysbackup/home.exclude" \
     --delete --delete-excluded \
-    --info=progress2 --itemize-changes \
+    --info=progress2 \
     "$SOURCE" "$DEST"
 
 if [[ -d $SOURCE/efi ]]; then
@@ -40,7 +40,7 @@ if [[ -d $SOURCE/efi ]]; then
         --one-file-system \
         --exclude loader/random-seed \
         --delete --delete-excluded \
-        --info=progress2 --itemize-changes \
+        --info=progress2 \
         "$SOURCE/efi" "$DEST/efi"
 fi
 
