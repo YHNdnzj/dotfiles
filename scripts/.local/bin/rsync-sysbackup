@@ -18,6 +18,12 @@ if ! [[ -d $SOURCE && -d $DEST ]] || ! (( run_valid )); then
     exit 1
 fi
 
+if ! [[ -f "$DEST/.sysbackup_dest" ]]; then
+    echo "Please run \`touch $DEST/.sysbackup_dest\' before first run."
+    echo "This helps to prevent accidental overwrites."
+    exit 2
+fi
+
 set -ux
 
 sudo rsync "$RUN" \
@@ -39,3 +45,5 @@ if [[ -d $SOURCE/efi ]]; then
         --info=progress2 --itemize-changes \
         "$SOURCE/efi" "$DEST/efi"
 fi
+
+sudo touch "$DEST/.sysbackup_dest"
