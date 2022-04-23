@@ -36,6 +36,7 @@ sudo rsync "${RUN[@]}" \
 
 if [[ -d $SOURCE/efi ]]; then
     sudo rsync "${RUN[@]}" \
+        --archive \
         --one-file-system \
         --exclude loader/random-seed \
         --delete --delete-excluded \
