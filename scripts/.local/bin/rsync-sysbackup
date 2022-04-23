@@ -1,12 +1,12 @@
 #!/bin/bash -e
 
 if [[ $# == 2 ]]; then
-    SOURCE=$1 DEST=$2 RUN="--dry-run"
+    SOURCE=$1 DEST=$2 RUN=("--dry-run" "--itemize-changes" "--progress")
     run_valid=1
 elif [[ $# == 3 ]]; then
     SOURCE=$2 DEST=$3
     if [[ $1 == "--run" ]]; then
-        RUN=""
+        RUN=("--info=progress2")
         run_valid=1
     else
         run_valid=0
@@ -26,21 +26,19 @@ fi
 
 set -ux
 
-sudo rsync "$RUN" \
+sudo rsync "${RUN[@]}" \
     --archive --acls --xattrs --hard-links --sparse \
     --numeric-ids --inplace \
     --one-file-system \
     --exclude-from="$HOME/.sysbackup/rootfs.exclude" --exclude-from="$HOME/.sysbackup/home.exclude" \
     --delete --delete-excluded \
-    --info=progress2 \
     "$SOURCE" "$DEST"
 
 if [[ -d $SOURCE/efi ]]; then
-    sudo rsync "$RUN" \
+    sudo rsync "${RUN[@]}" \
         --one-file-system \
         --exclude loader/random-seed \
         --delete --delete-excluded \
-        --info=progress2 \
         "$SOURCE/efi" "$DEST/efi"
 fi
 
