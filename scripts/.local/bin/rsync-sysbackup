@@ -28,7 +28,6 @@ set -ux
 
 sudo rsync "$RUN" \
     --archive --acls --xattrs --hard-links --sparse \
-    --atimes --crtimes \
     --numeric-ids --inplace \
     --one-file-system \
     --exclude-from="$HOME/.sysbackup/rootfs.exclude" --exclude-from="$HOME/.sysbackup/home.exclude" \
@@ -38,7 +37,6 @@ sudo rsync "$RUN" \
 
 if [[ -d $SOURCE/efi ]]; then
     sudo rsync "$RUN" \
-        --atimes --crtimes \
         --one-file-system \
         --exclude loader/random-seed \
         --delete --delete-excluded \
