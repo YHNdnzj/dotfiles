@@ -35,6 +35,6 @@ if [[ -d $SOURCE/efi ]]; then
         --atimes --crtimes \
         --one-file-system \
         --delete --delete-excluded \
-        --info=progress2 \
+        --info=progress2 --itemize-changes \
         "$SOURCE/efi" "$DEST/efi"
 fi
