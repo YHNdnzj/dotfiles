@@ -34,7 +34,7 @@ sudo rsync "${RUN[@]}" \
     --delete --delete-excluded \
     "$SOURCE" "$DEST"
 
-if [[ -d $SOURCE/efi ]]; then
+if mountpoint -q --nofollow "$SOURCE/efi"; then
     sudo rsync "${RUN[@]}" \
         --archive \
         --numeric-ids --inplace \
