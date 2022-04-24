@@ -37,10 +37,11 @@ sudo rsync "${RUN[@]}" \
 if [[ -d $SOURCE/efi ]]; then
     sudo rsync "${RUN[@]}" \
         --archive \
+        --numeric-ids --inplace \
         --one-file-system \
         --exclude loader/random-seed \
         --delete --delete-excluded \
-        "$SOURCE/efi" "$DEST/efi"
+        "$SOURCE/efi/" "$DEST/efi"
 fi
 
 if (( run_valid == 2 )); then
