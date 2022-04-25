@@ -37,8 +37,7 @@ sudo rsync "${RUN[@]}" \
 
 if mountpoint -q --nofollow "$SOURCE/efi"; then
     sudo rsync "${RUN[@]}" \
-        --archive \
-        --numeric-ids --inplace \
+        --archive --inplace \
         --atimes --open-noatime \
         --one-file-system \
         --exclude loader/random-seed \
