@@ -29,6 +29,7 @@ set -ux
 sudo rsync "${RUN[@]}" \
     --archive --acls --xattrs --hard-links --sparse \
     --numeric-ids --inplace \
+    --atimes --open-noatime \
     --one-file-system \
     --exclude-from="$HOME/.sysbackup/rootfs.exclude" --exclude-from="$HOME/.sysbackup/home.exclude" \
     --delete --delete-excluded \
@@ -38,6 +39,7 @@ if mountpoint -q --nofollow "$SOURCE/efi"; then
     sudo rsync "${RUN[@]}" \
         --archive \
         --numeric-ids --inplace \
+        --atimes --open-noatime \
         --one-file-system \
         --exclude loader/random-seed \
         --delete --delete-excluded \
