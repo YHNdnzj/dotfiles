@@ -5,3 +5,6 @@ fcitx5-lua
 fcitx5-material-color
 fcitx5-pinyin-zhwiki
 fcitx5-pinyin-moegirl
+
+Services:
+HTTP Proxy (Privoxy): listen on 8118
