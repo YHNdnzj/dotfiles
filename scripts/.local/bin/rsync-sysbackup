@@ -33,7 +33,7 @@ sudo rsync "${RUN[@]}" \
     --one-file-system \
     --exclude-from="$HOME/.sysbackup/rootfs.exclude" --exclude-from="$HOME/.sysbackup/home.exclude" \
     --delete --delete-excluded \
-    "$SOURCE" "$DEST"
+    "$SOURCE/" "$DEST"
 
 if mountpoint -q --nofollow "$SOURCE/efi"; then
     sudo rsync "${RUN[@]}" \
