@@ -1,4 +1,5 @@
 Packages:
 qt5ct
 qt6ct
+oxygen-icons
 breeze-icons
