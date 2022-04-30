@@ -21,7 +21,7 @@ fi
 
 set -e
 cd "$HOME/.config/sway/env"
-envfiles=(*.sh)
+envfiles=(*)
 set -x
 for envfile in "${envfiles[@]}"
 do
