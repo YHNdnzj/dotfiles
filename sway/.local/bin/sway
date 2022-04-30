@@ -20,8 +20,7 @@ if ! (( DUAL_CONFIGURED )); then
 fi
 
 set -e
-cd "$HOME/.config/sway/env"
-envfiles=(*)
+envfiles=("$HOME/.config/sway/env/"*)
 set -x
 for envfile in "${envfiles[@]}"
 do
