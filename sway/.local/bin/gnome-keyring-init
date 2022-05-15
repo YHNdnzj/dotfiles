@@ -1,0 +1,3 @@
+#!/bin/bash -e
+echo -n | gnome-keyring-daemon --login
+exec gnome-keyring-daemon --start --components=secrets
