@@ -13,7 +13,7 @@
     autocrlf = input
 
 [pull]
-    rebase = false
+    rebase = true
 
 [push]
     followTags = true
