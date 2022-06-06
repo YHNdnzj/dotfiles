@@ -1,3 +1,8 @@
+[keyboard-bqn]
+Description="鍵盤 - BQN"
+Language=en
+Label=bqn
+
 [keyboard-apl]
 Description="鍵盤 - APL"
 Language=en
@@ -32,11 +37,6 @@ Label=aplII
 Description="鍵盤 - APL - APL 符号（APLX 统一）"
 Language=en
 Label=aplx
-
-[keyboard-jv]
-Description="鍵盤 - 印尼语（爪哇）"
-Language=jv
-Label=jv
 
 [keyboard-tz]
 Description="鍵盤 - 史瓦西里語 (坦尚尼亞)"
@@ -225,7 +225,7 @@ Label=ua
 
 [keyboard-ua-rstu_ru]
 Description="鍵盤 - 烏克蘭語 - 俄語 (烏克蘭，標準 RSTU)"
-Language=uk
+Language=ru
 Label=ua
 
 [keyboard-ua-homophonic]
@@ -248,7 +248,7 @@ Description="鍵盤 - 烏克蘭語 - 克里米亞韃靼語 (土耳其語 Alt-Q)"
 Language=crh
 Label=crh
 
-[keyboard-ua-sun_type6]
+[keyboard-ua-pe6]
 Description="鍵盤 - 烏克蘭語 - 烏克蘭語 (昇陽 Type 6/7)"
 Language=uk
 Label=ua
@@ -433,6 +433,11 @@ Description="鍵盤 - 俄語 - 俄语（语音助记，法语）"
 Language=ru
 Label=ru
 
+[keyboard-ru-ab]
+Description="鍵盤 - 俄語 - 阿布哈兹语（俄罗斯）"
+Language=ab
+Label=ru
+
 [keyboard-ru-chu]
 Description="鍵盤 - 俄語 - 教会斯拉夫语"
 Language=cu
@@ -454,7 +459,7 @@ Language=ru
 Label=ru
 
 [keyboard-ru-sun_type6]
-Description="鍵盤 - 俄語 - 俄語 (昇陽 Type 6/7)"
+Description="鍵盤 - 俄語 - 6/7)"
 Language=ru
 Label=ru
 
@@ -477,6 +482,16 @@ Label=ru
 Description="鍵盤 - 俄語 - 俄语（Polyglot and Reactionary）"
 Language=ru
 Label=ru
+
+[keyboard-ru-ruchey_cyrillic]
+Description="鍵盤 - 俄語 - 俄语（工程，西里尔）"
+Language=ru
+Label=ru
+
+[keyboard-ru-ruchey_latin]
+Description="鍵盤 - 俄語 - 俄语（工程，拉丁）"
+Language=ru
+Label=us
 
 [keyboard-trans]
 Description="鍵盤 - 国际音标"
@@ -629,7 +644,7 @@ Language=et
 Label=ee
 
 [keyboard-ee-sun_type6]
-Description="鍵盤 - 愛沙尼亞語 - 愛沙尼亞語 (昇陽 Type 6/7)"
+Description="鍵盤 - 愛沙尼亞語 - (Sun Type 6/7)"
 Language=et
 Label=ee
 
@@ -720,6 +735,11 @@ Label=cz
 
 [keyboard-cz-prog_typo]
 Description="鍵盤 - 捷克語 - 捷克语（programming，typographic）"
+Language=cs
+Label=cz
+
+[keyboard-cz-colemak-ucw]
+Description="鍵盤 - 捷克語 - 捷克语（美国，Colemak，支持 UCW）"
 Language=cs
 Label=cz
 
@@ -1024,7 +1044,7 @@ Language=en
 Label=us
 
 [keyboard-us-carpalx-altgr-intl]
-Description="鍵盤 - 英語 (美式) - 英语（Carpalx，国际，带 AltGr 死键）"
+Description="鍵盤 - 英語 (美式) - ntl., with AltGr dead keys)"
 Language=en
 Label=us
 
@@ -1057,6 +1077,11 @@ Label=us
 Description="鍵盤 - 英語 (美式) - 英语（3l，emacs）"
 Language=en
 Label=us
+
+[keyboard-us-workman-p]
+Description="鍵盤 - 英語 (美式) - 英语（Workman-P）"
+Language=en
+Label=workman-p
 
 [keyboard-us-scn]
 Description="鍵盤 - 英語 (美式) - 西西里语（美式键盘）"
@@ -1109,7 +1134,7 @@ Language=hr
 Label=hr
 
 [keyboard-hr-unicodeus]
-Description="鍵盤 - 克羅埃西亞語 - 克罗地亚语（美国，带克罗地亚语二重字）"
+Description="鍵盤 - 克羅埃西亞語 - tian (US, with Croatian digraphs)"
 Language=hr
 Label=hr
 
@@ -1780,7 +1805,7 @@ Label=by
 
 [keyboard-by-ru]
 Description="鍵盤 - 白俄羅斯語 - 俄语（白俄罗斯）"
-Language=be
+Language=ru
 Label=by
 
 [keyboard-by-intl]
@@ -2064,7 +2089,7 @@ Language=de
 Label=be
 
 [keyboard-be-wang]
-Description="鍵盤 - 比利時語 - 比利时语（王安 724 型 AZERTY）"
+Description="鍵盤 - 比利時語 - elgian (Wang 724 AZERTY)"
 Language=de
 Label=be
 
@@ -2189,7 +2214,7 @@ Language=lv
 Label=lv
 
 [keyboard-lv-apostrophe-deadquotes]
-Description="鍵盤 - 拉脫維亞語 - 拉脱维亚语（带撇号，引号为死键）"
+Description="鍵盤 - 拉脫維亞語 - ad quotes)"
 Language=lv
 Label=lv
 
@@ -2594,8 +2619,8 @@ Language=fr
 Label=fr
 
 [keyboard-fr-bre]
-Description="鍵盤 - 法語 - 法語 (布里敦語)"
-Language=fr
+Description="鍵盤 - 法語 - 布列塔尼语（法国）"
+Language=br
 Label=fr
 
 [keyboard-fr-oci]
@@ -2796,6 +2821,11 @@ Label=pt
 [keyboard-id]
 Description="鍵盤 - 印尼语（拉丁）"
 Language=id
+Label=id
+
+[keyboard-id-javanese]
+Description="鍵盤 - 印尼语（拉丁） - 爪哇语"
+Language=jax
 Label=id
 
 [keyboard-id-phonetic]
@@ -3153,6 +3183,11 @@ Description="鍵盤 - 土耳其語 - 土耳其語 (F)"
 Language=tr
 Label=tr
 
+[keyboard-tr-e]
+Description="鍵盤 - 土耳其語 - 土耳其语（E）"
+Language=tr
+Label=tr
+
 [keyboard-tr-alt]
 Description="鍵盤 - 土耳其語 - 土耳其語 (Alt-Q)"
 Language=tr
@@ -3479,7 +3514,7 @@ Language=pl
 Label=pl
 
 [keyboard-pl-csb]
-Description="鍵盤 - 波蘭語 - 卡舒比語"
+Description="鍵盤 - 波蘭語 - ashubian"
 Language=csb
 Label=pl
 
@@ -3508,8 +3543,13 @@ Description="鍵盤 - 波蘭語 - 波蘭語 (Colemak 配置)"
 Language=pl
 Label=pl
 
-[keyboard-pl-colemak_dh]
+[keyboard-pl-colemak_dh_ansi]
 Description="鍵盤 - 波蘭語 - 波兰语（Colemak-DH）"
+Language=pl
+Label=pl
+
+[keyboard-pl-colemak_dh]
+Description="鍵盤 - 波蘭語 - 波兰语（Colemak-DH ISO）"
 Language=pl
 Label=pl
 
