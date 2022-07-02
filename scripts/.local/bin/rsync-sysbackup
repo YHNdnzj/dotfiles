@@ -1,7 +1,7 @@
 #!/bin/bash -e
 
 if (( EUID != 0 )); then
-    exec pkexec "$0" "$@"
+    exec sudo --preserve-env=HOME "$0" "$@"
 fi
 
 if [[ $# == 2 ]]; then
