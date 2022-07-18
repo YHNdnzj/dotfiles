@@ -1,3 +1,4 @@
+swapfile
 var/tmp
 var/cache/*/*
 var/lib/libvirt/images/*.qcow2
