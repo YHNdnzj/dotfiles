@@ -13,6 +13,7 @@ qt6-wayland
 qt
 polkit-gnome
 gnome-keyring
+networkd-notify-git
 playerctl
 lm_sensors
 xorg-xwayland
