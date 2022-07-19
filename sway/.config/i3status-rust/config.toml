@@ -3,14 +3,22 @@ icons = "awesome6"
 
 [[block]]
 block = "net"
+device = "bond0"
+format_alt = "{ip}"
+
+[[block]]
+block = "net"
 device = "eth0"
-format = "{ip}"
+format = ""
+icons_format = "{icon}"
 hide_inactive = true
+[block.icons_overrides]
+net_wired = "\uf796"
 
 [[block]]
 block = "net"
 device = "wlan0"
-format = "{ssid} {signal_strength} {ip}"
+format = "{ssid} {signal_strength}"
 hide_inactive = true
 
 [[block]]
@@ -44,10 +52,6 @@ format = "{1m}"
 
 [[block]]
 block = "temperature"
-
-[[block]]
-block = "cpu"
-format = "{utilization} {frequency}"
 
 [[block]]
 block = "music"
