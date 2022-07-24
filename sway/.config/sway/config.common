@@ -108,6 +108,9 @@ input type:touchpad {
     bindsym $mod+Space exec makoctl dismiss
     bindsym $mod+Shift+Space exec makoctl dismiss --all
 
+    # Display action menu for a notification
+    bindsym $mod+Shift+n exec makoctl menu bemenu -p 'Choose Action: '
+
     # Start screen capture tool
     bindsym Print exec $shot
 
