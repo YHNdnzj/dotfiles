@@ -105,8 +105,8 @@ input type:touchpad {
     bindsym $mod+Backspace exec $menu
 
     # Dismiss notifications
-    bindsym $mod+Space exec makoctl dismiss
-    bindsym $mod+Ctrl+Space exec makoctl dismiss --all
+    bindsym $mod+n exec makoctl dismiss
+    bindsym $mod+Ctrl+n exec makoctl dismiss --all
 
     # Display action menu for a notification
     bindsym $mod+Shift+n exec makoctl menu bemenu -p 'Choose Action: '
