@@ -104,6 +104,9 @@ input type:touchpad {
     # Start your launcher
     bindsym $mod+Backspace exec $menu
 
+    # Dismiss a notification
+    bindsym $mod+Space exec makoctl dismiss
+
     # Start screen capture tool
     bindsym Print exec $shot
 
