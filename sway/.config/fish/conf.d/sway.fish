@@ -1,3 +1,3 @@
-if test -z "$DISPLAY" -a (tty) = "/dev/tty1"
+if test (tty) = "/dev/tty1" -a \( -z "$WAYLAND_DISPLAY" -a -z "$DISPLAY" \)
     exec sway
 end
