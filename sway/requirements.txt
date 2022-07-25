@@ -11,6 +11,7 @@ mako
 qt5-wayland
 qt6-wayland
 qt
+papirus-icon-theme
 polkit-gnome
 gnome-keyring
 networkd-notify-git

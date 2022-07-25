@@ -285,6 +285,7 @@ bindsym $mod+r mode "resize"
 # Read `man 5 sway-bar` for more information about this section.
 bar {
     font pango:sans 9, Font Awesome 6 Free 9
+    icon_theme Papirus-Dark
 
     position top
 
