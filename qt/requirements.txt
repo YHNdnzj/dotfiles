@@ -1,5 +1,5 @@
 Packages:
 qt5ct
 qt6ct
-oxygen-icons
+papirus-icon-theme
 breeze-icons
