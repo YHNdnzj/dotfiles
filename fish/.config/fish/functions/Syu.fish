@@ -5,5 +5,5 @@ function Syu --description 'Upgrade the system'
         paru -c
         paru --aur -Sc --noconfirm >/dev/null
     end
-    flatpak update
+    px flatpak update
 end
