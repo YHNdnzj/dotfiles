@@ -5,6 +5,7 @@ vim
 pacman-contrib
 proxychains-ng
 gnu-free-fonts
+flatpak
 
 Services:
 HTTP Proxy (Privoxy): listen on 8118

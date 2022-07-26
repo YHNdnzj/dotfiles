@@ -1,7 +1,6 @@
 # This file contains fish universal variable definitions.
 # VERSION: 3.0
 SETUVAR --export EDITOR:vim
-SETUVAR --export JDK_JAVA_OPTIONS:\x2dDawt\x2euseSystemAAFontSettings\x3don\x20\x2dDswing\x2eaatext\x3dtrue\x20\x2dDswing\x2edefaultlaf\x3dcom\x2esun\x2ejava\x2eswing\x2eplaf\x2egtk\x2eGTKLookAndFeel
 SETUVAR --export MANPAGER:sh\x20\x2dc\x20\x27col\x20\x2dbx\x20\x7c\x20bat\x20\x2dl\x20man\x20\x2dp\x27
 SETUVAR __fish_init_2_39_8:\x1d
 SETUVAR __fish_init_2_3_0:\x1d
@@ -43,4 +42,4 @@ SETUVAR fish_pager_color_description:B3A06D\x1eyellow
 SETUVAR fish_pager_color_prefix:white\x1e\x2d\x2dbold\x1e\x2d\x2dunderline
 SETUVAR fish_pager_color_progress:brwhite\x1e\x2d\x2dbackground\x3dcyan
 SETUVAR fish_pager_color_selected_background:\x2dr
-SETUVAR fish_user_paths:/home/yhndnzj/\x2elocal/bin
+SETUVAR fish_user_paths:/home/yhndnzj/\x2elocal/bin\x1e/var/lib/flatpak/exports/bin
