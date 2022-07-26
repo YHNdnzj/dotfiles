@@ -203,7 +203,7 @@ input type:touchpad {
     for_window [app_id="mpv"] inhibit_idle visible
     for_window [app_id="calibre-gui"] layout tabbed
     for_window [class="wps"] layout tabbed
-    for_window [class="Steam"] layout tabbed, border none, inhibit_idle open
+    for_window [class="Steam"] floating enable, inhibit_idle open
     for_window [class="wemeetapp"] layout tabbed, inhibit_idle open
 #
 # Layout stuff:
