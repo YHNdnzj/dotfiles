@@ -27,3 +27,4 @@ firefox-nightly-zh-tw
 telegram-desktop-megumifox
 htop
 asusctl
+flatpak
