@@ -188,6 +188,7 @@ input type:touchpad {
     assign [class="wps"] workspace $ws4
     assign [app_id="calibre-gui"] workspace $ws4
     assign [class="Steam"] workspace $ws5
+    assign [class="heroic"] workspace $ws5
     assign [app_id="com.obsproject.Studio"] workspace $ws8
     assign [class="wemeetapp"] workspace $ws9
 
@@ -205,6 +206,7 @@ input type:touchpad {
     for_window [app_id="calibre-gui"] layout tabbed
     for_window [class="wps"] layout tabbed
     for_window [class="Steam"] floating enable, inhibit_idle open
+    for_window [class="heroic"] floating enable, inhibit_idle open
     for_window [class="wemeetapp"] layout tabbed, inhibit_idle open
 #
 # Layout stuff:
