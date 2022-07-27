@@ -199,6 +199,7 @@ input type:touchpad {
     for_window [app_id="thunar" title="檔案操作進度"] floating enable
     for_window [app_id="pavucontrol"] floating enable
     for_window [app_id="org.rncbc.qpwgraph"] floating enable
+    for_window [app_id="yubico.com.yubioath-desktop"] floating enable
     for_window [app_id="Waydroid"] layout tabbed
     for_window [app_id="mpv"] inhibit_idle visible
     for_window [app_id="calibre-gui"] layout tabbed
