@@ -1,4 +1,4 @@
 include ~/.config/sway/config.common
 
 ### Output configuration
-output eDP-1 res 2560x1440 scale 1.5 adaptive_sync on
+output eDP-1 res 2560x1440 scale 1.5
