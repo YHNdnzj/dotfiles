@@ -181,32 +181,31 @@ input type:touchpad {
     # Assign application to workspace
     assign [app_id="firefox"] workspace $ws2
     assign [app_id="telegramdesktop"] workspace $ws3
-    assign [app_id="virt-manager"] workspace $ws10
-    assign [app_id="Waydroid"] workspace $ws10
+    assign [class="Steam"] workspace $ws5
+    assign [class="heroic"] workspace $ws5
     assign [app_id="org.kde.okular"] workspace $ws4
     assign [class="DesktopEditors"] workspace $ws4
     assign [class="wps"] workspace $ws4
     assign [app_id="calibre-gui"] workspace $ws4
-    assign [class="Steam"] workspace $ws5
-    assign [class="heroic"] workspace $ws5
     assign [app_id="com.obsproject.Studio"] workspace $ws8
     assign [class="wemeetapp"] workspace $ws9
+    assign [app_id="Waydroid"] workspace $ws10
 
     # Change settings for windows
     for_window [app_id="Alacritty" workspace=$ws1] layout tabbed
     for_window [app_id="firefox"] border none, inhibit_idle fullscreen
-    for_window [app_id="firefox" title="子母畫面"] floating enable, inhibit_idle visible
+    for_window [app_id="firefox" title="子母畫面"] floating enable, sticky enable, inhibit_idle visible
     for_window [app_id="telegramdesktop"] border none
     for_window [app_id="thunar" title="檔案操作進度"] floating enable
-    for_window [app_id="pavucontrol"] floating enable
+    for_window [app_id="pavucontrol"] floating enable, sticky enable
+    for_window [workspace=$ws5] floating enable, inhibit_idle open
     for_window [app_id="org.rncbc.qpwgraph"] floating enable
     for_window [app_id="yubico.com.yubioath-desktop"] floating enable
-    for_window [app_id="Waydroid"] layout tabbed
     for_window [app_id="mpv"] inhibit_idle visible
     for_window [app_id="calibre-gui"] layout tabbed
     for_window [class="wps"] layout tabbed
-    for_window [workspace=$ws5] floating enable, inhibit_idle open
     for_window [class="wemeetapp"] layout tabbed, inhibit_idle open
+    for_window [app_id="Waydroid"] layout tabbed
 #
 # Layout stuff:
 #
