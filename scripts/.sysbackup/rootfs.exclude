@@ -1,6 +1,5 @@
 swapfile
 var/tmp
 var/cache/*/*
-var/lib/libvirt/images/*.qcow2
 var/lib/aurbuild
 var/lib/flatpak
