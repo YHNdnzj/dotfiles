@@ -226,6 +226,9 @@ input type:touchpad {
     # Toggle the current focus between tiling and floating mode
     bindsym $mod+Shift+space floating toggle
 
+    # Make the current focus sticky
+    bindsym $mod+Ctrl+space sticky toggle
+
     # Swap focus between the tiling area and the floating area
     bindsym $mod+space focus mode_toggle
 
