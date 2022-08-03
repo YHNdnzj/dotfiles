@@ -4,6 +4,8 @@ function Syu --description 'Upgrade the system'
     if test $status -eq 0
         paru -c
         paru --aur -Sc --noconfirm >/dev/null
+    else
+        return 1
     end
     px flatpak update
 end
