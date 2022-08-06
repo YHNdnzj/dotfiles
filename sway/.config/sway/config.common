@@ -198,6 +198,8 @@ input type:touchpad {
     for_window [app_id="telegramdesktop"] border none
     for_window [app_id="thunar" title="檔案操作進度"] floating enable
     for_window [app_id="pavucontrol"] floating enable, sticky enable
+    for_window [app_id="org.twosheds.iwgtk"] floating enable, sticky enable
+    for_window [app_id="iwgtk"] floating enable, sticky enable
     for_window [workspace=$ws5] floating enable, inhibit_idle open
     for_window [app_id="org.rncbc.qpwgraph"] floating enable
     for_window [app_id="yubico.com.yubioath-desktop"] floating enable
