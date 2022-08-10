@@ -39,6 +39,8 @@ set $ws10 10:VM/C
 # Cursor theme and size
 set $cursor_theme Graphite-dark-cursors
 set $cursor_size 28
+# Icon theme
+set $icon_theme Papirus-Dark
 
 ### Output configuration
 #
@@ -293,7 +295,7 @@ bindsym $mod+r mode "resize"
 # Read `man 5 sway-bar` for more information about this section.
 bar {
     font pango:sans 9, Font Awesome 6 Free Solid 9
-    icon_theme Papirus-Dark
+    icon_theme $icon_theme
 
     position top
 
@@ -311,12 +313,19 @@ bar {
 }
 
 #
-# Cursor Theme:
+# Cursor Theme & GTK Looking:
 #
 seat seat0 xcursor_theme $cursor_theme $cursor_size
+set $xsettingsd_config ~/.config/xsettingsd/xsettingsd.conf
 exec_always {
     gsettings set org.gnome.desktop.interface cursor-theme $cursor_theme
     gsettings set org.gnome.desktop.interface cursor-size $cursor_size
+
+    echo 'Gtk/CursorThemeName "$cursor_theme"' > $xsettingsd_config
+    echo 'Net/IconThemeName "$icon_theme"' >> $xsettingsd_config
+    echo 'Xft/DPI 147456' >> $xsettingsd_config
+
+    xsettingsd
 }
 
 xwayland enable

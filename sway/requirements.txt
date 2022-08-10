@@ -18,6 +18,7 @@ networkd-notify-git
 playerctl
 lm_sensors
 xorg-xwayland
+xsettingsd
 graphite-cursor-theme-git
 flameshot
 grim
