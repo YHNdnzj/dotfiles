@@ -324,7 +324,6 @@ exec_always {
     echo 'Gtk/CursorThemeName "$cursor_theme"' > $xsettingsd_config
     echo 'Net/IconThemeName "$icon_theme"' >> $xsettingsd_config
     echo 'Xft/DPI 147456' >> $xsettingsd_config
-
     xsettingsd
 }
 
