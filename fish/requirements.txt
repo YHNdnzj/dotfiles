@@ -2,11 +2,12 @@ Packages:
 exa
 bat
 vim
+rmtrash
 pacman-contrib
-proxychains-ng
 gnu-free-fonts
 paru
 flatpak
+proxychains-ng
 
 Services:
 HTTP Proxy (Privoxy): listen on 8118

@@ -12,6 +12,8 @@ SETUVAR _fish_abbr_ll:exa\x20\x2dl
 SETUVAR _fish_abbr_ls:exa
 SETUVAR _fish_abbr_pcq:proxychains\x20\x2dq
 SETUVAR _fish_abbr_pcs:proxychains
+SETUVAR _fish_abbr_rm:rmtrash
+SETUVAR _fish_abbr_rmdir:rmdirtrash
 SETUVAR fish_color_autosuggestion:555\x1ebrblack
 SETUVAR fish_color_cancel:\x2dr
 SETUVAR fish_color_command:005fd7
