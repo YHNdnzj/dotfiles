@@ -1,6 +1,0 @@
-Packages:
-neomutt
-cyrus-sasl
-
-Services:
-HTTP Proxy (Privoxy): listen on 8118
