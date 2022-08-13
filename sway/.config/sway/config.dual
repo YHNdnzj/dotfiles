@@ -10,7 +10,6 @@ output $out1 res 2560x1440 scale 1.5 adaptive_sync on position 1920 0
 output $out2 res 3840x2160 scale 2 position 0 0
 # Workspace configuration
 workspace $ws5 output $out2
-workspace $ws9 output $out2
 
 ### Input configuration
 input type:pointer {

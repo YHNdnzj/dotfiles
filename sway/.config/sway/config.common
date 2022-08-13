@@ -29,13 +29,13 @@ set $menu env LANG=en_US.UTF-8 j4-dmenu-desktop --dmenu='bemenu -i --nb "#3f3f3f
 set $ws1 1
 set $ws2 2:Web
 set $ws3 3:TG
-set $ws4 4:Office
+set $ws4 4:Mail
 set $ws5 5:Game
-set $ws6 6
+set $ws6 6:Office
 set $ws7 7
-set $ws8 8:OBS
-set $ws9 9:Class
-set $ws10 10:VM/C
+set $ws8 8
+set $ws9 9
+set $ws10 10:Waydroid
 # Cursor theme and size
 set $cursor_theme Graphite-dark-cursors
 set $cursor_size 28
@@ -183,14 +183,13 @@ input type:touchpad {
     # Assign application to workspace
     assign [app_id="firefox"] workspace $ws2
     assign [app_id="telegramdesktop"] workspace $ws3
+    assign [app_id="evolution"] workspace $ws4
     assign [class="Steam"] workspace $ws5
     assign [class="heroic"] workspace $ws5
-    assign [app_id="org.kde.okular"] workspace $ws4
-    assign [class="DesktopEditors"] workspace $ws4
-    assign [class="wps"] workspace $ws4
-    assign [app_id="calibre-gui"] workspace $ws4
-    assign [app_id="com.obsproject.Studio"] workspace $ws8
-    assign [class="wemeetapp"] workspace $ws9
+    assign [app_id="org.kde.okular"] workspace $ws6
+    assign [class="DesktopEditors"] workspace $ws6
+    assign [class="wps"] workspace $ws6
+    assign [app_id="calibre-gui"] workspace $ws6
     assign [app_id="Waydroid"] workspace $ws10
 
     # Change settings for windows
@@ -200,12 +199,12 @@ input type:touchpad {
     for_window [app_id="telegramdesktop"] border none
     for_window [app_id="thunar" title="檔案操作進度"] floating enable
     for_window [app_id="pavucontrol"] floating enable, sticky enable
+    for_window [app_id="org.rncbc.qpwgraph"] floating enable, sticky enable
+    for_window [app_id="yubico.com.yubioath-desktop"] floating enable, sticky enable
     for_window [app_id="org.twosheds.iwgtk"] floating enable, sticky enable
     for_window [app_id="iwgtk"] floating enable, sticky enable
-    for_window [workspace=$ws5] floating enable, inhibit_idle open
-    for_window [app_id="org.rncbc.qpwgraph"] floating enable
-    for_window [app_id="yubico.com.yubioath-desktop"] floating enable
     for_window [app_id="mpv"] inhibit_idle visible
+    for_window [workspace=$ws5] floating enable, inhibit_idle open
     for_window [app_id="calibre-gui"] layout tabbed
     for_window [class="wps"] layout tabbed
     for_window [class="wemeetapp"] layout tabbed, inhibit_idle open
