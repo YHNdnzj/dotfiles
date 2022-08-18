@@ -14,6 +14,10 @@ SETUVAR _fish_abbr_pcq:proxychains\x20\x2dq
 SETUVAR _fish_abbr_pcs:proxychains
 SETUVAR _fish_abbr_rm:rmtrash
 SETUVAR _fish_abbr_rmdir:rmdirtrash
+SETUVAR _fisher_hasanozgan_2F_theme_2D_lambda_files:\x7e/\x2econfig/fish/functions/fish_prompt\x2efish\x1e\x7e/\x2econfig/fish/functions/fish_right_prompt\x2efish
+SETUVAR _fisher_jorgebucaran_2F_fisher_files:\x7e/\x2econfig/fish/functions/fisher\x2efish\x1e\x7e/\x2econfig/fish/completions/fisher\x2efish
+SETUVAR _fisher_plugins:jorgebucaran/fisher\x1ehasanozgan/theme\x2dlambda
+SETUVAR _fisher_upgraded_to_4_4:\x1d
 SETUVAR fish_color_autosuggestion:555\x1ebrblack
 SETUVAR fish_color_cancel:\x2dr
 SETUVAR fish_color_command:005fd7

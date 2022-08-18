@@ -1,7 +1,9 @@
-## Oh My Fish
+## Fisher
 
 ```console
-$ px curl -L https://get.oh-my.fish | fish
+$ px curl -sL https://git.io/fisher | source && fisher install jorgebucaran/fisher
 ```
 
-Check `$OMF_CONFIG` for installed packages and use `omf (install|update)` to operate.
+| Package      | Repo                      |
+| ------------ | ------------------------- |
+| theme-lambda | `hasanozgan/theme-lambda` |
