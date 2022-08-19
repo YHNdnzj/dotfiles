@@ -35,7 +35,7 @@ set $ws6 6:Office
 set $ws7 7
 set $ws8 8
 set $ws9 9
-set $ws10 10:Waydroid
+set $ws10 10:VM/C
 # Cursor theme and size
 set $cursor_theme Graphite-dark-cursors
 set $cursor_size 28
@@ -190,6 +190,7 @@ input type:touchpad {
     assign [class="DesktopEditors"] workspace $ws6
     assign [class="wps"] workspace $ws6
     assign [app_id="calibre-gui"] workspace $ws6
+    assign [class="VirtualBox Manager"] workspace $ws10
     assign [app_id="Waydroid"] workspace $ws10
 
     # Change settings for windows
@@ -210,7 +211,7 @@ input type:touchpad {
     for_window [app_id="calibre-gui"] layout tabbed
     for_window [class="wps"] layout tabbed
     for_window [class="wemeetapp"] layout tabbed, inhibit_idle open
-    for_window [app_id="Waydroid"] layout tabbed
+    for_window [workspace=$ws10] layout tabbed, inhibit_idle open
 #
 # Layout stuff:
 #
