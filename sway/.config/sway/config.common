@@ -114,8 +114,14 @@ input type:touchpad {
     # Take a screenshot of the whole screen
     bindsym Print exec grim - | wl-copy
 
+    # Take a screenshot of current window
+    bindsym Mod1+Print exec grim -g "$(swaymsg -t get_tree | jq -r '.. | select(.focused?) | .rect | \"\(.x),\(.y) \(.width)x\(.height)\"')" - | wl-copy
+
     # Take a screenshot of a part of the screen
     bindsym Mod4+Print exec grim -g "$(slurp)" - | wl-copy
+
+    # Edit the screenshot in the clipboard
+    bindsym Ctrl+Print exec wl-paste | swappy -f -
 
     # Drag floating windows by holding down $mod and left mouse button.
     # Resize them with right mouse button + $mod.
