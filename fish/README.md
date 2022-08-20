@@ -7,3 +7,4 @@ $ px curl -sL https://git.io/fisher | source && fisher install jorgebucaran/fish
 | Package      | Repo                      |
 | ------------ | ------------------------- |
 | theme-lambda | `hasanozgan/theme-lambda` |
+| done         | `franciscolourenco/done`  |
