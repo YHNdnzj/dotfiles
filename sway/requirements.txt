@@ -22,7 +22,6 @@ xsettingsd
 graphite-cursor-theme-git
 grim
 slurp
-jq
 swappy
 xdg-desktop-portal
 xdg-desktop-portal-wlr
