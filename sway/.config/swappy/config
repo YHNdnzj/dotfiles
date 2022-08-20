@@ -2,3 +2,4 @@
 save_dir=$HOME/Pictures/screenshot
 save_filename_format=swappy-%Y%m%d-%H%M%S.png
 show_panel=true
+early_exit=true
