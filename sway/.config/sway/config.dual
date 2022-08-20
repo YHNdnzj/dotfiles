@@ -12,20 +12,17 @@ output $out2 res 3840x2160 scale 2 position 0 0
 workspace $ws5 output $out2
 
 ### Input configuration
-input type:pointer {
-    map_to_output $out1
-}
+#input type:pointer {
+#   map_to_output $out1
+#}
 
 ### Key bindings
 # Workspaces:
     # Move cursor to the specific output
-    bindsym $mod+Ctrl+z input type:pointer map_to_output $out1
-    bindsym $mod+Ctrl+x input type:pointer map_to_output $out2
-    bindsym $mod+Ctrl+c input type:pointer map_to_output *
+    #bindsym $mod+Ctrl+z input type:pointer map_to_output $out1
+    #bindsym $mod+Ctrl+x input type:pointer map_to_output $out2
+    #bindsym $mod+Ctrl+c input type:pointer map_to_output *
 
     # Move focused workspace to output
     bindsym $mod+Ctrl+1 move workspace to output $out1
     bindsym $mod+Ctrl+2 move workspace to output $out2
-
-    # Change settings for windows
-    for_window [app_id="flameshot"] border none, floating enable, fullscreen disable, move absolute position 0 0

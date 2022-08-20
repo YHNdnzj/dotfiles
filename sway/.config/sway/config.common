@@ -19,8 +19,6 @@ set $term alacritty
 set $fm thunar
 # Your preferred web browser
 set $web firefox-nightly
-# Your preferred screen capture tool
-set $shot flameshot gui
 # Your preferred application launcher
 # Note: pass the final command to swaymsg so that the resulting window can be opened
 # on the original workspace that the command was run on.
@@ -113,8 +111,11 @@ input type:touchpad {
     # Display action menu for a notification
     bindsym $mod+Shift+n exec makoctl menu bemenu -p 'Choose Action: '
 
-    # Start screen capture tool
-    bindsym Print exec $shot
+    # Take a screenshot of the whole screen
+    bindsym Print exec grim - | wl-copy
+
+    # Take a screenshot of a part of the screen
+    bindsym Mod4+Print exec grim -g "$(slurp)" - | wl-copy
 
     # Drag floating windows by holding down $mod and left mouse button.
     # Resize them with right mouse button + $mod.

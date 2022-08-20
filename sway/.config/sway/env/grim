@@ -1,0 +1,2 @@
+#!/hint/bash
+export GRIM_DEFAULT_DIR="${XDG_PICTURES_DIR:-$HOME/Pictures}/screenshot"
