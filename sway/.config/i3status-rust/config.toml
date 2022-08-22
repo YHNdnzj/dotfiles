@@ -18,13 +18,6 @@ hide_inactive = true
 net_wired = "\uf796"
 
 [[block]]
-block = "net"
-device = "wlan0"
-format = ""
-icons_format = "{icon}"
-hide_inactive = true
-
-[[block]]
 block = "backlight"
 cycle = [50, 70, 0, 30]
 invert_icons = true

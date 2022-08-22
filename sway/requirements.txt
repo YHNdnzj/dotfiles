@@ -8,6 +8,7 @@ swayidle
 swaylock-effects-git
 i3status-rust-git
 mako
+iwgtk
 qt5-wayland
 qt6-wayland
 qt
