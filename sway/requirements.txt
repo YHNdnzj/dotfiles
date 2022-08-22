@@ -6,7 +6,7 @@ bemenu-wayland
 j4-dmenu-desktop
 swayidle
 swaylock-effects-git
-i3status-rust
+i3status-rust-git
 mako
 qt5-wayland
 qt6-wayland

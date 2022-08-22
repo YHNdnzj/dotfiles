@@ -1,10 +1,12 @@
+[theme]
 theme = "dracula"
+
+[icons]
 icons = "awesome6"
 
 [[block]]
 block = "net"
 device = "bond0"
-format_alt = "{ip}"
 
 [[block]]
 block = "net"
@@ -18,7 +20,8 @@ net_wired = "\uf796"
 [[block]]
 block = "net"
 device = "wlan0"
-format = "{ssid} {signal_strength}"
+format = ""
+icons_format = "{icon}"
 hide_inactive = true
 
 [[block]]
@@ -28,35 +31,35 @@ invert_icons = true
 
 [[block]]
 block = "battery"
-format = "{percentage}{power} {time}"
+format = "$percentage $power $time"
 
 [[block]]
 block = "disk_space"
-path = "/"
-info_type = "free"
-unit = "GB"
-format = "{icon} {used}/{total}"
+format = "$used/$total"
 warning = 35
 alert = 20
+alert_unit = "GB"
 interval = 300
+[[block.click]]
+button = "right"
+update = true
 
 [[block]]
 block = "bluetooth"
 mac = "D8:35:28:A5:FA:F7"
+format = "$percentage"
 hide_disconnected = true
 
 [[block]]
 block = "load"
-interval = 1
-format = "{1m}"
+format = "$1m"
 
 [[block]]
 block = "temperature"
 
 [[block]]
 block = "music"
-max_width = 15
-buttons = ["prev", "play", "next"]
+format = "$combo.rot-str() $prev$play$next"
 hide_when_empty = true
 
 [[block]]
