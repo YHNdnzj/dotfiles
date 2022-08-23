@@ -40,7 +40,7 @@ update = true
 [[block]]
 block = "bluetooth"
 mac = "D8:35:28:A5:FA:F7"
-format = "$percentage"
+format = "{$percentage|}"
 hide_disconnected = true
 
 [[block]]
@@ -52,7 +52,7 @@ block = "temperature"
 
 [[block]]
 block = "music"
-format = "$combo.rot-str() $prev$play$next"
+format = "$combo.rot-str() {$prev|}$play{$next|}"
 hide_when_empty = true
 
 [[block]]
