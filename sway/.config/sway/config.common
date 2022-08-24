@@ -84,6 +84,12 @@ exec swayidle -w \
 # Read `man 5 sway-input` for more information about this section.
 input type:touchpad {
     tap enabled
+    dwt enabled
+    middle_emulation enabled
+}
+
+input type:pointer {
+    left_handed enabled
 }
 ### Key bindings
 #
