@@ -1,0 +1,11 @@
+[app-name=fish urgency=low]
+default-timeout=3
+ignore-timeout=1
+
+[app-name=networkd-notify]
+default-timeout=2
+ignore-timeout=1
+
+[app-name="Telegram Desktop"]
+anchor=bottom-right
+max-visible=2
