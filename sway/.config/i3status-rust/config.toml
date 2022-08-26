@@ -52,7 +52,7 @@ block = "temperature"
 
 [[block]]
 block = "music"
-format = "$combo.rot-str() {$prev|}$play{$next|}"
+format = "{$combo.rot-str()|} {$prev|}{$play|}{$next|}"
 hide_when_empty = true
 
 [[block]]
