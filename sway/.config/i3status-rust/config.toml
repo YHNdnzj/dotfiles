@@ -8,7 +8,6 @@ icons = "awesome6"
 block = "net"
 device = "bond0"
 format_alt = "{$ip|Can't acquire IP address}"
-hide_inactive = true
 
 [[block]]
 block = "net"
