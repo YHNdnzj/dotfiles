@@ -87,7 +87,6 @@ input type:touchpad {
     dwt enabled
     middle_emulation enabled
 }
-
 input type:pointer {
     left_handed enabled
 }
