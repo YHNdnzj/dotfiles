@@ -1,7 +1,7 @@
 [app-name=fish urgency=low]
 default-timeout=5000
 
-[app-name=networkd-notify]
+[app-name=networkd]
 default-timeout=3000
 ignore-timeout=1
 
