@@ -4,10 +4,10 @@ bat
 vim
 rmtrash
 pacman-contrib
-gnu-free-fonts
 paru
 flatpak
 proxychains-ng
+fontconfig
 
 Services:
 HTTP Proxy (Privoxy): listen on 8118
