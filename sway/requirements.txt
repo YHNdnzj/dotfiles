@@ -20,7 +20,7 @@ playerctl
 lm_sensors
 xorg-xwayland
 xsettingsd
-graphite-cursor-theme-git
+googledot-cursor-theme
 grim
 slurp
 swappy
