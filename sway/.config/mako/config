@@ -1,3 +1,5 @@
+output=eDP-1
+
 [app-name=fish urgency=low]
 default-timeout=5000
 
