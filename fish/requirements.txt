@@ -1,7 +1,6 @@
 Packages:
 vim
 pacman-contrib
-proxychains-ng
 
 Services:
 HTTP Proxy (Privoxy): listen on 8118

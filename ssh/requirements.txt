@@ -1,2 +1,6 @@
+Packages:
+openbsd-netcat
+
 Services:
 systemd --user: ssh-agent.service
+SOCKS5 Proxy (Shadowsocks): listen on 1080
