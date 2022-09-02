@@ -12,6 +12,8 @@ iwgtk
 qt5-wayland
 qt6-wayland
 qt
+thunar
+pavucontrol
 papirus-icon-theme
 polkit-gnome
 gnome-keyring
@@ -22,6 +24,7 @@ xorg-xwayland
 xsettingsd
 googledot-cursor-theme
 grim
+wl-clipboard
 slurp
 swappy
 xdg-desktop-portal

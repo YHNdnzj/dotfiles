@@ -109,6 +109,9 @@ input type:pointer {
     # Start your launcher
     bindsym $mod+Backspace exec $menu
 
+    # Start volume control
+    bindsym $mod+p exec pavucontrol
+
     # Dismiss notifications
     bindsym $mod+n exec makoctl dismiss
     bindsym $mod+Ctrl+n exec makoctl dismiss --all
