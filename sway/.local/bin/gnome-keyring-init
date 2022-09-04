@@ -1,2 +1,2 @@
 #!/bin/bash
-echo -n "Login" | gnome-keyring-daemon --replace --unlock --components=secrets
+exec gnome-keyring-daemon --replace --components=secrets --unlock < <(printf "Login")
