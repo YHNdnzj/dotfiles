@@ -4,46 +4,56 @@ config_dual() {
     DIALOG_TIMEOUT=1 dialog --erase-on-exit --timeout 3 --defaultno --yesno "Start sway with dual screen config?" 0 0
     nodual=$?
     if (( nodual == 1 )); then
-        DUAL_CONFIGURED=1
+        export DUAL_CONFIGURED=1
     elif (( nodual == 0 )); then
-        DUAL_CONFIGURED=2
+        export DUAL_CONFIGURED=2
     else
         echo "Invalid choice!" >&2
-        exit 2
+        exit 1
     fi
-    export DUAL_CONFIGURED
-    exec systemd-cat --identifier=sway "$0"
 }
+
+select_card() {
+    for card in /dev/dri/card*
+    do
+        if (( $(udevadm info -an "$card" | grep boot_vga | rev | cut -c 2) )); then
+            export WLR_DRM_DEVICES="$card"
+        fi
+    done
+
+    if [[ ! $WLR_DRM_DEVICES ]]; then
+        echo "No available GPU found!" >&2
+        exit 1
+    fi
+}
+
+if [[ ! $WLR_DRM_DEVICES ]]; then
+    select_card
+fi
 
 if ! (( DUAL_CONFIGURED )); then
     config_dual
 fi
 
-set -e
-envfiles=("$HOME/.config/sway/env/"*)
-set -x
+if [[ -t 1 ]]; then
+    exec systemd-cat --identifier=sway "$0"
+fi
+
+set -ex
+envfiles=("$HOME/.config/sway/env"/*)
 for envfile in "${envfiles[@]}"
 do
     source "$envfile"
 done
 set +x
 
-for card in /dev/dri/card*
-do
-    if (( $(udevadm info -an "$card" | grep boot_vga | rev | cut -c 2) )); then
-        cd "$HOME"
-        export -n OLDPWD
-        export WLR_DRM_DEVICES="$card"
-        if (( DUAL_CONFIGURED == 1 )); then
-            exec /usr/bin/sway --unsupported-gpu
-        elif (( DUAL_CONFIGURED == 2 )); then
-            exec /usr/bin/sway --unsupported-gpu --config "$HOME/.config/sway/config.dual"
-        else
-            echo "Dual screen is not correctly configured!" >&2
-            exit 3
-        fi
-    fi
-done
-
-echo "No available GPU found!" >&2
-exit 1
+cd "$HOME"
+export -n OLDPWD
+if (( DUAL_CONFIGURED == 1 )); then
+    exec /usr/bin/sway --unsupported-gpu
+elif (( DUAL_CONFIGURED == 2 )); then
+    exec /usr/bin/sway --unsupported-gpu --config "$HOME/.config/sway/config.dual"
+else
+    echo "Dual screen is not correctly configured!" >&2
+    exit 2
+fi
