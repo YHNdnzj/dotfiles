@@ -1,4 +1,4 @@
--- https://github.com/zc62/mpv-scripts/blob/master/exit-fullscreen.lua
+-- https://github.com/AN3223/dotfiles/blob/master/.config/mpv/scripts/auto-save-state.lua
 
 -- Runs write-watch-later-config periodically
 
