@@ -1,4 +1,7 @@
 Packages:
+bat
+bat-extras
+git-delta
 vim
 pacman-contrib
 
