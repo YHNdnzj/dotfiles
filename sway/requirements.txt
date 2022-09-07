@@ -1,4 +1,7 @@
 Packages:
+sway-im-git
+wlroots-hidpi-xprop-git
+xorg-xwayland-lily
 dialog
 alacritty
 bemenu
