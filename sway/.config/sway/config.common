@@ -339,6 +339,7 @@ exec_always {
 
     xprop -root -format _XWAYLAND_GLOBAL_OUTPUT_SCALE 32c -set _XWAYLAND_GLOBAL_OUTPUT_SCALE 2
     echo 'Xft/DPI 196608' > $xsettingsd_config
+    echo 'Gtk/CursorThemeName "$cursor_theme"' >> $xsettingsd_config
     echo 'Net/IconThemeName "$icon_theme"' >> $xsettingsd_config
     xsettingsd
 }
