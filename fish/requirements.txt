@@ -6,4 +6,4 @@ vim
 pacman-contrib
 
 Services:
-HTTP Proxy (Privoxy): listen on 8118
+HTTP Proxy (shadowsocks-rust): listen on 8118

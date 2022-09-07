@@ -2,5 +2,5 @@ Packages:
 base-devel
 
 Services:
-HTTP Proxy (Privoxy): listen on 8118
+HTTP Proxy (shadowsocks-rust): listen on 8118
 systemd --user: systemd-tmpfiles-setup.service systemd-tmpfiles-clean.timer
