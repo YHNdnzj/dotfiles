@@ -329,7 +329,7 @@ bar {
 }
 
 #
-# Cursor Theme & GTK Looking:
+# Cursor Theme & XWayland Looking (HiDPI):
 #
 seat seat0 xcursor_theme $cursor_theme $cursor_size
 set $xsettingsd_config ~/.config/xsettingsd/xsettingsd.conf
@@ -337,9 +337,9 @@ exec_always {
     gsettings set org.gnome.desktop.interface cursor-theme $cursor_theme
     gsettings set org.gnome.desktop.interface cursor-size $cursor_size
 
-    echo 'Gtk/CursorThemeName "$cursor_theme"' > $xsettingsd_config
+    xprop -root -format _XWAYLAND_GLOBAL_OUTPUT_SCALE 32c -set _XWAYLAND_GLOBAL_OUTPUT_SCALE 2
+    echo 'Xft/DPI 196608' > $xsettingsd_config
     echo 'Net/IconThemeName "$icon_theme"' >> $xsettingsd_config
-    echo 'Xft/DPI 147456' >> $xsettingsd_config
     xsettingsd
 }
 
