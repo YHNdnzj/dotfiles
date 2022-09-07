@@ -1,7 +1,6 @@
 Packages:
 sway-im-git
 wlroots-hidpi-xprop-git
-xorg-xwayland-lily
 dialog
 alacritty
 bemenu
@@ -23,7 +22,9 @@ gnome-keyring
 networkd-notify-git
 playerctl
 lm_sensors
-xorg-xwayland
+xorg-xwayland-lily
+xorg-xprop
+xorg-xrdb
 xsettingsd
 googledot-cursor-theme
 grim
