@@ -341,6 +341,7 @@ exec_always {
     xrdb -merge <<< 'Xft.dpi: 192'
     echo 'Gdk/UnscaledDPI 98304' > $xsettingsd_config
     echo 'Gdk/WindowScalingFactor 2' >> $xsettingsd_config
+    echo 'Gtk/CursorThemeName "$cursor_theme"' >> $xsettingsd_config
     echo 'Gtk/CursorThemeSize $cursor_size' >> $xsettingsd_config
     echo 'Net/IconThemeName "$icon_theme"' >> $xsettingsd_config
     xsettingsd
