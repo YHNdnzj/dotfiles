@@ -41,8 +41,8 @@ set $cursor_size 24
 set $icon_theme Papirus-Dark
 # Title style
 font pango:monospace 11
-for_window [title="." app_id="."] title_format "<b>%title</b> (%app_id)[W]"
-for_window [title="." class="."] title_format "<b>%title</b> (%class)[X]"
+for_window [app_id="."] title_format "<b>%title</b> (%app_id)[W]"
+for_window [class="."] title_format "<b>%title</b> (%class)[X]"
 
 ### Output configuration
 #
@@ -213,10 +213,10 @@ input type:pointer {
     assign [class="VirtualBox Manager"] workspace $ws10
 
     # Change settings for windows
-    for_window [app_id="Alacritty" workspace=$ws1] layout tabbed
+    for_window [app_id="Alacritty" workspace=$ws1] layout tabbed, border normal 1
     for_window [app_id="firefox"] border none, inhibit_idle fullscreen
     for_window [app_id="firefox" title="子母畫面"] floating enable, sticky enable, inhibit_idle visible
-    for_window [workspace=$ws3] layout tabbed, border pixel 0
+    for_window [workspace=$ws3] layout tabbed, border normal 0
     for_window [app_id="evolution"] floating enable
     for_window [app_id="evolution" title="Evolution$"] floating disable
     for_window [app_id="thunar" title="檔案操作進度"] floating enable
@@ -316,10 +316,9 @@ bindsym $mod+r mode "resize"
 #
 # Read `man 5 sway-bar` for more information about this section.
 bar {
-    font pango:Font Awesome 6 Free Solid 9
+    font pango:Font Awesome 6 Free Solid 10
+    height 24
     icon_theme $icon_theme
-
-    position top
 
     status_command i3status-rs
 
