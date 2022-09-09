@@ -71,7 +71,7 @@ workspace_auto_back_and_forth on
 # resumed. It will also lock your screen before your computer goes to sleep.
 exec swayidle -w \
         timeout 900 'swaylock -f' \
-        timeout 1200 'swaymsg "output * dpms off"' resume 'swaymsg "output * dpms on"' \
+        timeout 1200 'swaymsg "output * power off"' resume 'swaymsg "output * power on"' \
         before-sleep 'playerctl pause' before-sleep 'swaylock -f'
 ### Input configuration
 #
