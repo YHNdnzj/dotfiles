@@ -212,7 +212,7 @@ input type:pointer {
     for_window [app_id="Alacritty" workspace=$ws1] layout tabbed
     for_window [app_id="firefox"] border none, inhibit_idle fullscreen
     for_window [app_id="firefox" title="子母畫面"] floating enable, sticky enable, inhibit_idle visible
-    for_window [workspace=$ws3] layout tabbed
+    for_window [workspace=$ws3] layout tabbed, border pixel 0
     for_window [app_id="evolution"] floating enable
     for_window [app_id="evolution" title="Evolution$"] floating disable
     for_window [app_id="thunar" title="檔案操作進度"] floating enable
