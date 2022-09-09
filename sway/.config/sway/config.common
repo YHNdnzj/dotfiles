@@ -22,7 +22,7 @@ set $web firefox-nightly
 # Your preferred application launcher
 # Note: pass the final command to swaymsg so that the resulting window can be opened
 # on the original workspace that the command was run on.
-set $menu env LANG=en_US.UTF-8 j4-dmenu-desktop --dmenu='bemenu -i --nb "#3f3f3f" --nf "#dcdccc" --fn "pango:sans 12"' --term=$term --wrapper='swaymsg exec --'
+set $menu env LANG=en_US.UTF-8 j4-dmenu-desktop --dmenu='bemenu -i --nb "#3f3f3f" --nf "#dcdccc" --fn "sans 13"' --term=$term --wrapper='swaymsg exec --'
 # Workspace names
 set $ws1 1
 set $ws2 2:Web
@@ -39,6 +39,10 @@ set $cursor_theme GoogleDot-Blue
 set $cursor_size 24
 # Icon theme
 set $icon_theme Papirus-Dark
+# Title style
+font pango:monospace 11
+for_window [title="." app_id="."] title_format "<b>%title</b> (%app_id)[W]"
+for_window [title="." class="."] title_format "<b>%title</b> (%class)[X]"
 
 ### Output configuration
 #
@@ -312,7 +316,7 @@ bindsym $mod+r mode "resize"
 #
 # Read `man 5 sway-bar` for more information about this section.
 bar {
-    font pango:sans 9, Font Awesome 6 Free Solid 9
+    font pango:Font Awesome 6 Free Solid 9
     icon_theme $icon_theme
 
     position top
