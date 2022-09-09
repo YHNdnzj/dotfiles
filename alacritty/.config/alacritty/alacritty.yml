@@ -545,8 +545,8 @@ mouse:
 # And optionally:
 #
 # - `mods` (see key bindings)
-mouse_bindings:
-  - { mouse: Right,                 action: PasteSelection  }
+#mouse_bindings:
+#  - { mouse: Right,                 action: PasteSelection  }
 #  - { mouse: Right,  mods: Control, action: ExpandSelection }
 #  - { mouse: Middle, mode: ~Vi,     action: PasteSelection  }
 
@@ -870,7 +870,8 @@ key_bindings:
   #- { key: F,              mods: Command, mode: ~Search,     action: SearchForward         }
   #- { key: B,              mods: Command, mode: ~Search,     action: SearchBackward        }
 
-  - { key: Return,         mods: Control,                    action: CreateNewWindow       }
+  - { key: Return, mods: Control, action: CreateNewWindow }
+  - { key: S, mods: Control, action: PasteSelection }
 
 #debug:
   # Display the time it takes to redraw each frame.
