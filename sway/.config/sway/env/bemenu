@@ -1,0 +1,2 @@
+#!/hint/bash
+export BEMENU_OPTS='--nb "#3f3f3f" --nf "#dcdccc" --fn "Minecraft 14"'
