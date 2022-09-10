@@ -226,7 +226,9 @@ input type:pointer {
     for_window [app_id="org.twosheds.iwgtk"] floating enable, sticky enable
     for_window [app_id="iwgtk"] floating enable, sticky enable
     for_window [app_id="mpv"] inhibit_idle visible
-    for_window [workspace=$ws5] floating enable, inhibit_idle open
+    for_window [workspace=$ws5] layout tabbed, floating enable, inhibit_idle open
+    for_window [class="Steam"] floating disable
+    for_window [class="heroic"] floating disable
     for_window [app_id="calibre-gui"] layout tabbed
     for_window [class="wps"] layout tabbed
     for_window [class="wemeetapp"] layout tabbed, inhibit_idle open
