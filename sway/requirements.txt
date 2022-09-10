@@ -17,6 +17,7 @@ qt
 thunar
 pavucontrol
 papirus-icon-theme
+otf-minecraft
 polkit-gnome
 gnome-keyring
 networkd-notify-git
