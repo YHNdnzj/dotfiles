@@ -29,9 +29,9 @@ format = "$percentage $power $time"
 
 [[block]]
 block = "disk_space"
-format = "$used/$total"
-warning = 35
-alert = 20
+format = "$used.eng(2,_auto,_Gi)/$total.eng(2,auto,Gi)"
+warning = 50
+alert = 35
 alert_unit = "GB"
 interval = 300
 [[block.click]]
