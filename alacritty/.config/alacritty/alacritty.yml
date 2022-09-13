@@ -871,7 +871,7 @@ key_bindings:
   #- { key: B,              mods: Command, mode: ~Search,     action: SearchBackward        }
 
   - { key: Return, mods: Control, action: CreateNewWindow }
-  - { key: S, mods: Control, action: PasteSelection }
+  - { key: S, mods: Control|Shift, action: PasteSelection }
 
 #debug:
   # Display the time it takes to redraw each frame.
