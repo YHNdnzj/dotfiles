@@ -4,26 +4,24 @@ if (( EUID != 0 )); then
     exec sudo --preserve-env=HOME "$0" "$@"
 fi
 
-if [[ $# == 2 ]]; then
+if (( $# == 2 )); then
     SOURCE=$1 DEST=$2 RUN=("--dry-run" "--itemize-changes" "--verbose")
-    run_valid=1
-elif [[ $# == 3 ]]; then
+    dry_run=1
+elif (( $# == 3 )); then
     SOURCE=$2 DEST=$3
     if [[ $1 == "--run" ]]; then
         RUN=("--info=progress2")
-        run_valid=2
-    else
-        run_valid=0
+        dry_run=0
     fi
 fi
 
-if ! [[ -d $SOURCE && -d $DEST ]] || ! (( run_valid )); then
+if ! [[ -d $SOURCE && -d $DEST ]] || [[ ! $dry_run ]]; then
     echo "usage: ${0##*/} [--run] SOURCE DEST" >&2
     exit 1
 fi
 
-if ! [[ -f "$DEST/.sysbackup_dest" ]]; then
-    echo "Please run \`touch $DEST/.sysbackup_dest' before first run."
+if [[ ! -f "$DEST/.sysbackup_dest" ]]; then
+    echo "Please create \`$DEST/.sysbackup_dest' before first run."
     echo "This helps to prevent accidental overwrites."
     exit 2
 fi
@@ -49,6 +47,6 @@ if mountpoint -q --nofollow "$SOURCE/efi"; then
         "$SOURCE/efi/" "$DEST/efi"
 fi
 
-if (( run_valid == 2 )); then
+if ! (( dry_run )); then
     touch "$DEST/.sysbackup_dest"
 fi
