@@ -214,7 +214,7 @@ input type:pointer {
 
     # Change settings for windows
     for_window [app_id="Alacritty" workspace=$ws1] layout tabbed, border normal 1
-    for_window [app_id="firefox"] border pixel 3, inhibit_idle fullscreen
+    for_window [app_id="firefox" title="Firefox"] border pixel 3, inhibit_idle fullscreen
     for_window [app_id="firefox" title="子母畫面"] floating enable, sticky enable, inhibit_idle visible
     for_window [workspace=$ws3] layout tabbed
     for_window [app_id="evolution"] floating enable
