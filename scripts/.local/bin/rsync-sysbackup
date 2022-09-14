@@ -20,8 +20,9 @@ if ! [[ -d $SOURCE && -d $DEST ]] || [[ ! $dry_run ]]; then
     exit 1
 fi
 
-if [[ ! -f "$DEST/.sysbackup_dest" ]]; then
-    echo "Please create \`$DEST/.sysbackup_dest' before first run."
+DESTFILE="$DEST/.sysbackup_dest"
+if [[ ! -f "$DESTFILE" ]]; then
+    echo "Please create \`$DESTFILE' before first run."
     echo "This helps to prevent accidental overwrites."
     exit 2
 fi
@@ -48,5 +49,5 @@ if mountpoint -q --nofollow "$SOURCE/efi"; then
 fi
 
 if ! (( dry_run )); then
-    touch "$DEST/.sysbackup_dest"
+    touch "$DESTFILE"
 fi
