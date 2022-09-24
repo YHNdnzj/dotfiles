@@ -16,7 +16,7 @@ set $right l
 # Your preferred terminal emulator
 set $term alacritty
 # Your preferred file manager
-set $fm thunar
+set $fm pcmanfm-qt
 # Your preferred web browser
 set $web firefox-nightly
 # Your preferred application launcher

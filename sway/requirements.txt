@@ -14,7 +14,7 @@ iwgtk
 qt5-wayland
 qt6-wayland
 qt
-thunar
+pcmanfm-qt
 pavucontrol
 papirus-icon-theme
 otf-minecraft
@@ -34,6 +34,7 @@ slurp
 swappy
 xdg-desktop-portal
 xdg-desktop-portal-wlr
+xdg-desktop-portal-lxqt
 firefox-nightly-zh-tw
 telegram-desktop-megumifox
 htop
