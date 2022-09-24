@@ -34,7 +34,6 @@ slurp
 swappy
 xdg-desktop-portal
 xdg-desktop-portal-wlr
-xdg-desktop-portal-lxqt
 firefox-nightly-zh-tw
 telegram-desktop-megumifox
 htop
