@@ -1,1 +1,1 @@
-exec telegram-desktop
+exec QT_QPA_PLATFORMTHEME=xdgdesktopportal telegram-desktop
