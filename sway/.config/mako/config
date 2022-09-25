@@ -7,6 +7,9 @@ default-timeout=5000
 default-timeout=3000
 ignore-timeout=1
 
+[app-name=iwgtk]
+default-timeout=3000
+
 [app-name="Telegram Desktop"]
 anchor=bottom-right
 
