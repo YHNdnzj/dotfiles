@@ -7,14 +7,13 @@ icons = "awesome6"
 [[block]]
 block = "net"
 device = "bond0"
-format_alt = "{$ip|Can't acquire IP address}"
+format_alt = " $icon {$ip|Can't acquire IP address} "
 
 [[block]]
 block = "net"
 device = "eth0"
-format = ""
-icons_format = "{icon}"
-hide_inactive = true
+format = "$icon"
+missing_format = ""
 [block.icons_overrides]
 net_wired = "\uf796"
 
@@ -25,11 +24,11 @@ invert_icons = true
 
 [[block]]
 block = "battery"
-format = "$percentage $power $time"
+format = " $icon $percentage $power $time "
 
 [[block]]
 block = "disk_space"
-format = "$used.eng(2,_auto,_Gi)/$total.eng(2,auto,Gi)"
+format = " $icon $used.eng(2,_auto,_Gi)/$total.eng(2,auto,Gi) "
 warning = 50
 alert = 35
 alert_unit = "GB"
@@ -41,19 +40,20 @@ update = true
 [[block]]
 block = "bluetooth"
 mac = "D8:35:28:A5:FA:F7"
-format = "{$percentage|}"
-hide_disconnected = true
+format = " $icon {$percentage|} "
+disconnected_format = ""
 
 [[block]]
 block = "load"
-format = "$1m"
+format = " $icon $1m "
 
 [[block]]
 block = "temperature"
+format = "$icon"
 
 [[block]]
 block = "music"
-format = "{$combo.rot-str()|} {$prev|}{$play|}{$next|}"
+format = " $icon {$combo.rot-str()|} {$prev|}  {$play|}  {$next|} "
 hide_when_empty = true
 
 [[block]]
@@ -62,4 +62,4 @@ block = "sound"
 [[block]]
 block = "time"
 interval = 1
-format = "%a %v %T"
+format = " $icon %a %v %T "
