@@ -49,7 +49,7 @@ format = " $icon $1m "
 
 [[block]]
 block = "temperature"
-format = "$icon"
+format = " $icon "
 
 [[block]]
 block = "music"
