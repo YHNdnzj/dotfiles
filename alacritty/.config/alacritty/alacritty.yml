@@ -870,7 +870,7 @@ key_bindings:
   #- { key: F,              mods: Command, mode: ~Search,     action: SearchForward         }
   #- { key: B,              mods: Command, mode: ~Search,     action: SearchBackward        }
 
-  - { key: Return, mods: Control, action: CreateNewWindow }
+  - { key: Return, mods: Control, action: SpawnNewInstance }
   - { key: S, mods: Control|Shift, action: PasteSelection }
 
 #debug:
