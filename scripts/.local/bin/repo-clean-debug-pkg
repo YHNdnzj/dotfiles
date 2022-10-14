@@ -1,0 +1,14 @@
+#!/bin/bash -e
+cd "$HOME/repo/Local"
+
+for arch in *
+do
+    (
+    cd "$arch"
+    for dbg_pkg in *-debug*.pkg.tar.*; do
+        if [[ ! -f ${dbg_pkg//-debug/} ]]; then
+            rm "$dbg_pkg"
+        fi
+    done
+    )
+done
