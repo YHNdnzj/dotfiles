@@ -345,11 +345,6 @@ exec_always {
 
     xprop -root -format _XWAYLAND_GLOBAL_OUTPUT_SCALE 32c -set _XWAYLAND_GLOBAL_OUTPUT_SCALE 2
     xrdb -merge <<< 'Xft.dpi: 192'
-    echo 'Gdk/UnscaledDPI 98304' > $xsettingsd_config
-    echo 'Gdk/WindowScalingFactor 2' >> $xsettingsd_config
-    echo 'Gtk/CursorThemeName "$cursor_theme"' >> $xsettingsd_config
-    echo "Gtk/CursorThemeSize $(( $cursor_size * 2 ))" >> $xsettingsd_config
-    echo 'Net/IconThemeName "$icon_theme"' >> $xsettingsd_config
     xsettingsd
 }
 
