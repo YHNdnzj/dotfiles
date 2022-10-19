@@ -1,1 +1,1 @@
-exec evolution
+exec sleep 15 && evolution
