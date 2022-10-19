@@ -1,0 +1,2 @@
+#!/hint/bash
+export WLR_RENDERER=vulkan
