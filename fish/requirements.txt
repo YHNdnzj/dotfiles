@@ -3,6 +3,7 @@ bat
 bat-extras
 git-delta
 vim
+rmtrash
 pacman-contrib
 
 Services:
