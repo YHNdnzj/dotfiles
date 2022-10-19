@@ -53,7 +53,7 @@ format = " $icon "
 
 [[block]]
 block = "music"
-format = " $icon {$combo.rot-str() $prev  $play  $next |}"
+format = " $icon { $combo.rot-str()  $prev  $play  $next |}"
 hide_when_empty = true
 
 [[block]]
