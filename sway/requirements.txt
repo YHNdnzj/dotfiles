@@ -1,6 +1,7 @@
 Packages:
 sway-im-git
 wlroots-hidpi-xprop-git
+vulkan-validation-layers
 dialog
 alacritty
 bemenu
