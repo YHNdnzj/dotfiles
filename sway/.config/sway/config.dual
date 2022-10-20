@@ -14,6 +14,7 @@ workspace $ws5 output $out2
 ### Input configuration
 input 7847:100:2.4G_Mouse {
     map_to_output $out2
+    left_handed disabled
 }
 
 ### Key bindings
