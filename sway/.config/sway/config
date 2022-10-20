@@ -2,3 +2,8 @@ include ~/.config/sway/config.common
 
 ### Output configuration
 output eDP-1 res 2560x1440 scale 1.5 adaptive_sync on
+
+### Input configuration
+input 7847:100:2.4G_Mouse {
+    events disabled
+}
