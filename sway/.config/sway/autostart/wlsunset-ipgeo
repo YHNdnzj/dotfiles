@@ -1,1 +1,1 @@
-exec_always wlsunset-ipgeo
+exec wlsunset-ipgeo
