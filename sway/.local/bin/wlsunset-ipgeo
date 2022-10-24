@@ -2,7 +2,7 @@
 IPGEO_FILE="$HOME/.cache/ipgeo.last"
 
 ipgeo --silent --fields latitude longitude | tee "$IPGEO_FILE"
-if [[ -s "$IPGEO_FILE" ]]; then
+if [[ ! -s "$IPGEO_FILE" ]]; then
     echo "Neither the current location nor the last available one could be obtained. Exiting..."
     exit 1
 fi
