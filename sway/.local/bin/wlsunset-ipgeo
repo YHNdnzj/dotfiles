@@ -1,11 +1,18 @@
 #!/bin/bash
-IPGEO_FILE="$HOME/.cache/ipgeo.last"
+IPGEO_FILE_LAST="$HOME/.cache/ipgeo.last"
+IPGEO_FILE_CUR="$HOME/.cache/ipgeo.cur"
 
-ipgeo --silent --fields latitude longitude | tee "$IPGEO_FILE"
-if [[ ! -s "$IPGEO_FILE" ]]; then
-    echo "Neither the current location nor the last available one could be obtained. Exiting..."
-    exit 1
+ipgeo --silent --fields latitude longitude | tee "$IPGEO_FILE_CUR"
+if [[ -s "$IPGEO_FILE_CUR" ]]; then
+    cp -a "$IPGEO_FILE_CUR" "$IPGEO_FILE_LAST"
+else
+    if [[ -s "$IPGEO_FILE_LAST" ]]; then
+        echo "Using the last available ipgeo results." >&2
+    else
+        echo "Neither the current location nor the last available one could be obtained. Exiting..." >&2
+        exit 1
+    fi
 fi
 
-mapfile -t IPGEO < "$IPGEO_FILE"
+mapfile -t IPGEO < "$IPGEO_FILE_LAST"
 exec wlsunset -l "${IPGEO[0]}" -L "${IPGEO[1]}"
