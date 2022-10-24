@@ -1,0 +1,4 @@
+#!/bin/bash -e
+
+mapfile -t IPGEO < <(ipgeo --silent --fields latitude longitude)
+exec wlsunset -l "${IPGEO[0]}" -L "${IPGEO[1]}"

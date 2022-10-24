@@ -25,6 +25,8 @@ networkd-notify-git
 ydotool-git
 playerctl
 lm_sensors
+wlsunset-git
+ipgeo-git
 xorg-xwayland-lily
 xorg-xprop
 xorg-xrdb
