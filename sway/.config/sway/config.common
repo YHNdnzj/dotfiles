@@ -299,10 +299,10 @@ bindsym $mod+r mode "resize"
 #
 # Extra keyboard keys
 #
-    bindsym XF86KbdBrightnessUp exec ydotool key 104:1 104:0
-    bindsym XF86KbdBrightnessDown exec ydotool key 109:1 109:0
-    bindsym XF86Launch2 exec ydotool key 102:1 102:0
-    bindsym XF86Launch3 exec ydotool key 107:1 107:0
+    bindsym --inhibited XF86KbdBrightnessUp exec ydotool key 104:1 104:0
+    bindsym --inhibited XF86KbdBrightnessDown exec ydotool key 109:1 109:0
+    bindsym --inhibited XF86Launch2 exec ydotool key 102:1 102:0
+    bindsym --inhibited XF86Launch3 exec ydotool key 107:1 107:0
     bindsym XF86AudioRaiseVolume exec wpctl set-volume @DEFAULT_AUDIO_SINK@ 5%+
     bindsym XF86AudioLowerVolume exec wpctl set-volume @DEFAULT_AUDIO_SINK@ 5%-
     bindsym XF86AudioMute exec wpctl set-mute @DEFAULT_AUDIO_SINK@ toggle
@@ -312,9 +312,9 @@ bindsym $mod+r mode "resize"
     bindsym --locked XF86AudioPlay exec playerctl play-pause
     bindsym --locked XF86AudioNext exec playerctl next
     bindsym --locked XF86AudioPrev exec playerctl previous
-    bindsym XF86TouchpadToggle input type:touchpad events toggle enabled disabled
-    bindsym XF86Launch1 exec $term -e htop
-    bindsym XF86Launch4 exec asusctl profile -n
+    bindsym --inhibited XF86TouchpadToggle input type:touchpad events toggle enabled disabled
+    bindsym --inhibited XF86Launch1 exec $term -e htop
+    bindsym --inhibited XF86Launch4 exec asusctl profile -n
 
 #
 # Status Bar:
