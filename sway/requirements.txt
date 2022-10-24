@@ -22,6 +22,7 @@ otf-minecraft
 polkit-gnome
 gnome-keyring
 networkd-notify-git
+ydotool-git
 playerctl
 lm_sensors
 xorg-xwayland-lily
@@ -40,3 +41,6 @@ telegram-desktop-megumifox
 htop
 asusctl
 flatpak
+
+Services:
+systemd --user: ydotool.service
