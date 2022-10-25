@@ -1,1 +1,1 @@
-exec wlsunset-ipgeo
+exec sleep 10 && wlsunset-ipgeo
