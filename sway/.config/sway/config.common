@@ -214,6 +214,7 @@ input type:pointer {
 
     # Change settings for windows
     for_window [app_id="Alacritty" workspace=$ws1] layout tabbed, border normal 1
+    for_window [app_id="xdg-desktop-portal-lxqt"] floating enable
     for_window [app_id="firefox" title="Firefox"] border pixel 3, inhibit_idle fullscreen
     for_window [app_id="firefox" title="子母畫面"] floating enable, sticky enable, inhibit_idle visible
     for_window [workspace=$ws3] layout tabbed
@@ -230,7 +231,6 @@ input type:pointer {
     for_window [class="heroic"] floating disable
     for_window [app_id="calibre-gui"] layout tabbed
     for_window [class="wps"] layout tabbed
-    for_window [class="wemeetapp"] layout tabbed, inhibit_idle open
     for_window [workspace=$ws10] layout tabbed, inhibit_idle open
 #
 # Layout stuff:
