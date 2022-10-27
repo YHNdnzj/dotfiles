@@ -1,3 +1,2 @@
 Packages:
 lxqt-qtplugin
-lxqt-config
