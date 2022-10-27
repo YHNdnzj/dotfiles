@@ -1,2 +1,3 @@
 Packages:
 lxqt-qtplugin
+lxqt-themes
