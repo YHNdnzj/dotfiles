@@ -1,2 +1,4 @@
 #!/hint/bash
 export QT_QPA_PLATFORMTHEME=qt5ct
+
+dbus-update-activation-environment --systemd QT_QPA_PLATFORMTHEME

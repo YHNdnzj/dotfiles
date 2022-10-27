@@ -15,6 +15,7 @@ iwgtk
 qt5-wayland
 qt6-wayland
 qt
+lxqt
 pcmanfm-qt
 pavucontrol
 papirus-icon-theme

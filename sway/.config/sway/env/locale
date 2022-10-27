@@ -8,3 +8,5 @@ for var in "${LC_vars[@]}"
 do
     export "$var"="$locale"
 done
+
+dbus-update-activation-environment --systemd LANG LANGUAGE "${LC_vars[@]}"
