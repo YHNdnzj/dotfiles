@@ -1,5 +1,4 @@
 Packages:
-qt5ct
 qt6ct
 papirus-icon-theme
 breeze-icons
