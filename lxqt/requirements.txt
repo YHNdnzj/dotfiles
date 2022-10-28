@@ -1,3 +1,4 @@
 Packages:
 lxqt-qtplugin
 lxqt-themes
+pcmanfm-qt
