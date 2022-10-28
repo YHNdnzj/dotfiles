@@ -1,4 +1,5 @@
 Packages:
-qt6ct
+qt6ct-git
+qt5ct
 papirus-icon-theme
 breeze-icons
