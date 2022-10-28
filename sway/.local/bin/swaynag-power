@@ -2,7 +2,7 @@
 
 exec swaynag -t warning \
         -m "Power Menu for Sway" \
-        -B "Lock" "swaylock -f" \
+        -Z "Lock" "swaylock -f" \
         -B "Log out" "swaymsg exit" \
         -B "Reboot" "systemctl reboot" \
         -B "Power off" "systemctl poweroff" \
