@@ -1,2 +1,0 @@
-#!/bin/bash
-QT_QPA_PLATFORMTHEME=lxqt exec /usr/bin/pcmanfm-qt
