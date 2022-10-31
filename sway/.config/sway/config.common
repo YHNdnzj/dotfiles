@@ -314,7 +314,6 @@ bindsym $mod+r mode "resize"
     bindsym --locked XF86AudioPrev exec playerctl previous
     bindsym --inhibited XF86TouchpadToggle input type:touchpad events toggle enabled disabled
     bindsym --inhibited XF86Launch1 exec $term -e htop
-    bindsym --inhibited XF86Launch4 exec asusctl profile -n
 
 #
 # Status Bar:
