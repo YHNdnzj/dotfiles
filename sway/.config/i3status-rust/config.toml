@@ -24,7 +24,7 @@ invert_icons = true
 
 [[block]]
 block = "toggle"
-format = "$icon "
+format = " $icon "
 command_state = "pidof wlsunset"
 command_off = "pkill wlsunset"
 command_on = "systemd-run --user ~/.local/bin/wlsunset-ipgeo"
