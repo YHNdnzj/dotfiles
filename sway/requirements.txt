@@ -28,7 +28,7 @@ playerctl
 lm_sensors
 wlsunset-git
 ipgeo-git
-xorg-xwayland-lily
+xorg-xwayland-hidpi-xprop
 xorg-xprop
 xorg-xrdb
 xsettingsd
