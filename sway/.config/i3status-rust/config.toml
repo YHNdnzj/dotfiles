@@ -66,6 +66,11 @@ block = "temperature"
 format = " $icon "
 
 [[block]]
+block = "memory"
+format = " $icon $mem_used_percents "
+format_alt = " $icon $mem_used.eng(1,_auto,_Gi)/$mem_total.eng(2,auto,Gi) "
+
+[[block]]
 block = "music"
 format = " $icon { $combo.rot-str()  $prev  $play  $next |}"
 hide_when_empty = true
