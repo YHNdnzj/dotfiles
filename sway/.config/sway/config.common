@@ -202,6 +202,7 @@ input type:pointer {
     assign [app_id="firefox"] workspace $ws2
     assign [app_id="telegramdesktop"] workspace $ws3
     assign [app_id="nheko"] workspace $ws3
+    assign [app_id="srain"] workspace $ws3
     assign [app_id="indi.lomirus.gtk-qq"] workspace $ws3
     assign [app_id="evolution"] workspace $ws4
     assign [class="Steam"] workspace $ws5

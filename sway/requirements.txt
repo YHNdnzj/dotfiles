@@ -41,6 +41,8 @@ xdg-desktop-portal
 xdg-desktop-portal-wlr
 firefox-nightly-zh-tw
 telegram-desktop-megumifox
+nheko-git
+srain
 htop
 asusctl
 flatpak
