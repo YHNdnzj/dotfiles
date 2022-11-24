@@ -115,6 +115,9 @@ input type:pointer {
     # Start your launcher
     bindsym $mod+Backspace exec $menu
 
+    # Start music player
+    bindsym $mod+m exec $term -e ncmpcpp
+
     # Start volume control
     bindsym $mod+p exec pavucontrol
 
