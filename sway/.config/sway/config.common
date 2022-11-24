@@ -233,6 +233,7 @@ input type:pointer {
     for_window [class="gamescope"] floating enable, inhibit_idle open
     for_window [app_id="calibre-gui"] layout tabbed
     for_window [class="wps"] layout tabbed
+    for_window [class="wemeetapp"] floating enable, inhibit_idle visible
     for_window [workspace=$ws10] layout tabbed, inhibit_idle open
 #
 # Layout stuff:
