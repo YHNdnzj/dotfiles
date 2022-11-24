@@ -6,6 +6,8 @@ Documentation=https://github.com/YHNdnzj/dotfiles
 WorkingDirectory=%h/dotfiles
 ExecStartPre=/usr/bin/wait-online
 ExecStart=/usr/bin/git pull
+Restart=on-failure
+RestartSec=20
 
 [Install]
 WantedBy=default.target
