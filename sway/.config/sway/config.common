@@ -116,7 +116,7 @@ input type:pointer {
     bindsym $mod+Backspace exec $menu
 
     # Start music player
-    bindsym $mod+m exec $term -e ncmpcpp
+    bindsym $mod+m exec $term -e fish -c ncmpcpp
 
     # Start volume control
     bindsym $mod+p exec pavucontrol
