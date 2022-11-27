@@ -2,7 +2,7 @@
 IPGEO_FILE_LAST="$HOME/.cache/ipgeo.last"
 IPGEO_FILE_CUR="$HOME/.cache/ipgeo.cur"
 
-timeout 10 ipgeo --silent --fields latitude longitude | tee "$IPGEO_FILE_CUR"
+timeout 20 ipgeo --silent --fields latitude longitude | tee "$IPGEO_FILE_CUR"
 if [[ -s "$IPGEO_FILE_CUR" ]]; then
     cp -a "$IPGEO_FILE_CUR" "$IPGEO_FILE_LAST"
 else
