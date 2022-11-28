@@ -4,3 +4,6 @@
 [submodule "vim/.vim/pack/fix-vim-pasting/start/fix-vim-pasting"]
 	path = vim/.vim/pack/fix-vim-pasting/start/fix-vim-pasting
 	url = https://github.com/ryanpcmcquen/fix-vim-pasting.git
+[submodule "vim/.vim/pack/editorconfig-vim/start/editorconfig-vim"]
+	path = vim/.vim/pack/editorconfig-vim/start/editorconfig-vim
+	url = https://github.com/editorconfig/editorconfig-vim.git
