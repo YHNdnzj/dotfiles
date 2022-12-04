@@ -45,7 +45,7 @@ if not age_timedelta:
 
 
 if args:
-    aur_cache_path = Path(args)
+    aur_cache_path = Path(args[0])
 else:
     xdg_cache_path = os.getenv("XDG_CACHE_HOME")
     if xdg_cache_path:
