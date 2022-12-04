@@ -1,0 +1,25 @@
+#!/bin/bash -e
+cd "$HOME/repo/Local"
+
+for arch in *
+do
+    (
+    cd "$arch"
+    for pkg in *.pkg.tar.*; do
+        if [[ "$pkg" == *-debug* && ! -f "${dbg_pkg//-debug/}" ]]; then
+            rm -v "$pkg"
+            continue
+        fi
+
+        # Skip all signature files
+        if [[ "$pkg" == *.sig ]]; then
+            continue
+        fi
+
+        # Unused split packages don't have signatures
+        if [[ ! -f "$pkg.sig" ]]; then
+            rm -v "$pkg"
+        fi
+    done
+    )
+done
