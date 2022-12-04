@@ -1,5 +1,3 @@
 Packages:
 base-devel
-
-Services:
-systemd --user: systemd-tmpfiles-setup.service systemd-tmpfiles-clean.timer
+scripts/aur-package-cache-cleanup
