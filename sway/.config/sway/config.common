@@ -203,7 +203,7 @@ input type:pointer {
 
     # Assign application to workspace
     assign [app_id="firefox"] workspace $ws2
-    assign [app_id="telegramdesktop"] workspace $ws3
+    assign [app_id="org.telegram.desktop"] workspace $ws3
     assign [app_id="nheko"] workspace $ws3
     assign [app_id="srain"] workspace $ws3
     assign [app_id="indi.lomirus.gtk-qq"] workspace $ws3
