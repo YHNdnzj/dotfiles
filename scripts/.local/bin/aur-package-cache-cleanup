@@ -31,14 +31,17 @@ def age_to_timedelta(p: str):
 
 
 try:
-    opts, args = getopt.getopt(sys.argv[1:], "a:", ["age="])
+    opts, args = getopt.getopt(sys.argv[1:], "a:f", ["age=", "force"])
 except getopt.GetoptError as e:
     die(e.msg, 2)
 
 age_timedelta = None
+force = False
 for opt, arg in opts:
     if opt in ("-a", "--age"):
         age_timedelta = age_to_timedelta(arg)
+    elif opt in ("-f", "--force"):
+        force = True
 
 if not age_timedelta:
     age_timedelta = age_to_timedelta("2w")
@@ -66,7 +69,7 @@ for pkg in aur_cache_path.iterdir():
     if not pkg.is_dir():
         continue
 
-    if alpm_localdb.get_pkg(pkg.name):
+    if (not force) and alpm_localdb.get_pkg(pkg.name):
         msg(f"{pkg.name}: installed, skipping...")
         continue
 
