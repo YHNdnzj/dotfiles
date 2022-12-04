@@ -1,5 +1,6 @@
 #!/hint/bash
 export QT_QPA_PLATFORM="wayland;xcb"
+export SDL_VIDEODRIVER=wayland
 export MOZ_ENABLE_WAYLAND=1
 
 dbus-update-activation-environment --systemd QT_QPA_PLATFORM
