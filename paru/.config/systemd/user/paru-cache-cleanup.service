@@ -1,0 +1,7 @@
+[Unit]
+Description=Cleanup outdated paru AUR package cache
+
+[Service]
+Type=oneshot
+ExecCondition=/bin/bash -c "until ! pgrep paru &>/dev/null; do sleep 10; done"
+ExecStart=/home/yhndnzj/.local/bin/aur-package-cache-cleanup
