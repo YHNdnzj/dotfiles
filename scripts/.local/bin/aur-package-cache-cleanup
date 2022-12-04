@@ -1,0 +1,77 @@
+#!/usr/bin/python
+import os
+import sys
+import getopt
+import re
+import shutil
+from pathlib import Path
+from datetime import datetime, timedelta, timezone
+from pyalpm import Handle as alpm_Handle
+
+
+def msg(m: str):
+    print(m, file=sys.stderr)
+
+
+def die(m: str, code: int = 1):
+    msg(m)
+    sys.exit(code)
+
+
+def age_to_timedelta(p: str):
+    re_timedelta = re.compile(r"(\d+)(d|w)")
+    units = {"d": "days", "w": "weeks"}
+
+    age_timedelta = timedelta(**{units[unit]: int(value)
+                                 for value, unit in re_timedelta.findall(p)})
+    if age_timedelta == timedelta(0):
+        die("Invalid age format or age is 0, exiting...")
+
+    return age_timedelta
+
+
+try:
+    opts, args = getopt.getopt(sys.argv[1:], "a:", ["age="])
+except getopt.GetoptError as e:
+    die(e.msg, 2)
+
+age_timedelta = None
+for opt, arg in opts:
+    if opt in ("-a", "--age"):
+        age_timedelta = age_to_timedelta(arg)
+
+if not age_timedelta:
+    age_timedelta = age_to_timedelta("2w")
+
+
+if args:
+    aur_cache_path = Path(args)
+else:
+    xdg_cache_path = os.getenv("XDG_CACHE_HOME")
+    if xdg_cache_path:
+        xdg_cache_path = Path(xdg_cache_path)
+    else:
+        xdg_cache_path = Path.joinpath(Path.home(), ".cache")
+
+    aur_cache_path = Path.joinpath(xdg_cache_path, "paru", "clone")
+
+if not aur_cache_path.exists():
+    die("Specified cache dir doesn't exist, exiting...")
+
+
+alpm_handle = alpm_Handle(".", "/var/lib/pacman")
+alpm_localdb = alpm_handle.get_localdb()
+
+for pkg in aur_cache_path.iterdir():
+    if not pkg.is_dir():
+        continue
+
+    if alpm_localdb.get_pkg(pkg.name):
+        msg(f"{pkg.name}: installed, skipping...")
+        continue
+
+    pkg_mtime = datetime.fromtimestamp(pkg.stat().st_mtime, tz=timezone.utc)
+    pkg_timedelta = datetime.now(timezone.utc) - pkg_mtime
+    if pkg_timedelta > age_timedelta:
+        msg(f"{pkg.name}: modified {pkg_timedelta} ago, removing...")
+        shutil.rmtree(pkg)
