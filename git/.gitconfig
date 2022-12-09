@@ -3,14 +3,18 @@
     email = me@yhndnzj.com
     signingkey = 8BA0CFCBBC7B196AF0F4C6943DC99CD82A711C5A
 
-[commit]
-    gpgsign = true
-
 [color]
     ui = auto
 
 [core]
     autocrlf = input
+
+[http]
+    proxy = http://127.0.0.1:8118
+    postBuffer = 1048576000
+
+[commit]
+    gpgsign = true
 
 [pull]
     rebase = true
@@ -19,9 +23,8 @@
     followTags = true
     autoSetupRemote = true
 
-[http]
-    proxy = http://127.0.0.1:8118
-    postBuffer = 1048576000
+[merge]
+    log = true
 
 [submodule]
     recurse = true
