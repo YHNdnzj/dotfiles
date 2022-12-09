@@ -72,8 +72,7 @@ format_alt = " $icon $mem_used.eng(1,_auto,_Gi)/$mem_total.eng(2,auto,Gi) "
 
 [[block]]
 block = "music"
-format = " $icon { $combo.rot-str()  $prev  $play  $next |}"
-hide_when_empty = true
+format = "{ $icon  $combo.rot-str()  $prev  $play  $next |}"
 
 [[block]]
 block = "sound"
