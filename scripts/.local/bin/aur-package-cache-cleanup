@@ -10,7 +10,7 @@ from pyalpm import Handle as alpm_Handle
 
 
 def die(m: str, code: int = 1):
-    print(m, file=sys.stderr)
+    print(f"ERROR: {m}", file=sys.stderr)
     sys.exit(code)
 
 
@@ -21,24 +21,27 @@ def age_to_timedelta(p: str):
     age_timedelta = timedelta(**{units[unit]: int(value)
                                  for value, unit in re_timedelta.findall(p)})
     if age_timedelta == timedelta(0):
-        die("Invalid age format or age is 0, exiting...")
+        die("Invalid age format or age is 0")
 
     return age_timedelta
 
 
 try:
-    opts, args = getopt.getopt(sys.argv[1:], "a:fv", ["age=", "force", "verbose"])
+    opts, args = getopt.getopt(sys.argv[1:], "a:fsv", ["age=", "force", "summary", "verbose"])
 except getopt.GetoptError as e:
     die(e.msg, 2)
 
 age_timedelta = None
 force = False
+summary = False
 verbose = False
 for opt, arg in opts:
     if opt in ("-a", "--age"):
         age_timedelta = age_to_timedelta(arg)
     elif opt in ("-f", "--force"):
         force = True
+    elif opt in ("-s", "--summary"):
+        summary = True
     elif opt in ("-v", "--verbose"):
         verbose = True
 
@@ -49,7 +52,7 @@ if not age_timedelta:
 if len(args) == 1:
     aur_cache_path = Path(args[0])
 elif len(args) > 1:
-    die("Too many arguments.")
+    die("Too many arguments")
 else:
     xdg_cache_path = os.getenv("XDG_CACHE_HOME")
     if xdg_cache_path:
@@ -60,7 +63,7 @@ else:
     aur_cache_path = Path.joinpath(xdg_cache_path, "paru", "clone")
 
 if not aur_cache_path.exists():
-    die("Specified cache dir doesn't exist, exiting...")
+    die("Specified cache dir doesn't exist")
 
 
 alpm_handle = alpm_Handle(".", "/var/lib/pacman")
@@ -72,7 +75,8 @@ for pkg in aur_cache_path.iterdir():
         continue
 
     if (not force) and alpm_localdb.get_pkg(pkg.name):
-        print(f"{pkg.name}: installed, skipping...")
+        if verbose:
+            print(f"{pkg.name}: installed, skipping...")
         pkgs_installed.append(pkg.name)
         continue
 
@@ -87,7 +91,7 @@ for pkg in aur_cache_path.iterdir():
             print(f"{pkg.name}: modified {pkg_timedelta} ago, preserving...")
         pkgs_preserved.append(pkg.name)
 
-if verbose and (pkgs_installed or pkgs_removed or pkgs_preserved):
+if summary and (pkgs_installed or pkgs_removed or pkgs_preserved):
     print("\nSummary of processed packages:",
           "==> Installed (skipped): {}".format(' '.join(map(str, pkgs_installed))),
           "==> Removed: {}".format(' '.join(map(str, pkgs_removed))),
