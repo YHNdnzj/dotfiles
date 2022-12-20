@@ -7,3 +7,5 @@ output eDP-1 res 2560x1440 scale 1.5 adaptive_sync on
 input 7847:100:2.4G_Mouse {
     events disabled
 }
+
+# vim: set ft=swayconfig ts=4 sw=4 et:

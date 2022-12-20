@@ -22,3 +22,5 @@ input 7847:100:2.4G_Mouse {
     # Move focused workspace to output
     bindsym $mod+Ctrl+1 move workspace to output $out1
     bindsym $mod+Ctrl+2 move workspace to output $out2
+
+# vim: set ft=swayconfig ts=4 sw=4 et:

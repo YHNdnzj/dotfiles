@@ -361,3 +361,5 @@ xwayland enable
 
 include /etc/sway/config.d/*
 include ~/.config/sway/autostart/*
+
+# vim: set ft=swayconfig ts=4 sw=4 et:
