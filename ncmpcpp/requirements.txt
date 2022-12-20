@@ -3,4 +3,5 @@ mpd
 mpdris2
 
 Services:
+systemd --user: mpd.socket
 HTTP Proxy (shadowsocks-rust): listen on 8118
