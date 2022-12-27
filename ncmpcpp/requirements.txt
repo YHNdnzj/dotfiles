@@ -1,6 +1,6 @@
 Packages:
 mpd
-mpdris2
+mpd-mpris
 
 Services:
 systemd --user: mpd.socket
