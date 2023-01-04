@@ -1,5 +1,5 @@
 Packages:
-fcitx5-im
+fcitx5-im (except fcitx5-gtk)
 fcitx5-chinese-addons
 fcitx5-lua
 fcitx5-material-color
