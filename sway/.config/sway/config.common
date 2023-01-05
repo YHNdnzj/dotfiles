@@ -210,6 +210,7 @@ input type:pointer {
     assign [app_id="evolution"] workspace $ws4
     assign [class="Steam"] workspace $ws5
     assign [class="heroic"] workspace $ws5
+    assign [app_id="chiaki"] workspace $ws5
     assign [app_id="org.kde.okular"] workspace $ws6
     assign [class="DesktopEditors"] workspace $ws6
     assign [class="wps"] workspace $ws6
@@ -234,6 +235,7 @@ input type:pointer {
     for_window [class="Steam" title="^Steam$"] floating disable, inhibit_idle visible
     for_window [class="heroic"] floating disable
     for_window [class="gamescope"] floating enable, inhibit_idle open
+    for_window [app_id="chiaki"] floating disable, inhibit_idle visible
     for_window [app_id="calibre-gui"] layout tabbed
     for_window [class="wps"] layout tabbed
     for_window [class="wemeetapp"] floating enable, inhibit_idle visible
