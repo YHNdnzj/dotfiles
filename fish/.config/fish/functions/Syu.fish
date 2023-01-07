@@ -10,6 +10,6 @@ function Syu --description 'Upgrade the system'
     and paru -c
     and paru --aur -Sc --noconfirm >/dev/null
 
-    and px flatpak update
+    and flatpak update
     and flatpak uninstall --unused
 end
