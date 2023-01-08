@@ -10,6 +10,9 @@ function Syu --description 'Upgrade the system'
     and paru -c
     and paru --aur -Sc --noconfirm >/dev/null
 
-    and flatpak update
+    and http_proxy=$proxy https_proxy=$proxy \
+            no_proxy=mirror.sjtu.edu.cn \
+            flatpak update
+
     and flatpak uninstall --unused
 end
