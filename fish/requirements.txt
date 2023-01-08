@@ -3,6 +3,7 @@ exa
 bat
 bat-extras
 git-delta
+ov
 vim
 rmtrash
 pacman-contrib
