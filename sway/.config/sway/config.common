@@ -214,6 +214,7 @@ input type:pointer {
     assign [app_id="org.kde.okular"] workspace $ws6
     assign [class="DesktopEditors"] workspace $ws6
     assign [class="wps"] workspace $ws6
+    assign [class="wpspdf"] workspace $ws6
     assign [app_id="calibre-gui"] workspace $ws6
     assign [class="VirtualBox Manager"] workspace $ws10
 
@@ -238,6 +239,7 @@ input type:pointer {
     for_window [app_id="chiaki"] floating disable, inhibit_idle visible
     for_window [app_id="calibre-gui"] layout tabbed
     for_window [class="wps"] layout tabbed
+    for_window [class="wpspdf"] layout tabbed
     for_window [class="wemeetapp"] floating enable, inhibit_idle visible
     for_window [app_id="org.remmina.Remmina"] shortcuts_inhibitor enable
     for_window [workspace=$ws10] layout tabbed, inhibit_idle open, shortcuts_inhibitor enable
