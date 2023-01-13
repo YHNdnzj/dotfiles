@@ -8,7 +8,7 @@ bemenu
 bemenu-wayland
 j4-dmenu-desktop
 swayidle
-swaylock-git
+swaylock-effects-git
 i3status-rust-git
 mako-git
 iwgtk
