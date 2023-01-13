@@ -1,7 +1,6 @@
 Packages:
-ttf-work-sans
-ttf-swei-gothic-git
 noto-fonts
+ttf-swei-gothic-git
 noto-fonts-cjk
 ttf-cascadia-code
 ttf-joypixels
