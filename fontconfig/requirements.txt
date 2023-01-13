@@ -1,6 +1,7 @@
 Packages:
-noto-fonts
+ttf-overpass
 ttf-swei-gothic-git
+noto-fonts
 noto-fonts-cjk
 ttf-cascadia-code
 ttf-joypixels
