@@ -211,7 +211,7 @@ input type:pointer {
     assign [class="heroic"] workspace $ws5
     assign [app_id="chiaki"] workspace $ws5
     assign [app_id="org.kde.okular"] workspace $ws6
-    assign [class="DesktopEditors"] workspace $ws6
+    assign [class="ONLYOFFICE Desktop Editors"] workspace $ws6
     assign [class="wps"] workspace $ws6
     assign [class="wpspdf"] workspace $ws6
     assign [app_id="calibre-gui"] workspace $ws6
