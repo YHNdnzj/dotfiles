@@ -330,7 +330,7 @@ bindsym $mod+r mode "resize"
 #
 # Read `man 5 sway-bar` for more information about this section.
 bar {
-    font pango:Font Awesome 6 Free Solid 10
+    font pango:Font Awesome 6 Free Solid,sans-serif Medium 10
     height 24
     icon_theme $icon_theme
 
