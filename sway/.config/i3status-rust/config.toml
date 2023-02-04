@@ -42,7 +42,7 @@ format = " $icon $percentage $power $time "
 
 [[block]]
 block = "disk_space"
-format = " $icon $used.eng(2,_auto,_Gi)/$total.eng(2,auto,Gi) "
+format = " $icon $used.eng(prefix:Gi,hide_unit:true,hide_prefix:true)/$total.eng(prefix:Gi) "
 warning = 50
 alert = 35
 alert_unit = "GB"
@@ -68,11 +68,11 @@ format = " $icon "
 [[block]]
 block = "memory"
 format = " $icon $mem_used_percents "
-format_alt = " $icon $mem_used.eng(1,_auto,_Gi)/$mem_total.eng(2,auto,Gi) "
+format_alt = " $icon $mem_used.eng(width:1,prefix:Gi,hide_unit:true,hide_prefix:true)/$mem_total.eng(prefix:Gi) "
 
 [[block]]
 block = "music"
-format = "{ $icon  $combo.rot-str()  $prev  $play  $next |}"
+format = "{ $icon  $combo.str(max_width:15,rot_interval:1)  $prev  $play  $next |}"
 
 [[block]]
 block = "sound"
