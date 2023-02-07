@@ -35,8 +35,10 @@ if ! (( DUAL_CONFIGURED )); then
     config_dual
 fi
 
-if [[ -t 1 ]]; then
+if [[ -t 1 || ! $JOURNAL_STREAM ]]; then
     exec systemd-cat --identifier=sway "$0"
+else
+    unset JOURNAL_STREAM
 fi
 
 set -ex
