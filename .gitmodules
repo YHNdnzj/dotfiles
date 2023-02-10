@@ -1,9 +1,6 @@
 [submodule "vim/.vim/pack/fcitx/start/fcitx.vim"]
 	path = vim/.vim/pack/fcitx/start/fcitx.vim
 	url = https://github.com/lilydjwg/fcitx.vim.git
-[submodule "vim/.vim/pack/fix-vim-pasting/start/fix-vim-pasting"]
-	path = vim/.vim/pack/fix-vim-pasting/start/fix-vim-pasting
-	url = https://github.com/ryanpcmcquen/fix-vim-pasting.git
 [submodule "vim/.vim/pack/editorconfig-vim/start/editorconfig-vim"]
 	path = vim/.vim/pack/editorconfig-vim/start/editorconfig-vim
 	url = https://github.com/editorconfig/editorconfig-vim.git
