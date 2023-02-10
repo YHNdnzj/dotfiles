@@ -1,3 +1,0 @@
-[submodule "vim/.vim/pack/fix-vim-pasting/start/fix-vim-pasting"]
-	path = vim/.vim/pack/fix-vim-pasting/start/fix-vim-pasting
-	url = https://github.com/ryanpcmcquen/fix-vim-pasting.git
