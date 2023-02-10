@@ -12,7 +12,7 @@ output $out2 res 3840x2160 scale 2 position 0 0
 workspace $ws5 output $out2
 
 ### Input configuration
-input 7847:100:2.4G_Mouse {
+input 14:13330:BT5.0_Mouse {
     map_to_output $out2
     left_handed disabled
 }
