@@ -52,12 +52,6 @@ button = "right"
 update = true
 
 [[block]]
-block = "bluetooth"
-mac = "D8:35:28:A5:FA:F7"
-format = " $icon {$percentage |}"
-disconnected_format = ""
-
-[[block]]
 block = "load"
 format = " $icon $1m "
 
