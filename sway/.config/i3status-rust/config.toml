@@ -74,4 +74,4 @@ block = "sound"
 [[block]]
 block = "time"
 interval = 1
-format = " $icon %a %v %T "
+format = " $icon $timestamp.datetime(f:'%a %v %T') "
