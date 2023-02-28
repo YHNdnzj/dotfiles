@@ -1,1 +1,1 @@
-exec pcmanfm-qt -d
+exec sleep 3 && pcmanfm-qt -d
