@@ -1,31 +1,29 @@
 #!/bin/bash
 
 config_dual() {
-    local default
     local -i n=0
 
     for output in /sys/class/drm/card?-*
     do
         read -r < "$output/enabled"
-        if [[ "$REPLY" == "On" ]]; then
+        if [[ "$REPLY" == "enabled" ]]; then
             (( n++ ))
         fi
     done
 
     if (( n == 1 )); then
-        default="--defaultno"
+        DIALOG_TIMEOUT=1 dialog --erase-on-exit --timeout 3 --defaultno --yesno "Start sway with dual screen config?" 0 0
     elif (( n == 2 )); then
-        default=""
+        DIALOG_TIMEOUT=1 dialog --erase-on-exit --timeout 3 --yesno "Start sway with dual screen config?" 0 0
     elif (( n > 2 )); then
         echo "More than 2 monitors connected, defaulting to config for dual monitor" >&2
         sleep 1
-        default=""
+        DIALOG_TIMEOUT=1 dialog --erase-on-exit --timeout 3 --yesno "Start sway with dual screen config?" 0 0
     else
         echo "No monitor connected!" >&2
         exit 2
     fi
 
-    DIALOG_TIMEOUT=1 dialog --erase-on-exit --timeout 3 "$default" --yesno "Start sway with dual screen config?" 0 0
     nodual=$?
     if (( nodual == 1 )); then
         export DUAL_CONFIGURED=1
