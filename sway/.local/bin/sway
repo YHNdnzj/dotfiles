@@ -12,26 +12,22 @@ config_dual() {
     done
 
     if (( n == 1 )); then
-        DIALOG_TIMEOUT=1 dialog --erase-on-exit --timeout 3 --defaultno --yesno "Start sway with dual screen config?" 0 0
+        DIALOG_TIMEOUT=5 dialog --erase-on-exit --timeout 3 --defaultno --yesno "Start sway with dual screen config?" 0 0
     elif (( n == 2 )); then
-        DIALOG_TIMEOUT=1 dialog --erase-on-exit --timeout 3 --yesno "Start sway with dual screen config?" 0 0
+        DIALOG_TIMEOUT=5 dialog --erase-on-exit --timeout 3 --yesno "Start sway with dual screen config?" 0 0
     elif (( n > 2 )); then
         echo "More than 2 monitors connected, defaulting to config for dual monitor" >&2
         sleep 1
-        DIALOG_TIMEOUT=1 dialog --erase-on-exit --timeout 3 --yesno "Start sway with dual screen config?" 0 0
+        DIALOG_TIMEOUT=5 dialog --erase-on-exit --timeout 3 --yesno "Start sway with dual screen config?" 0 0
     else
         echo "No monitor connected!" >&2
         exit 2
     fi
 
-    nodual=$?
-    if (( nodual == 1 )); then
+    if (( $? == 1 || (n == 1 && $? == 5) )); then
         export DUAL_CONFIGURED=1
-    elif (( nodual == 0 )); then
-        export DUAL_CONFIGURED=2
     else
-        echo "Invalid choice!" >&2
-        exit 1
+        export DUAL_CONFIGURED=2
     fi
 }
 
