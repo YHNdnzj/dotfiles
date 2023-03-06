@@ -1,7 +1,7 @@
 #!/bin/bash
 
 config_dual() {
-    local -i n=0
+    local -i n=0 r
 
     for output in /sys/class/drm/card?-*
     do
@@ -23,8 +23,12 @@ config_dual() {
         echo "No monitor connected!" >&2
         exit 2
     fi
+    r=$?
 
-    if (( $? == 1 || (n == 1 && $? == 5) )); then
+    if (( r == 255 )); then
+        echo "Invalid choice!" >&2
+        exit 1
+    elif (( r == 1 || (n == 1 && r == 5) )); then
         export DUAL_CONFIGURED=1
     else
         export DUAL_CONFIGURED=2
