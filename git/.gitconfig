@@ -23,6 +23,9 @@
     followTags = true
     autoSetupRemote = true
 
+[rebase]
+    autosquash = true
+
 [merge]
     log = true
 
