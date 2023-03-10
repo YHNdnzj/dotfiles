@@ -5,3 +5,5 @@ set ttymouse=sgr
 set ts=4 sw=4 et
 
 let g:EditorConfig_preserve_formatoptions=1
+
+command B call gitblame#echo()
