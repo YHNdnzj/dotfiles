@@ -4,3 +4,6 @@
 [submodule "vim/.vim/pack/editorconfig-vim/start/editorconfig-vim"]
 	path = vim/.vim/pack/editorconfig-vim/start/editorconfig-vim
 	url = https://github.com/editorconfig/editorconfig-vim.git
+[submodule "vim/.vim/pack/git-blame/start/git-blame.vim"]
+	path = vim/.vim/pack/git-blame/start/git-blame.vim
+	url = https://github.com/zivyangll/git-blame.vim.git
