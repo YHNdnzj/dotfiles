@@ -16,5 +16,5 @@ anchor=bottom-right
 [app-name=nheko]
 anchor=bottom-right
 
-[app-name=简繁转换]
+[app-name=簡繁轉换]
 default-timeout=3000
