@@ -227,7 +227,7 @@ input type:pointer {
     for_window [app_id="evolution" title="Evolution$"] floating disable
     for_window [app_id="pavucontrol"] floating enable, sticky enable
     for_window [app_id="org.rncbc.qpwgraph"] floating enable, sticky enable
-    for_window [app_id="yubico.com.yubioath-desktop"] floating enable, sticky enable
+    for_window [app_id="authenticator"] floating enable, sticky enable
     for_window [app_id="org.twosheds.iwgtk"] floating enable, sticky enable
     for_window [app_id="iwgtk"] floating enable, sticky enable
     for_window [app_id="mpv"] inhibit_idle visible
