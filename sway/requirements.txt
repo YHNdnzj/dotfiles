@@ -1,7 +1,6 @@
 Packages:
 sway-im-git
 wlroots-hidpi-xprop-git
-vulkan-validation-layers
 dialog
 alacritty
 bemenu
@@ -40,6 +39,7 @@ swappy
 xdg-desktop-portal
 xdg-desktop-portal-wlr
 xdg-desktop-portal-lxqt
+xdg-desktop-portal-gtk
 firefox-nightly-zh-tw
 telegram-desktop-megumifox
 nheko-git
