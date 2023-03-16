@@ -2,10 +2,6 @@
 # VERSION: 3.0
 SETUVAR --export EDITOR:vim
 SETUVAR __fish_initialized:3400
-SETUVAR _fish_abbr_fcpb:curl\x20\x2dF\x20c\x3d\x40\x2d\x20https\x3a//fars\x2eee/
-SETUVAR _fish_abbr_man:batman
-SETUVAR _fish_abbr_rm:rmtrash
-SETUVAR _fish_abbr_rmdir:rmdirtrash
 SETUVAR fish_color_autosuggestion:555\x1ebrblack
 SETUVAR fish_color_cancel:\x2dr
 SETUVAR fish_color_command:blue
