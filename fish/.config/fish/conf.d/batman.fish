@@ -1,0 +1,1 @@
+abbr -a -- man batman
