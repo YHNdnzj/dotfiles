@@ -1,3 +1,4 @@
 Packages:
+paru-git
 base-devel
 scripts/aur-package-cache-cleanup
