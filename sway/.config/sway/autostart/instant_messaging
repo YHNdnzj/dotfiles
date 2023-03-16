@@ -1,2 +1,2 @@
-exec sleep 5 && telegram-desktop
-exec sleep 15 && nheko
+exec sleep 15 && telegram-desktop
+exec sleep 20 && nheko
