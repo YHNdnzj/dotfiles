@@ -1,4 +1,4 @@
-#!/bin/bash -e
+#!/bin/bash -eu
 cd "$HOME/repo/Local"
 
 for arch in *
@@ -6,7 +6,7 @@ do
     (
     cd "$arch"
     for pkg in *.pkg.tar.*; do
-        if [[ "$pkg" == *-debug* && ! -f "${dbg_pkg//-debug/}" ]]; then
+        if [[ "$pkg" == *-debug* && ! -f "${pkg//-debug/}" ]]; then
             rm -v "$pkg"
             continue
         fi
