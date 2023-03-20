@@ -6,8 +6,10 @@ do
     (
     cd "$arch"
     for pkg in *.pkg.tar.*; do
-        if [[ "$pkg" == *-debug* && ! -f "${pkg//-debug/}" ]]; then
-            rm -v "$pkg"
+        if [[ "$pkg" == *-debug* ]]; then
+            if [[ ! -f "${pkg//-debug/}" ]]; then
+                rm -v "$pkg"
+            fi
             continue
         fi
 
