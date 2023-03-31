@@ -222,6 +222,7 @@ input type:pointer {
     for_window [app_id="xdg-desktop-portal-lxqt"] floating enable
     for_window [app_id="firefox" title="Firefox"] border pixel 3, inhibit_idle fullscreen
     for_window [app_id="firefox" title="子母畫面"] floating enable, sticky enable, inhibit_idle visible
+    for_window [app_id="firefox" title="分享指示器"] floating enable, inhibit_idle open
     for_window [workspace=$ws3] layout tabbed
     for_window [app_id="evolution"] floating enable
     for_window [app_id="evolution" title="Evolution$"] floating disable
