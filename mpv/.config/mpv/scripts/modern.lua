@@ -1,6 +1,6 @@
--- by zjuyk (inspired by maoiscat)
--- email: ownbyzjuyk@gmail.com
--- https://github.com/zjuyk/mpv-osc-morden
+-- by maoiscat
+-- email:valarmor@163.com
+-- https://github.com/maoiscat/mpv-osc-morden
 
 local assdraw = require 'mp.assdraw'
 local msg = require 'mp.msg'
@@ -11,7 +11,7 @@ local utils = require 'mp.utils'
 -- Parameters
 --
 -- default user option values
--- please change them in osc.conf
+-- may change them in osc.conf
 local user_opts = {
     showwindowed = true,        -- show OSC when windowed?
     showfullscreen = true,      -- show OSC when fullscreen?
@@ -22,68 +22,64 @@ local user_opts = {
     hidetimeout = 1000,         -- duration in ms until the OSC hides if no
                                 -- mouse movement. enforced non-negative for the
                                 -- user, but internally negative is 'always-on'.
-
-    fadeduration = 500,         -- duration of fade out in ms, 0 means no fade
+    fadeduration = 500,         -- duration of fade out in ms, 0 = no fade
     minmousemove = 3,           -- minimum amount of pixels the mouse has to
                                 -- move between ticks to make the OSC show up
-
     iamaprogrammer = false,     -- use native mpv values and disable OSC
                                 -- internal track list management (and some
                                 -- functions that depend on it)
-
-	font = 'mpv-osd-symbols',	-- default osc font (will fallback to regular fonts)
-    seekbarhandlesize = 1.0,	-- size ratio of the slider handle, range 0 ~ 1
-    seekrange = true,			-- show seekrange overlay
-    seekrangealpha = 128,      	-- transparency of seekranges
+    font = 'mpv-osd-symbols',    -- default osc font
+    seekrange = true,            -- show seekrange overlay
+    seekrangealpha = 128,          -- transparency of seekranges
     seekbarkeyframes = true,    -- use keyframes when dragging the seekbar
     title = '${media-title}',   -- string compatible with property-expansion
                                 -- to be shown as OSC title
-
-	showtitle = true,			-- show title and no hide timeout on pause
-    timetotal = true,          	-- display total time instead of remaining time?
+    showtitle = true,            -- show title and no hide timeout on pause
+    timetotal = true,              -- display total time instead of remaining time?
     visibility = 'auto',        -- only used at init to set visibility_mode(...)
-    windowcontrols = 'no',    -- whether to show window controls
-    language = 'eng',			-- eng=English, chs=Chinese
+    windowcontrols = 'auto',    -- whether to show window controls
+    volumecontrol = true,       -- whether to show mute button and volumne slider
+    processvolume = true,		-- volue slider show processd volume
+    language = 'eng',            -- eng=English, chs=Chinese
+    thumbpad = 4,               -- thumbnail border size
 }
 
 -- Localization
 local language = {
-	['eng'] = {
-	    welcome = '{\\fs24\\1c&H0&\\3c&HFFFFFF&}Drop files or URLs to play here.',  -- this text appears when mpv starts
-		off = 'OFF',
-		na = 'n/a',
-		none = 'none',
-		video = 'Video',
-		audio = 'Audio',
-		subtitle = 'Subtitle',
-		available = 'Available ',
-		track = ' Tracks:',
-		playlist = 'Playlist',
-		nolist = 'Empty playlist.',
-		chapter = 'Chapter',
-		nochapter = 'No chapters.',
-	},
-	['chs'] = {
-		welcome = '{\\1c&H00\\bord0\\fs30\\fscx125}MPV{\\fscx100} 播放器',  -- this text appears when mpv starts
-		off = '关闭',
-		na = 'n/a',
-		none = '无',
-		video = '视频',
-		audio = '音频',
-		subtitle = '字幕',
-		available = '可选',
-		track = '：',
-		playlist = '播放列表',
-		nolist = '无列表信息',
-		chapter = '章节',
-		nochapter = '无章节信息',
-	}
+    ['eng'] = {
+        welcome = '{\\fs24\\1c&H0&\\3c&HFFFFFF&}Drop files or URLs to play here.',  -- this text appears when mpv starts
+        off = 'OFF',
+        na = 'n/a',
+        none = 'none',
+        video = 'Video',
+        audio = 'Audio',
+        subtitle = 'Subtitle',
+        available = 'Available ',
+        track = ' Tracks:',
+        playlist = 'Playlist',
+        nolist = 'Empty playlist.',
+        chapter = 'Chapter',
+        nochapter = 'No chapters.',
+    },
+    ['chs'] = {
+        welcome = '{\\1c&H00\\bord0\\fs30\\fscx125}MPV{\\fscx100} 播放器',  -- this text appears when mpv starts
+        off = '关闭',
+        na = 'n/a',
+        none = '无',
+        video = '视频',
+        audio = '音频',
+        subtitle = '字幕',
+        available = '可选',
+        track = '：',
+        playlist = '播放列表',
+        nolist = '无列表信息',
+        chapter = '章节',
+        nochapter = '无章节信息',
+    }
 }
-
 -- read options from config and command-line
 opt.read_options(user_opts, 'osc', function(list) update_options(list) end)
-
--- apply language opts
+-- apply lang opts
 local texts = language[user_opts.language]
 local osc_param = { -- calculated by osc_init()
     playresy = 0,                           -- canvas size Y
@@ -94,15 +90,17 @@ local osc_param = { -- calculated by osc_init()
 }
 
 local osc_styles = {
-	TransBg = '{\\blur100\\bord140\\1c&H000000&\\3c&H000000&}',
-	SeekbarBg = '{\\blur0\\bord0\\1c&HFFFFFF&}',
-	SeekbarFg = '{\\blur1\\bord1\\1c&HE39C42&}',
+    TransBg = '{\\blur100\\bord140\\1c&H000000&\\3c&H000000&}',
+    SeekbarBg = '{\\blur0\\bord0\\1c&HFFFFFF&}',
+    SeekbarFg = '{\\blur1\\bord1\\1c&HE39C42&}',
+    VolumebarBg = '{\\blur0\\bord0\\1c&H999999&}',
+    VolumebarFg = '{\\blur1\\bord1\\1c&HFFFFFF&}',
     Ctrl1 = '{\\blur0\\bord0\\1c&HFFFFFF&\\3c&HFFFFFF&\\fs36\\fnmaterial-design-iconic-font}',
     Ctrl2 = '{\\blur0\\bord0\\1c&HFFFFFF&\\3c&HFFFFFF&\\fs24\\fnmaterial-design-iconic-font}',
     Ctrl3 = '{\\blur0\\bord0\\1c&HFFFFFF&\\3c&HFFFFFF&\\fs24\\fnmaterial-design-iconic-font}',
     Time = '{\\blur0\\bord0\\1c&HFFFFFF&\\3c&H000000&\\fs17\\fn' .. user_opts.font .. '}',
     Tooltip = '{\\blur1\\bord0.5\\1c&HFFFFFF&\\3c&H000000&\\fs18\\fn' .. user_opts.font .. '}',
-	Title = '{\\blur1\\bord0.5\\1c&HFFFFFF&\\3c&H0\\fs48\\q2\\fn' .. user_opts.font .. '}',
+    Title = '{\\blur1\\bord0.5\\1c&HFFFFFF&\\3c&H0\\fs48\\q2\\fn' .. user_opts.font .. '}',
     WinCtrl = '{\\blur1\\bord0.5\\1c&HFFFFFF&\\3c&H0\\fs20\\fnmpv-osd-symbols}',
     elementDown = '{\\1c&H999999&}',
 }
@@ -137,7 +135,17 @@ local state = {
     border = true,
     maximized = false,
     osd = mp.create_osd_overlay('ass-events'),
-    lastvisibility = user_opts.visibility,	-- save last visibility on pause if showtitle
+    mute = false,
+    lastvisibility = user_opts.visibility,		-- save last visibility on pause if showtitle
+    sys_volume,									--system volume
+    proc_volume,								--processed volume
+}
+
+local thumbfast = {
+    width = 0,
+    height = 0,
+    disabled = true,
+    available = false
 }
 
 local window_control_box_width = 138
@@ -307,7 +315,7 @@ function ass_append_alpha(ass, alpha, modifier)
 end
 
 function ass_draw_cir_cw(ass, x, y, r)
-	ass:round_rect_cw(x-r, y-r, x+r, y+r, r)
+    ass:round_rect_cw(x-r, y-r, x+r, y+r, r)
 end
 
 function ass_draw_rr_h_cw(ass, x0, y0, x1, y1, r1, hexagon, r2)
@@ -326,7 +334,14 @@ function ass_draw_rr_h_ccw(ass, x0, y0, x1, y1, r1, hexagon, r2)
     end
 end
 
-
+-- set volume
+function set_volume(val)
+	if user_opts.processvolume then
+		val = 10*math.sqrt(val)
+	end
+	mp.commandv('set', 'volume', val)
+	mp.commandv('add', 'volume', 0)		--this prevent volume exceeds limit
+end
 --
 -- Tracklist Management
 --
@@ -397,6 +412,15 @@ function set_track(type, next)
     end
 
     mp.commandv('set', type, new_track_mpv)
+
+--    if (new_track_osc == 0) then
+--        show_message(nicetypes[type] .. ' Track: none')
+--    else
+--        show_message(nicetypes[type]  .. ' Track: '
+--            .. new_track_osc .. '/' .. #tracks_osc[type]
+--            .. ' ['.. (tracks_osc[type][new_track_osc].lang or 'unknown') ..'] '
+--            .. (tracks_osc[type][new_track_osc].title or ''))
+--    end
 end
 
 -- get the currently selected track of <type>, OSC-style counted
@@ -414,10 +438,8 @@ end
 -- WindowControl helpers
 function window_controls_enabled()
     val = user_opts.windowcontrols
-    if val == 'auto' or val == 'yes' then
+    if val == 'auto' then
         return (not state.border) or state.fullscreen
-    elseif val == 'no' then
-        return false
     else
         return val ~= 'no'
     end
@@ -480,15 +502,15 @@ function prepare_elements()
             --draw static slider parts
             local slider_lo = element.layout.slider
             -- calculate positions of min and max points
-			element.slider.min.ele_pos = user_opts.seekbarhandlesize * elem_geo.h / 2
-			element.slider.max.ele_pos = elem_geo.w - element.slider.min.ele_pos
+            element.slider.min.ele_pos = elem_geo.h / 2
+            element.slider.max.ele_pos = elem_geo.w - element.slider.min.ele_pos
             element.slider.min.glob_pos = element.hitbox.x1 + element.slider.min.ele_pos
             element.slider.max.glob_pos = element.hitbox.x1 + element.slider.max.ele_pos
 
             static_ass:draw_start()
-			-- a hack which prepares the whole slider area to allow center placements such like an=5
-			static_ass:rect_cw(0, 0, elem_geo.w, elem_geo.h)
-			static_ass:rect_ccw(0, 0, elem_geo.w, elem_geo.h)
+            -- a hack which prepares the whole slider area to allow center placements such like an=5
+            static_ass:rect_cw(0, 0, elem_geo.w, elem_geo.h)
+            static_ass:rect_ccw(0, 0, elem_geo.w, elem_geo.h)
             -- marker nibbles
             if not (element.slider.markerF == nil) and (slider_lo.gap > 0) then
                 local markers = element.slider.markerF()
@@ -505,7 +527,7 @@ function prepare_elements()
                             --bottom
                             if (slider_lo.nibbles_bottom) then
                                 static_ass:move_to(s - 3, elem_geo.h - slider_lo.gap + 5)
-								static_ass:line_to(s, elem_geo.h - slider_lo.gap + 1)
+                                static_ass:line_to(s, elem_geo.h - slider_lo.gap + 1)
                                 static_ass:line_to(s + 3, elem_geo.h - slider_lo.gap + 5)
                             end
                         else -- draw 2x1px nibbles
@@ -579,26 +601,26 @@ function render_elements(master_ass)
             local s_max = element.slider.max.value
             -- draw pos marker
             local pos = element.slider.posF()
-            local seekRanges = element.slider.seekRangesF()
-			local rh = user_opts.seekbarhandlesize * elem_geo.h / 2 -- Handle radius
+            local seekRanges
+            local rh = elem_geo.h / 2 -- Handle radius
             local xp
             
             if pos then
                 xp = get_slider_ele_pos_for(element, pos)
-				ass_draw_cir_cw(elem_ass, xp, elem_geo.h/2, rh)
-				elem_ass:rect_cw(0, slider_lo.gap, xp, elem_geo.h - slider_lo.gap)
+                ass_draw_cir_cw(elem_ass, xp, elem_geo.h/2, rh)
+                elem_ass:rect_cw(0, slider_lo.gap, xp, elem_geo.h - slider_lo.gap)
             end
-
+			if element.slider.seekRangesF ~= nil then seekRanges = element.slider.seekRangesF() end
             if seekRanges then
-				elem_ass:draw_stop()
-				elem_ass:merge(element.style_ass)
-				ass_append_alpha(elem_ass, element.layout.alpha, user_opts.seekrangealpha)
-				elem_ass:merge(element.static_ass)
+                elem_ass:draw_stop()
+                elem_ass:merge(element.style_ass)
+                ass_append_alpha(elem_ass, element.layout.alpha, user_opts.seekrangealpha)
+                elem_ass:merge(element.static_ass)
 
                 for _,range in pairs(seekRanges) do
                     local pstart = get_slider_ele_pos_for(element, range['start'])
                     local pend = get_slider_ele_pos_for(element, range['end'])
-					elem_ass:rect_cw(pstart - rh, slider_lo.gap, pend + rh, elem_geo.h - slider_lo.gap)
+                    elem_ass:rect_cw(pstart - rh, slider_lo.gap, pend + rh, elem_geo.h - slider_lo.gap)
                 end
             end
 
@@ -641,6 +663,42 @@ function render_elements(master_ass)
                     elem_ass:append(slider_lo.tooltip_style)
                     ass_append_alpha(elem_ass, slider_lo.alpha, 0)
                     elem_ass:append(tooltiplabel)
+
+                    -- thumbnail
+                    if element.thumbnail and not thumbfast.disabled then
+                        local osd_w = mp.get_property_number("osd-width")
+                        if osd_w then
+                            local r_w, r_h = get_virt_scale_factor()
+
+                            local thumbPad = user_opts.thumbpad
+                            local thumbMarginX = 18 / r_w
+                            local thumbMarginY = 30
+                            local tooltipBgColor = "FFFFFF"
+                            local tooltipBgAlpha = 80
+                            local thumbX = math.min(osd_w - thumbfast.width - thumbMarginX, math.max(thumbMarginX, tx / r_w - thumbfast.width / 2))
+                            local thumbY = ((ty - thumbMarginY) / r_h - thumbfast.height)
+
+                            thumbX = math.floor(thumbX + 0.5)
+                            thumbY = math.floor(thumbY + 0.5)
+
+                            elem_ass:new_event()
+                            elem_ass:pos(thumbX * r_w, ty - thumbMarginY - thumbfast.height * r_h)
+                            elem_ass:append(osc_styles.Tooltip)
+                            elem_ass:draw_start()
+                            elem_ass:rect_cw(-thumbPad * r_w, -thumbPad * r_h, (thumbfast.width + thumbPad) * r_w, (thumbfast.height + thumbPad) * r_h)
+                            elem_ass:draw_stop()
+
+                            mp.commandv("script-message-to", "thumbfast", "thumb",
+                                mp.get_property_number("duration", 0) * (sliderpos / 100),
+                                thumbX,
+                                thumbY
+                            )
+                        end
+                    end
+                else
+                    if element.thumbnail and thumbfast.available then
+                        mp.commandv("script-message-to", "thumbfast", "clear")
+                    end
                 end
             end
 
@@ -652,8 +710,8 @@ function render_elements(master_ass)
             elseif not (element.content == nil) then
                 buttontext = element.content -- text objects
             end
-			
-			buttontext = buttontext:gsub(':%((.?.?.?)%) unknown ', ':%(%1%)')  --gsub('%) unknown %(\'', '')
+            
+            buttontext = buttontext:gsub(':%((.?.?.?)%) unknown ', ':%(%1%)')  --gsub('%) unknown %(\'', '')
 
             local maxchars = element.layout.button.maxchars
             -- 认为1个中文字符约等于1.5个英文字符
@@ -663,7 +721,7 @@ function render_elements(master_ass)
                 if (charcount > limit) then
                     while (charcount > limit) do
                         buttontext = buttontext:gsub('.[\128-\191]*$', '')
-						charcount = (buttontext:len() + select(2, buttontext:gsub('[^\128-\193]', ''))*2) / 3
+                        charcount = (buttontext:len() + select(2, buttontext:gsub('[^\128-\193]', ''))*2) / 3
                     end
                     buttontext = buttontext .. '...'
                 end
@@ -672,7 +730,7 @@ function render_elements(master_ass)
             elem_ass:append(buttontext)
             
             -- add tooltip
-			if not (element.tooltipF == nil) and element.enabled then
+            if not (element.tooltipF == nil) and element.enabled then
                 if mouse_hit(element) then
                     local tooltiplabel = element.tooltipF
                     local an = 1
@@ -680,23 +738,23 @@ function render_elements(master_ass)
                     local tx = get_virt_mouse_pos()
                     
                     if ty < osc_param.playresy / 2 then
-						ty = element.hitbox.y2
-						an = 7
-					end
+                        ty = element.hitbox.y2
+                        an = 7
+                    end
 
                     -- tooltip label
                     if type(element.tooltipF) == 'function' then
-						tooltiplabel = element.tooltipF()
-					else
-						tooltiplabel = element.tooltipF
-					end
+                        tooltiplabel = element.tooltipF()
+                    else
+                        tooltiplabel = element.tooltipF
+                    end
                     elem_ass:new_event()
                     elem_ass:pos(tx, ty)
                     elem_ass:an(an)
                     elem_ass:append(element.tooltip_style)
                     elem_ass:append(tooltiplabel)
                 end
-			end
+            end
         end
 
         master_ass:merge(elem_ass)
@@ -973,8 +1031,8 @@ layouts = function ()
 
     local osc_geo = {w, h}
 
-	osc_geo.w = osc_param.playresx
-	osc_geo.h = 180
+    osc_geo.w = osc_param.playresx
+    osc_geo.h = 180
 
     -- origin of the controllers, left/bottom corner
     local posX = 0
@@ -986,36 +1044,37 @@ layouts = function ()
     add_area('input', get_hitbox_coords(posX, posY, 1, osc_geo.w, 104))
 
     -- area for show/hide
-    add_area('showhide', 0, 0, osc_param.playresx, osc_param.playresy)
-
+    add_area('showhide', 0, osc_param.playresy-200, osc_param.playresx, osc_param.playresy)
+    add_area('showhide_wc', osc_param.playresx*0.67, 0, osc_param.playresx, 48)
+    
     -- fetch values
     local osc_w, osc_h=
         osc_geo.w, osc_geo.h
 
-	--
+    --
     -- Controller Background
     --
-	local lo
+    local lo
 
-	new_element('TransBg', 'box')
-	lo = add_layout('TransBg')
-	lo.geometry = {x = posX, y = posY, an = 7, w = osc_w, h = 1}
-	lo.style = osc_styles.TransBg
-	lo.layer = 10
-	lo.alpha[3] = 0
-	
+    new_element('TransBg', 'box')
+    lo = add_layout('TransBg')
+    lo.geometry = {x = posX, y = posY, an = 7, w = osc_w, h = 1}
+    lo.style = osc_styles.TransBg
+    lo.layer = 10
+    lo.alpha[3] = 0
+    
     --
     -- Alignment
     --
-	local refX = osc_w / 2
-	local refY = posY
-	local geo
-	
+    local refX = osc_w / 2
+    local refY = posY
+    local geo
+    
     --
     -- Seekbar
     --
-    new_element('bgbar1', 'box')
-    lo = add_layout('bgbar1')
+    new_element('seekbarbg', 'box')
+    lo = add_layout('seekbarbg')
     lo.geometry = {x = refX , y = refY - 96 , an = 5, w = osc_geo.w - 50, h = 2}
     lo.layer = 13
     lo.style = osc_styles.SeekbarBg
@@ -1024,66 +1083,93 @@ layouts = function ()
 
     lo = add_layout('seekbar')
     lo.geometry = {x = refX, y = refY - 96 , an = 5, w = osc_geo.w - 50, h = 16}
-	lo.style = osc_styles.SeekbarFg
+    lo.style = osc_styles.SeekbarFg
     lo.slider.gap = 7
     lo.slider.tooltip_style = osc_styles.Tooltip
     lo.slider.tooltip_an = 2
+    --
+    -- Volumebar
+    --
+    lo = new_element('volumebarbg', 'box')
+    lo.visible = (osc_param.playresx >= 750) and user_opts.volumecontrol
+    lo = add_layout('volumebarbg')
+    lo.geometry = {x = 155, y = refY - 40, an = 4, w = 80, h = 2}
+    lo.layer = 13
+    lo.style = osc_styles.VolumebarBg
+
     
-	-- buttons
+    lo = add_layout('volumebar')
+    lo.geometry = {x = 155, y = refY - 40, an = 4, w = 80, h = 8}
+    lo.style = osc_styles.VolumebarFg
+    lo.slider.gap = 3
+    lo.slider.tooltip_style = osc_styles.Tooltip
+    lo.slider.tooltip_an = 2
+        
+    -- buttons
     lo = add_layout('pl_prev')
     lo.geometry = {x = refX - 120, y = refY - 40 , an = 5, w = 30, h = 24}
     lo.style = osc_styles.Ctrl2
 
-	lo = add_layout('skipback')
+    lo = add_layout('skipback')
     lo.geometry = {x = refX - 60, y = refY - 40 , an = 5, w = 30, h = 24}
     lo.style = osc_styles.Ctrl2
 
-			
+            
     lo = add_layout('playpause')
     lo.geometry = {x = refX, y = refY - 40 , an = 5, w = 45, h = 45}
-    lo.style = osc_styles.Ctrl1	
+    lo.style = osc_styles.Ctrl1    
 
     lo = add_layout('skipfrwd')
     lo.geometry = {x = refX + 60, y = refY - 40 , an = 5, w = 30, h = 24}
-    lo.style = osc_styles.Ctrl2	
+    lo.style = osc_styles.Ctrl2    
 
     lo = add_layout('pl_next')
     lo.geometry = {x = refX + 120, y = refY - 40 , an = 5, w = 30, h = 24}
     lo.style = osc_styles.Ctrl2
 
 
-	-- Time
+    -- Time
     lo = add_layout('tc_left')
     lo.geometry = {x = 25, y = refY - 84, an = 7, w = 64, h = 20}
-    lo.style = osc_styles.Time	
-	
+    lo.style = osc_styles.Time    
+    
 
     lo = add_layout('tc_right')
     lo.geometry = {x = osc_geo.w - 25 , y = refY -84, an = 9, w = 64, h = 20}
-    lo.style = osc_styles.Time	
+    lo.style = osc_styles.Time    
 
     lo = add_layout('cy_audio')
-	lo.geometry = {x = 37, y = refY - 40, an = 5, w = 24, h = 24}
-    lo.style = osc_styles.Ctrl3	
-	
+    lo.geometry = {x = 37, y = refY - 40, an = 5, w = 24, h = 24}
+    lo.style = osc_styles.Ctrl3
+    lo.visible = (osc_param.playresx >= 540)
+    
     lo = add_layout('cy_sub')
     lo.geometry = {x = 87, y = refY - 40, an = 5, w = 24, h = 24}
     lo.style = osc_styles.Ctrl3
+    lo.visible = (osc_param.playresx >= 600)
 
-	lo = add_layout('tog_fs')
+    lo = add_layout('vol_ctrl')
+    lo.geometry = {x = 137, y = refY - 40, an = 5, w = 24, h = 24}
+    lo.style = osc_styles.Ctrl3
+    lo.visible = (osc_param.playresx >= 650)
+
+    lo = add_layout('tog_fs')
     lo.geometry = {x = osc_geo.w - 37, y = refY - 40, an = 5, w = 24, h = 24}
-    lo.style = osc_styles.Ctrl3    
+    lo.style = osc_styles.Ctrl3
+    lo.visible = (osc_param.playresx >= 540)
 
-	lo = add_layout('tog_info')
+    lo = add_layout('tog_info')
     lo.geometry = {x = osc_geo.w - 87, y = refY - 40, an = 5, w = 24, h = 24}
     lo.style = osc_styles.Ctrl3
+    lo.visible = (osc_param.playresx >= 600)
     
     geo = { x = 25, y = refY - 132, an = 1, w = osc_geo.w - 50, h = 48 }
     lo = add_layout('title')
     lo.geometry = geo
     lo.style = string.format('%s{\\clip(%f,%f,%f,%f)}', osc_styles.Title,
-								geo.x, geo.y - geo.h, geo.x + geo.w , geo.y)
-	lo.alpha[3] = 0
+                                geo.x, geo.y - geo.h, geo.x + geo.w , geo.y)
+    lo.alpha[3] = 0
+    lo.button.maxchars = geo.w / 23
 end
 
 -- Validate string type user options
@@ -1177,10 +1263,10 @@ function osc_init()
     ne = new_element('playpause', 'button')
 
     ne.content = function ()
-        if mp.get_property('pause') == 'yes' then
-            return ('\xEF\x8E\xAA')
-        else
+        if mp.get_property('pause') == 'no' then
             return ('\xEF\x8E\xA7')
+        else
+            return ('\xEF\x8E\xAA')
         end
     end
     ne.eventresponder['mbtn_left_up'] =
@@ -1219,26 +1305,26 @@ function osc_init()
     --
     update_tracklist()
     
-	--cy_audio
+    --cy_audio
     ne = new_element('cy_audio', 'button')
     ne.enabled = (#tracks_osc.audio > 0)
     ne.visible = (osc_param.playresx >= 540)
     ne.content = '\xEF\x8E\xB7'
     ne.tooltip_style = osc_styles.Tooltip
     ne.tooltipF = function ()
-		local msg = texts.off
+        local msg = texts.off
         if not (get_track('audio') == 0) then
             msg = (texts.audio .. ' [' .. get_track('audio') .. ' ∕ ' .. #tracks_osc.audio .. '] ')
             local prop = mp.get_property('current-tracks/audio/lang')
             if not prop then
-				prop = texts.na
-			end
-			msg = msg .. '[' .. prop .. ']'
-			prop = mp.get_property('current-tracks/audio/title')
-			if prop then
-				msg = msg .. ' ' .. prop
-			end
-			return msg
+                prop = texts.na
+            end
+            msg = msg .. '[' .. prop .. ']'
+            prop = mp.get_property('current-tracks/audio/title')
+            if prop then
+                msg = msg .. ' ' .. prop
+            end
+            return msg
         end
         return msg
     end
@@ -1256,19 +1342,19 @@ function osc_init()
     ne.content = '\xEF\x8F\x93'
     ne.tooltip_style = osc_styles.Tooltip
     ne.tooltipF = function ()
-		local msg = texts.off
+        local msg = texts.off
         if not (get_track('sub') == 0) then
             msg = (texts.subtitle .. ' [' .. get_track('sub') .. ' ∕ ' .. #tracks_osc.sub .. '] ')
             local prop = mp.get_property('current-tracks/sub/lang')
             if not prop then
-				prop = texts.na
-			end
-			msg = msg .. '[' .. prop .. ']'
-			prop = mp.get_property('current-tracks/sub/title')
-			if prop then
-				msg = msg .. ' ' .. prop
-			end
-			return msg
+                prop = texts.na
+            end
+            msg = msg .. '[' .. prop .. ']'
+            prop = mp.get_property('current-tracks/sub/title')
+            if prop then
+                msg = msg .. ' ' .. prop
+            end
+            return msg
         end
         return msg
     end
@@ -1278,6 +1364,20 @@ function osc_init()
         function () set_track('sub', -1) end
     ne.eventresponder['mbtn_mid_up'] =
         function () show_message(get_tracklist('sub')) end
+        
+    -- vol_ctrl
+    ne = new_element('vol_ctrl', 'button')
+    ne.enabled = (get_track('audio')>0)
+    ne.visible = (osc_param.playresx >= 650) and user_opts.volumecontrol
+    ne.content = function ()
+        if (state.mute) then
+            return ('\xEF\x8E\xBB')
+        else
+            return ('\xEF\x8E\xBC')
+        end
+    end
+    ne.eventresponder['mbtn_left_up'] =
+        function () mp.commandv('cycle', 'mute') end
         
     --tog_fs
     ne = new_element('tog_fs', 'button')
@@ -1302,12 +1402,12 @@ function osc_init()
     -- title
     ne = new_element('title', 'button')
     ne.content = function ()
-		local title = mp.command_native({'expand-text', user_opts.title})
+        local title = mp.command_native({'expand-text', user_opts.title})
         if state.paused then
-			title = title:gsub('\\n', ' '):gsub('\\$', ''):gsub('{','\\{')
-		else
-			title = ' '
-		end
+            title = title:gsub('\\n', ' '):gsub('\\$', ''):gsub('{','\\{')
+        else
+            title = ' '
+        end
         return not (title == '') and title or ' '
     end
     ne.visible = osc_param.playresy >= 320 and user_opts.showtitle
@@ -1316,6 +1416,7 @@ function osc_init()
     ne = new_element('seekbar', 'slider')
 
     ne.enabled = not (mp.get_property('percent-pos') == nil)
+    ne.thumbnail = true
     ne.slider.markerF = function ()
         local duration = mp.get_property_number('duration', nil)
         if not (duration == nil) then
@@ -1334,7 +1435,23 @@ function osc_init()
     ne.slider.tooltipF = function (pos)
         local duration = mp.get_property_number('duration', nil)
         if not ((duration == nil) or (pos == nil)) then
-            possec = duration * (pos / 100)
+            local possec = duration * (pos / 100)
+			local chapters = mp.get_property_native('chapter-list', {})
+			if #chapters > 0 then
+				local ch = #chapters
+				local i
+				for i = 1, #chapters do
+					if chapters[i].time / duration * 100 >= pos then
+						ch = i - 1
+						break
+					end
+				end
+				if ch == 0 then
+					return string.format('[%s] [0/%d]', mp.format_time(possec), #chapters)
+				elseif chapters[ch].title then 
+					return string.format('[%s] [%d/%d][%s]', mp.format_time(possec), ch, #chapters, chapters[ch].title)
+				end
+			end
             return mp.format_time(possec)
         else
             return ''
@@ -1367,7 +1484,7 @@ function osc_init()
     end
     ne.eventresponder['mouse_move'] = --keyframe seeking when mouse is dragged
         function (element)
-			if not element.state.mbtnleft then return end -- allow drag for mbtnleft only!
+            if not element.state.mbtnleft then return end -- allow drag for mbtnleft only!
             -- mouse move events may pile up during seeking and may still get
             -- sent when the user is done seeking, so we need to throw away
             -- identical seeks
@@ -1385,34 +1502,83 @@ function osc_init()
         end
     ne.eventresponder['mbtn_left_down'] = --exact seeks on single clicks
         function (element)
-			mp.commandv('seek', get_slider_value(element), 'absolute-percent', 'exact')
-			element.state.mbtnleft = true
-		end
-	ne.eventresponder['mbtn_left_up'] =
-		function (element) element.state.mbtnleft = false end
+            mp.commandv('seek', get_slider_value(element), 'absolute-percent', 'exact')
+            element.state.mbtnleft = true
+        end
+    ne.eventresponder['mbtn_left_up'] =
+        function (element) element.state.mbtnleft = false end
     ne.eventresponder['mbtn_right_down'] = --seeks to chapter start
         function (element)
-			local duration = mp.get_property_number('duration', nil)
-			if not (duration == nil) then
-				local chapters = mp.get_property_native('chapter-list', {})
-				if #chapters > 0 then
-					local pos = get_slider_value(element)
-					local ch = #chapters
-					for n = 1, ch do
-						if chapters[n].time / duration * 100 >= pos then
-							ch = n - 1
-							break
-						end
-					end
-					mp.commandv('set', 'chapter', ch - 1)
-					--if chapters[ch].title then show_message(chapters[ch].time) end
-				end
-			end
-		end
+            local duration = mp.get_property_number('duration', nil)
+            if not (duration == nil) then
+                local chapters = mp.get_property_native('chapter-list', {})
+                if #chapters > 0 then
+                    local pos = get_slider_value(element)
+                    local ch = #chapters
+                    for n = 1, ch do
+                        if chapters[n].time / duration * 100 >= pos then
+                            ch = n - 1
+                            break
+                        end
+                    end
+                    mp.commandv('set', 'chapter', ch - 1)
+                    --if chapters[ch].title then show_message(chapters[ch].time) end
+                end
+            end
+        end
     ne.eventresponder['reset'] =
         function (element) element.state.lastseek = nil end
 
-
+    --volumebar
+    ne = new_element('volumebar', 'slider')
+    ne.visible = (osc_param.playresx >= 700) and user_opts.volumecontrol
+    ne.enabled = (get_track('audio')>0)
+    ne.slider.tooltipF = 
+		function (pos)
+			local refpos = state.proc_volume
+			if refpos > 100 then refpos = 100 end
+			if pos+3 >= refpos and pos-3 <= refpos then
+				return string.format('%d', state.proc_volume)
+			else
+				return ''
+			end
+		end
+    ne.slider.markerF = nil
+    ne.slider.seekRangesF = nil
+    ne.slider.posF =
+        function ()
+            return state.proc_volume
+        end
+    ne.eventresponder['mouse_move'] =
+        function (element)
+            if not element.state.mbtnleft then return end
+            local seekto = get_slider_value(element)
+            if (element.state.lastseek == nil) or
+                (not (element.state.lastseek == seekto)) then
+                    set_volume(seekto)
+                    element.state.lastseek = seekto
+            end
+        end
+    ne.eventresponder['mbtn_left_down'] = --exact seeks on single clicks
+        function (element)
+            local seekto = get_slider_value(element)
+            set_volume(seekto)
+            element.state.mbtnleft = true
+        end
+    ne.eventresponder['mbtn_left_up'] =
+        function (element)
+			element.state.mbtnleft = false
+		end
+    ne.eventresponder['reset'] =
+        function (element) element.state.lastseek = nil end
+    ne.eventresponder['wheel_up_press'] =
+        function (element)
+			set_volume(state.proc_volume+5)
+		end
+    ne.eventresponder['wheel_down_press'] =
+        function (element)
+			set_volume(state.proc_volume-5)
+		end
     -- tc_left (current pos)
     ne = new_element('tc_left', 'button')
     ne.content = function () return (mp.get_property_osd('playback-time')) end
@@ -1422,14 +1588,14 @@ function osc_init()
     ne.content = function ()
         if (mp.get_property_number('duration', 0) <= 0) then return '--:--:--' end
         if (state.rightTC_trem) then
-			return ('-'..mp.get_property_osd('playtime-remaining'))
+            return ('-'..mp.get_property_osd('playtime-remaining'))
         else
-			return (mp.get_property_osd('duration'))
+            return (mp.get_property_osd('duration'))
         end
     end
     ne.eventresponder['mbtn_left_up'] =
         function () state.rightTC_trem = not state.rightTC_trem end
-
+        
     -- load layout
     layouts()
 
@@ -1493,14 +1659,14 @@ end
 function pause_state(name, enabled)
     state.paused = enabled
     if user_opts.showtitle then
-		if enabled then
-			state.lastvisibility = user_opts.visibility
-			visibility_mode("always", true)
-			show_osc()
-		else
-			visibility_mode(state.lastvisibility, true)
-		end
-	end
+        if enabled then
+            state.lastvisibility = user_opts.visibility
+            visibility_mode('always', true)
+            show_osc()
+        else
+            visibility_mode(state.lastvisibility, true)
+        end
+    end
     request_tick()
 end
 
@@ -1794,44 +1960,45 @@ function process_event(source, what)
 end
 
 function show_logo()
-	local osd_w, osd_h = 640, 360
-	local logo_x, logo_y = osd_w/2, osd_h/2-20
-	local ass = assdraw.ass_new()
-	ass:new_event()
-	ass:pos(logo_x, logo_y)
-	ass:append('{\\1c&H8E348D&\\3c&H0&\\3a&H60&\\blur1\\bord0.5}')
-	ass:draw_start()
-	ass_draw_cir_cw(ass, 0, 0, 100)
-	ass:draw_stop()
-	
-	ass:new_event()
-	ass:pos(logo_x, logo_y)
-	ass:append('{\\1c&H632462&\\bord0}')
-	ass:draw_start()
-	ass_draw_cir_cw(ass, 6, -6, 75)
-	ass:draw_stop()
+    local osd_w, osd_h, osd_aspect = mp.get_osd_size()
+    osd_w, osd_h = 360*osd_aspect, 360
+    local logo_x, logo_y = osd_w/2, osd_h/2-20
+    local ass = assdraw.ass_new()
+    ass:new_event()
+    ass:pos(logo_x, logo_y)
+    ass:append('{\\1c&H8E348D&\\3c&H0&\\3a&H60&\\blur1\\bord0.5}')
+    ass:draw_start()
+    ass_draw_cir_cw(ass, 0, 0, 100)
+    ass:draw_stop()
+    
+    ass:new_event()
+    ass:pos(logo_x, logo_y)
+    ass:append('{\\1c&H632462&\\bord0}')
+    ass:draw_start()
+    ass_draw_cir_cw(ass, 6, -6, 75)
+    ass:draw_stop()
 
-	ass:new_event()
-	ass:pos(logo_x, logo_y)
-	ass:append('{\\1c&HFFFFFF&\\bord0}')
-	ass:draw_start()
-	ass_draw_cir_cw(ass, -4, 4, 50)
-	ass:draw_stop()
-		
-	ass:new_event()
-	ass:pos(logo_x, logo_y)
-	ass:append('{\\1c&H632462&\\bord&}')
-	ass:draw_start()
-	ass:move_to(-20, -20)
-	ass:line_to(23.3, 5)
-	ass:line_to(-20, 30)
-	ass:draw_stop()
-	
-	ass:new_event()
-	ass:pos(logo_x, logo_y+110)
-	ass:an(8)
-	ass:append(texts.welcome)
-	set_osd(osd_w, osd_h, ass.text)
+    ass:new_event()
+    ass:pos(logo_x, logo_y)
+    ass:append('{\\1c&HFFFFFF&\\bord0}')
+    ass:draw_start()
+    ass_draw_cir_cw(ass, -4, 4, 50)
+    ass:draw_stop()
+        
+    ass:new_event()
+    ass:pos(logo_x, logo_y)
+    ass:append('{\\1c&H632462&\\bord&}')
+    ass:draw_start()
+    ass:move_to(-20, -20)
+    ass:line_to(23.3, 5)
+    ass:line_to(-20, 30)
+    ass:draw_stop()
+    
+    ass:new_event()
+    ass:pos(logo_x, logo_y+110)
+    ass:an(8)
+    ass:append(texts.welcome)
+    set_osd(osd_w, osd_h, ass.text)
 end
 
 -- called by mpv on every frame
@@ -1839,7 +2006,7 @@ function tick()
     if (not state.enabled) then return end
 
     if (state.idle) then
-		show_logo()
+        show_logo()
         -- render idle message
         msg.trace('idle message')
 
@@ -1918,6 +2085,21 @@ mp.observe_property('fullscreen', 'bool',
         state.fullscreen = val
         request_init_resize()
     end
+)
+mp.observe_property('mute', 'bool',
+    function(name, val)
+        state.mute = val
+    end
+)
+mp.observe_property('volume', 'number',
+	function(name, val)
+		state.sys_volume = val
+		if user_opts.processvolume then
+			state.proc_volume = val*val/100
+		else
+			state.proc_volume = val
+		end
+	end
 )
 mp.observe_property('border', 'bool',
     function(name, val)
@@ -2012,12 +2194,12 @@ function visibility_mode(mode, no_osd)
     elseif mode == 'never' then
         enable_osc(false)
     else
-        msg.warn('Ignoring unknown visibility mode \"' .. mode .. '\"')
+        msg.warn('Ignoring unknown visibility mode \'' .. mode .. '\'')
         return
     end
     
-	user_opts.visibility = mode
-	
+    user_opts.visibility = mode
+    
     if not no_osd and tonumber(mp.get_property('osd-level')) >= 1 then
         mp.osd_message('OSC visibility: ' .. mode)
     end
@@ -2034,6 +2216,15 @@ end
 visibility_mode(user_opts.visibility, true)
 mp.register_script_message('osc-visibility', visibility_mode)
 mp.add_key_binding(nil, 'visibility', function() visibility_mode('cycle') end)
+
+mp.register_script_message("thumbfast-info", function(json)
+    local data = utils.parse_json(json)
+    if type(data) ~= "table" or not data.width or not data.height then
+        msg.error("thumbfast-info: received json didn't produce a table with thumbnail information")
+    else
+        thumbfast = data
+    end
+end)
 
 set_virt_mouse_area(0, 0, 0, 0, 'input')
 set_virt_mouse_area(0, 0, 0, 0, 'window-controls')
