@@ -1,5 +1,5 @@
-mp.observe_property("eof-reached", "bool", function(_, eof)
-    if eof and mp.get_property_bool("pause") then
+mp.observe_property("pause", "bool", function(_, paused)
+    if paused and mp.get_property_bool("eof-reached") then
         mp.set_property("fullscreen", "no")
     end
 end)
