@@ -233,6 +233,7 @@ input type:pointer {
     for_window [app_id="iwgtk"] floating enable, sticky enable
     for_window [app_id="mpv"] inhibit_idle visible
     for_window [workspace=$ws5] layout tabbed, floating enable
+    for_window [class="steamwebhelper" title="^Steam$"] floating disable, inhibit_idle visible
     for_window [class="heroic"] floating disable
     for_window [class="gamescope"] floating enable, inhibit_idle open
     for_window [app_id="chiaki"] floating disable, inhibit_idle visible
