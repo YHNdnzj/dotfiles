@@ -36,7 +36,7 @@ set $ws9 9
 set $ws10 10:VM/C
 # Cursor theme and size
 set $cursor_theme GoogleDot-Blue
-set $cursor_size 24
+set $cursor_size 22
 # Icon theme
 set $icon_theme Papirus-Dark
 # Title style
