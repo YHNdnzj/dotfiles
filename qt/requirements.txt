@@ -1,5 +1,5 @@
 Packages:
-qt6ct-git
-qt5ct-svn
+qt6ct
+qt5ct
 papirus-icon-theme
 breeze-icons
