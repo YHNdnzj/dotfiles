@@ -1,2 +1,0 @@
-Packages:
-alacritty-git
