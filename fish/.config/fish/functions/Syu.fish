@@ -4,7 +4,7 @@ function Syu --description 'Upgrade the system'
     set -l acl_proxy http://127.0.0.1:8119
 
     http_proxy=$acl_proxy https_proxy=$acl_proxy \
-        no_proxy=opentuna.cn,mirrors.tuna.tsinghua.edu.cn,mirrors.ustc.edu.cn \
+        no_proxy=opentuna.cn,mirrors.wsyu.edu.cn,mirrors.ustc.edu.cn \
         paru -Syu --mflags "http_proxy=$proxy https_proxy=$proxy"
 
     and paru -c
