@@ -207,7 +207,8 @@ input type:pointer {
     assign [app_id="srain"] workspace $ws3
     assign [app_id="indi.lomirus.gtk-qq"] workspace $ws3
     assign [app_id="evolution"] workspace $ws4
-    assign [class="steamwebhelper"] workspace $ws5
+    assign [class="steam"] workspace $ws5
+    assign [title="Steam"] workspace $ws5
     assign [class="heroic"] workspace $ws5
     assign [app_id="chiaki"] workspace $ws5
     assign [app_id="org.kde.okular"] workspace $ws6
@@ -233,7 +234,7 @@ input type:pointer {
     for_window [app_id="iwgtk"] floating enable, sticky enable
     for_window [app_id="mpv"] inhibit_idle visible
     for_window [workspace=$ws5] layout tabbed, floating enable
-    for_window [class="steamwebhelper" title="^Steam$"] floating disable, inhibit_idle visible
+    for_window [class="steam" title="^Steam$"] floating disable, inhibit_idle visible
     for_window [class="heroic"] floating disable
     for_window [class="gamescope"] floating enable, inhibit_idle open
     for_window [app_id="chiaki"] floating disable, inhibit_idle visible
