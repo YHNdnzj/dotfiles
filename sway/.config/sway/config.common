@@ -216,7 +216,7 @@ input type:pointer {
     assign [class="wps"] workspace $ws6
     assign [class="wpspdf"] workspace $ws6
     assign [app_id="calibre-gui"] workspace $ws6
-    assign [class="VirtualBox Manager"] workspace $ws10
+    assign [class="VirtualBox"] workspace $ws10
 
     # Change settings for windows
     for_window [app_id="Alacritty" workspace=$ws1] layout tabbed, border normal 1
