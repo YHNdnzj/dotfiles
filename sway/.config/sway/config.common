@@ -36,7 +36,7 @@ set $ws9 9
 set $ws10 10:VM/C
 # Cursor theme and size
 set $cursor_theme GoogleDot-Blue
-set $cursor_size 22
+set $cursor_size 26
 # Icon theme
 set $icon_theme Papirus-Dark
 # Title style
@@ -352,7 +352,6 @@ bar {
 #
 # Cursor Theme & XWayland Looking (HiDPI):
 #
-seat seat0 xcursor_theme $cursor_theme $cursor_size
 exec_always {
     gsettings set org.gnome.desktop.interface cursor-theme $cursor_theme
     gsettings set org.gnome.desktop.interface cursor-size $cursor_size
