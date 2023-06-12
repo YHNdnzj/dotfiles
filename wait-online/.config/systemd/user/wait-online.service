@@ -1,0 +1,9 @@
+[Unit]
+Description=Wait until we're connected to the Internet
+
+[Service]
+Type=notify
+ExecStart=/usr/bin/check-online
+
+[Install]
+WantedBy=network-online.target
