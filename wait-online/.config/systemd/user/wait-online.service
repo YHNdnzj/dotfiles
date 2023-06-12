@@ -2,8 +2,9 @@
 Description=Wait until we're connected to the Internet
 
 [Service]
-Type=notify
-ExecStart=/usr/bin/check-online
+Type=oneshot
+ExecStart=/usr/bin/wait-online
+RemainAfterExit=yes
 
 [Install]
 WantedBy=network-online.target
