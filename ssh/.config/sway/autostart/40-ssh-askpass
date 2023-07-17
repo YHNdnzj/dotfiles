@@ -1,0 +1,2 @@
+exec_always systemctl --user set-environment SSH_ASKPASS=lxqt-openssh-askpass
+exec_always systemctl --user try-restart ssh-agent.service

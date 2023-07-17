@@ -4,6 +4,7 @@ Documentation=man:ssh-agent(1)
 
 [Service]
 Environment=SSH_AUTH_SOCK=%t/ssh-agent.socket
+PassEnvironment=WAYLAND_DISPLAY DISPLAY SSH_ASKPASS
 ExecStart=/usr/bin/ssh-agent -D -a $SSH_AUTH_SOCK
 
 [Install]

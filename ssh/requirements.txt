@@ -1,4 +1,5 @@
 Packages:
+lxqt-openssh-askpass
 openbsd-netcat
 
 Services:
