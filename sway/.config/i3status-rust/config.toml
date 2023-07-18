@@ -41,6 +41,9 @@ block = "battery"
 format = " $icon $percentage $power $time "
 
 [[block]]
+block = "kdeconnect"
+
+[[block]]
 block = "disk_space"
 format = " $icon $used.eng(prefix:Gi,hide_unit:true,hide_prefix:true)/$total.eng(prefix:Gi) "
 warning = 50
