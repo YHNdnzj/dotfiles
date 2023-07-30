@@ -13,5 +13,5 @@ proxychains-ng
 fontconfig
 
 Services:
-HTTP Proxy (shadowsocks-rust): listen on 8118
-HTTP Proxy using GFWList (shadowsocks-rust): listen on 8119
+HTTP Proxy: listen on 8118
+HTTP Proxy using GFWList: listen on 8119

@@ -7,4 +7,4 @@ fcitx5-pinyin-zhwiki
 fcitx5-pinyin-moegirl
 
 Services:
-HTTP Proxy (shadowsocks-rust): listen on 8118
+HTTP Proxy: listen on 8118
