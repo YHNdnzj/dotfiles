@@ -1,6 +1,0 @@
-#!/bin/bash -e
-
-for trash in /data/*/.Trash-"$UID"
-do
-    autotrash -T "$trash" "$@"
-done

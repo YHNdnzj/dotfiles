@@ -1,9 +1,0 @@
-[Unit]
-Description=Cleanup outdated paru AUR package cache weekly
-
-[Timer]
-OnCalendar=weekly
-Persistent=true
-
-[Install]
-WantedBy=timers.target

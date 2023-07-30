@@ -1,10 +1,11 @@
 [Unit]
 Description=Pull dotfiles repo automatically
 Documentation=https://github.com/YHNdnzj/dotfiles
+Wants=network-online.target
+After=network-online.target
 
 [Service]
 WorkingDirectory=%h/dotfiles
-ExecStartPre=/usr/bin/wait-online
 ExecStart=/usr/bin/git pull
 Restart=on-failure
 RestartSec=20

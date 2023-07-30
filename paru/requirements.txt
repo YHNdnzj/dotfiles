@@ -1,6 +1,6 @@
 Packages:
 base-devel
-scripts/aur-package-cache-cleanup
 
 Services:
-HTTP Proxy (shadowsocks-rust): listen on 8118
+HTTP Proxy: listen on 8118
+HTTP Proxy using GFWList: listen on 8119

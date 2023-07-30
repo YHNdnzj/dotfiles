@@ -1,2 +1,2 @@
 Services:
-HTTP Proxy (shadowsocks-rust): listen on 8118
+HTTP Proxy: listen on 8118
