@@ -19,6 +19,9 @@
 [pull]
     rebase = true
 
+[fetch]
+    prune = true
+
 [push]
     followTags = true
     autoSetupRemote = true
