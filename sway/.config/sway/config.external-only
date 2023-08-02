@@ -1,0 +1,12 @@
+include ~/.config/sway/config.common
+
+### Output configuration
+output HDMI-A-1 res 3840x2160 scale 1.75 adaptive_sync on
+output eDP-1 disable
+
+### Input configuration
+input 14:13330:BT5.0_Mouse {
+    events disabled
+}
+
+# vim: set ft=swayconfig ts=4 sw=4 et:

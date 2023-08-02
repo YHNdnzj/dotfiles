@@ -1,7 +1,7 @@
 Packages:
 sway-im-git
 wlroots-hidpi-xprop-git
-dialog
+fzf
 alacritty
 bemenu
 bemenu-wayland

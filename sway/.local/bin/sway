@@ -1,45 +1,10 @@
 #!/bin/bash
 
-config_dual() {
-    local -i n=0 r
-
-    for output in /sys/class/drm/card?-*
-    do
-        read -r < "$output/enabled"
-        if [[ "$REPLY" == "enabled" ]]; then
-            (( n++ ))
-        fi
-    done
-
-    if (( n == 1 )); then
-        DIALOG_TIMEOUT=5 dialog --erase-on-exit --timeout 3 --defaultno --yesno "Start sway with dual screen config?" 0 0
-    elif (( n == 2 )); then
-        DIALOG_TIMEOUT=5 dialog --erase-on-exit --timeout 3 --yesno "Start sway with dual screen config?" 0 0
-    elif (( n > 2 )); then
-        echo "More than 2 monitors connected, defaulting to config for dual monitor" >&2
-        sleep 1
-        DIALOG_TIMEOUT=5 dialog --erase-on-exit --timeout 3 --yesno "Start sway with dual screen config?" 0 0
-    else
-        echo "No monitor connected!" >&2
-        exit 2
-    fi
-    r=$?
-
-    if (( r == 255 )); then
-        echo "Invalid choice!" >&2
-        exit 1
-    elif (( r == 1 || (n == 1 && r == 5) )); then
-        export DUAL_CONFIGURED=1
-    else
-        export DUAL_CONFIGURED=2
-    fi
-}
-
 select_card() {
-    for card in /dev/dri/card*
-    do
+    for card in /dev/dri/card*; do
         if (( $(udevadm info -an "$card" | grep boot_vga | rev | cut -c 2) )); then
             export WLR_DRM_DEVICES="$card"
+            break
         fi
     done
 
@@ -53,8 +18,12 @@ if [[ ! $WLR_DRM_DEVICES ]]; then
     select_card
 fi
 
-if ! (( DUAL_CONFIGURED )); then
-    config_dual
+if [[ ! $SWAY_CONF_SELECTED ]]; then
+    export SWAY_CONF_SELECTED="$(find "$HOME/.config/sway/" -maxdepth 1 -name "config.*" -print0 | fzf --read0)"
+    if [[ ! $SWAY_CONF_SELECTED ]]; then
+        echo "No configuration file selected!" >&2
+        exit 2
+    fi
 fi
 
 if [[ -t 1 ]]; then
@@ -65,19 +34,11 @@ fi
 
 set -ex
 envfiles=("$HOME/.config/sway/env"/*)
-for envfile in "${envfiles[@]}"
-do
+for envfile in "${envfiles[@]}"; do
     source "$envfile"
 done
 set +x
 
 cd "$HOME"
-export -n OLDPWD
-if (( DUAL_CONFIGURED == 1 )); then
-    exec /usr/bin/sway --unsupported-gpu
-elif (( DUAL_CONFIGURED == 2 )); then
-    exec /usr/bin/sway --unsupported-gpu --config "$HOME/.config/sway/config.dual"
-else
-    echo "Dual screen is not correctly configured!" >&2
-    exit 2
-fi
+export -n OLDPWD SWAY_CONF_SELECTED
+exec /usr/bin/sway --unsupported-gpu --config "$SWAY_CONF_SELECTED"
