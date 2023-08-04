@@ -19,7 +19,7 @@ if [[ ! $WLR_DRM_DEVICES ]]; then
 fi
 
 if [[ ! $SWAY_CONF_SELECTED ]]; then
-    export SWAY_CONF_SELECTED="$(find "$HOME/.config/sway/" -maxdepth 1 -name "config*" -print0 | fzf --read0)"
+    export SWAY_CONF_SELECTED="$(find "$HOME/.config/sway/" -maxdepth 1 -name "config*" ! -name "config.common" -print0 | fzf --read0)"
     if [[ ! $SWAY_CONF_SELECTED ]]; then
         echo "No configuration file selected!" >&2
         exit 2
