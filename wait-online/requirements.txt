@@ -1,5 +1,0 @@
-Packages:
-wait-online-git
-
-Services:
-systemd --user: network-online.target wait-online.service

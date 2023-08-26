@@ -1,6 +1,6 @@
 Packages:
 git
-wait-online
 
 Services:
+systemd: systemd-networkd.service
 systemd --user: dotfiles-pull.service

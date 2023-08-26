@@ -1,6 +1,2 @@
 Packages:
 base-devel
-
-Services:
-HTTP Proxy: listen on 8118
-HTTP Proxy using GFWList: listen on 8119

@@ -4,6 +4,3 @@ bat-extras
 git-delta
 vim
 pacman-contrib
-
-Services:
-HTTP Proxy: listen on 8118

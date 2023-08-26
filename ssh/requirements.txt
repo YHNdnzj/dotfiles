@@ -1,5 +1,0 @@
-Packages:
-openbsd-netcat
-
-Services:
-SOCKS5 Proxy: listen on 1080

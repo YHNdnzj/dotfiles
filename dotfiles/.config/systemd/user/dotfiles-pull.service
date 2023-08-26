@@ -1,11 +1,10 @@
 [Unit]
 Description=Pull dotfiles repo automatically
 Documentation=https://github.com/YHNdnzj/dotfiles
-Wants=network-online.target
-After=network-online.target
 
 [Service]
 WorkingDirectory=%h/dotfiles
+ExecCondition=/usr/lib/systemd/systemd-networkd-wait-online --timeout=30 --quiet
 ExecStart=/usr/bin/git pull
 Restart=on-failure
 RestartSec=20
