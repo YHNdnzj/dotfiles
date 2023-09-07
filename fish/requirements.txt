@@ -1,5 +1,5 @@
 Packages:
-exa
+eza
 bat
 bat-extras
 git-delta
