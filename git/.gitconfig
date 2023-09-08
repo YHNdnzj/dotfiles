@@ -3,15 +3,8 @@
     email = me@yhndnzj.com
     signingkey = 22269415549E1602E06DC0716F4C5AF537D3C301
 
-[color]
-    ui = auto
-
 [core]
     autocrlf = input
-
-[http]
-    proxy = http://127.0.0.1:8118
-    postBuffer = 1048576000
 
 [commit]
     gpgsign = true
@@ -22,15 +15,25 @@
 [fetch]
     prune = true
 
+[rebase]
+    autosquash = true
+
 [push]
     followTags = true
     autoSetupRemote = true
-
-[rebase]
-    autosquash = true
 
 [merge]
     log = true
 
 [submodule]
     recurse = true
+
+[color]
+    ui = auto
+
+[include]
+    path = /home/yhndnzj/.config/git-delta/gitconfig
+
+[http]
+    proxy = http://127.0.0.1:8118
+    postBuffer = 1048576000
