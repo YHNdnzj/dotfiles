@@ -1,0 +1,5 @@
+#!/bin/bash
+export XCURSOR_SIZE=48
+export GTK_IM_MODULE=fcitx
+
+exec /usr/bin/"${0##*/}" "$@"
