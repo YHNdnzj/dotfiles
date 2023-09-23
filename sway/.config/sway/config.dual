@@ -17,6 +17,12 @@ input 14:13330:BT5.0_Mouse {
     left_handed disabled
 }
 
+### Idle configuration
+exec swayidle -w \
+        timeout 1200 'swaylock -f' \
+        timeout 1800 'swaymsg "output * power off"' resume 'swaymsg "output * power on"' \
+        before-sleep 'playerctl pause' before-sleep 'swaylock -f'
+
 ### Key bindings
 # Workspaces:
     # Move focused workspace to output

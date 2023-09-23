@@ -9,4 +9,9 @@ input 14:13330:BT5.0_Mouse {
     events disabled
 }
 
+### Idle configuration
+exec swayidle -w \
+        timeout 1200 'swaylock -f' \
+        before-sleep 'playerctl pause' before-sleep 'swaylock -f'
+
 # vim: set ft=swayconfig ts=4 sw=4 et:
