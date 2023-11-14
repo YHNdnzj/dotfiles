@@ -28,7 +28,7 @@ format = " $icon "
 command_state = "pidof wlsunset"
 command_off = "pkill wlsunset"
 command_on = "systemd-run --user ~/.local/bin/wlsunset-ipgeo"
-interval = 15
+interval = 60
 [block.icons_overrides]
 toggle_off = "\uf185"
 toggle_on = "\uf186"
