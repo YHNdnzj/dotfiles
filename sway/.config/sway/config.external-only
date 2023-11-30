@@ -1,7 +1,7 @@
 include ~/.config/sway/config.common
 
 ### Output configuration
-output HDMI-A-1 res 3840x2160 scale 1.75 adaptive_sync on
+output HDMI-A-1 res 3840x2160 scale 1.75
 output eDP-1 disable
 
 ### Input configuration
