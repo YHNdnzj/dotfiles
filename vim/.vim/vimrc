@@ -6,4 +6,7 @@ set ts=4 sw=4 et
 
 let g:EditorConfig_preserve_formatoptions=1
 
+set undodir=~/.local/state/vim/undo
+set undofile
+
 command B GitBlame
