@@ -1,12 +1,14 @@
 unlet! set_defaults_vim
 source $VIMRUNTIME/defaults.vim
-set ttymouse=sgr
 
 set ts=4 sw=4 et
 
-let g:EditorConfig_preserve_formatoptions=1
-
+set viminfofile=~/.local/state/vim/viminfo
 set undodir=~/.local/state/vim/undo
 set undofile
+
+set ttymouse=sgr
+
+let g:EditorConfig_preserve_formatoptions=1
 
 command B GitBlame
