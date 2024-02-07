@@ -6,13 +6,17 @@ icons = "awesome6"
 
 [[block]]
 block = "net"
-device = "bond0"
-format_alt = " $icon {$ip|Can't acquire IP address} "
+device = "wlan0"
+interval = 5
+format_alt = " $icon {$ssid|Can't acquire SSID} {$ip|Can't acquire IP address} "
+inactive_format = " $icon NOCONN "
 
 [[block]]
 block = "net"
 device = "eth0"
-format = "$icon"
+interval = 5
+format_alt = " $icon {$ip|Can't acquire IP address} "
+inactive_format = " $icon NOCONN "
 missing_format = ""
 [block.icons_overrides]
 net_wired = "\uf796"
