@@ -1,5 +1,5 @@
 Packages:
-sway-im-git
+sway-git
 wlroots-hidpi-xprop-git
 fzf
 alacritty
