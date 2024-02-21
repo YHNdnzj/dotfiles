@@ -46,6 +46,8 @@ format = " $icon $percentage $power $time "
 
 [[block]]
 block = "kdeconnect"
+disconnected_format = ""
+missing_format = ""
 
 [[block]]
 block = "disk_space"
