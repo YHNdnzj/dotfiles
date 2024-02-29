@@ -42,10 +42,11 @@ xdg-desktop-portal-lxqt
 xdg-desktop-portal-gtk
 firefox-nightly-zh-tw
 telegram-desktop-megumifox
-nheko-git
+nheko
+evolution
 htop
 asusctl
 flatpak
 
 Services:
-systemd --user: ydotool.service
+systemd --user: ydotool.service gnome-keyring-daemon.socket
