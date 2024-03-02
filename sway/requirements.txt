@@ -49,4 +49,4 @@ asusctl
 flatpak
 
 Services:
-systemd --user: ydotool.service gnome-keyring-daemon.service
+systemd --user: gnome-keyring-daemon.service ydotoold.service
