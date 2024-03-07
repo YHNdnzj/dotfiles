@@ -188,12 +188,9 @@ input type:pointer {
     assign [app_id="firefox"] workspace $ws2
     assign [app_id="org.telegram.desktop"] workspace $ws3
     assign [app_id="nheko"] workspace $ws3
-    assign [app_id="srain"] workspace $ws3
-    assign [app_id="indi.lomirus.gtk-qq"] workspace $ws3
     assign [app_id="evolution"] workspace $ws4
     assign [class="steam"] workspace $ws5
     assign [title="Steam"] workspace $ws5
-    assign [class="heroic"] workspace $ws5
     assign [app_id="chiaki"] workspace $ws5
     assign [app_id="org.kde.okular"] workspace $ws6
     assign [class="ONLYOFFICE Desktop Editors"] workspace $ws6
@@ -219,13 +216,11 @@ input type:pointer {
     for_window [app_id="mpv"] inhibit_idle visible
     for_window [workspace=$ws5] layout tabbed, floating enable
     for_window [class="steam" title="^Steam$"] floating disable, inhibit_idle visible
-    for_window [class="heroic"] floating disable
     for_window [class="gamescope"] floating enable, inhibit_idle open
     for_window [app_id="chiaki"] floating disable, inhibit_idle visible
     for_window [app_id="calibre-gui"] layout tabbed
     for_window [class="wps"] layout tabbed
     for_window [class="wpspdf"] layout tabbed
-    for_window [class="wemeetapp"] floating enable, inhibit_idle visible
     for_window [app_id="org.remmina.Remmina"] shortcuts_inhibitor enable
     for_window [workspace=$ws10] layout tabbed, inhibit_idle open, shortcuts_inhibitor enable
 #
