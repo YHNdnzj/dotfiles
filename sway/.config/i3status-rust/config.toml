@@ -46,7 +46,7 @@ format = " $icon $percentage $power $time "
 
 [[block]]
 block = "kdeconnect"
-format = "$icon{ $bat_charge|}{ $notif_icon|}"
+format = "$icon{ $bat_charge|}{ $notif_icon|} "
 disconnected_format = ""
 missing_format = ""
 
