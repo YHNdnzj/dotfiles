@@ -1,7 +1,6 @@
 Packages:
 sway-git
 wlroots-hidpi-xprop-git
-fzf
 alacritty
 bemenu
 bemenu-wayland
@@ -22,7 +21,6 @@ otf-minecraft
 polkit-gnome
 gnome-keyring
 networkd-notify-git
-ydotool-git
 playerctl
 lm_sensors
 wlsunset-git
@@ -49,4 +47,4 @@ asusctl
 flatpak
 
 Services:
-systemd --user: gnome-keyring-daemon.socket ydotoold.service
+systemd --user: gnome-keyring-daemon.socket
