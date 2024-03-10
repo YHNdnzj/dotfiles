@@ -18,14 +18,6 @@ if [[ ! $WLR_DRM_DEVICES ]]; then
     select_card
 fi
 
-if [[ ! $SWAY_CONF_SELECTED ]]; then
-    export SWAY_CONF_SELECTED="$(find "$HOME/.config/sway/" -maxdepth 1 -name "config*" ! -name "config.common" -print0 | fzf --read0)"
-    if [[ ! $SWAY_CONF_SELECTED ]]; then
-        echo "No configuration file selected!" >&2
-        exit 2
-    fi
-fi
-
 if [[ -t 1 ]]; then
     exec systemd-cat --identifier=sway "$0"
 else
@@ -40,5 +32,5 @@ done
 set +x
 
 cd "$HOME"
-export -n OLDPWD SWAY_CONF_SELECTED
-exec /usr/bin/sway --unsupported-gpu --config "$SWAY_CONF_SELECTED"
+export -n OLDPWD
+exec /usr/bin/sway --unsupported-gpu

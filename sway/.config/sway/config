@@ -1,12 +1,7 @@
 include ~/.config/sway/config.common
 
 ### Output configuration
-output eDP-1 res 2560x1440 scale 1.5 adaptive_sync on
-
-### Input configuration
-input 14:13330:BT5.0_Mouse {
-    events disabled
-}
+output eDP-1 scale 1.75 adaptive_sync on
 
 ### Idle configuration
 exec swayidle -w \
