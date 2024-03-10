@@ -46,6 +46,7 @@ format = " $icon $percentage $power $time "
 
 [[block]]
 block = "kdeconnect"
+format = "$icon{ $bat_icon $bat_charge|}{ $notif_icon|}"
 disconnected_format = ""
 missing_format = ""
 
@@ -75,7 +76,7 @@ format_alt = " $icon $mem_used.eng(width:1,prefix:Gi,hide_unit:true,hide_prefix:
 
 [[block]]
 block = "music"
-format = "{ $icon  $combo.str(max_width:15,rot_interval:1)  $prev  $play  $next |}"
+format = "{ $icon  $combo.str(max_width:8,rot_interval:1)  $prev  $play  $next |}"
 
 [[block]]
 block = "sound"
