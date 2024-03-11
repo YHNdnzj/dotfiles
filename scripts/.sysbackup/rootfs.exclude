@@ -1,5 +1,0 @@
-swapfile
-var/tmp
-var/cache/*/*
-var/lib/aurbuild
-var/lib/flatpak
