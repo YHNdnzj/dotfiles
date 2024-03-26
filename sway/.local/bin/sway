@@ -33,4 +33,4 @@ set +x
 
 cd "$HOME"
 export -n OLDPWD
-exec /usr/bin/sway --unsupported-gpu
+exec /usr/bin/sway
