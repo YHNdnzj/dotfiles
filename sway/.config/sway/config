@@ -7,6 +7,6 @@ output eDP-1 scale 1.75 adaptive_sync on
 exec swayidle -w \
         timeout 900 'swaylock -f' \
         timeout 930 'swaymsg "output * power off"' resume 'swaymsg "output * power on"' \
-        before-sleep 'playerctl pause' before-sleep 'swaylock -f'
+        before-sleep 'playerctl pause' before-sleep 'swaylock -f --grace 0'
 
 # vim: set ft=swayconfig ts=4 sw=4 et:
