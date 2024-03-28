@@ -1,23 +1,5 @@
 #!/bin/bash
 
-select_card() {
-    for card in /dev/dri/card*; do
-        if (( $(udevadm info -an "$card" | grep boot_vga | rev | cut -c 2) )); then
-            export WLR_DRM_DEVICES="$card"
-            break
-        fi
-    done
-
-    if [[ ! $WLR_DRM_DEVICES ]]; then
-        echo "No available GPU found!" >&2
-        exit 1
-    fi
-}
-
-if [[ ! $WLR_DRM_DEVICES ]]; then
-    select_card
-fi
-
 if [[ -t 1 ]]; then
     exec systemd-cat --identifier=sway "$0"
 else
