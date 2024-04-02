@@ -39,7 +39,7 @@ xdg-desktop-portal-wlr
 xdg-desktop-portal-lxqt
 xdg-desktop-portal-gtk
 firefox-nightly-zh-tw
-telegram-desktop-lily
+telegram-desktop-megumifox
 nheko
 evolution
 htop
