@@ -14,5 +14,5 @@ done
 set +x
 
 cd "$HOME"
-export -n OLDPWD
+export -n OLDPWD SHLVL MEMORY_PRESSURE_WATCH MEMORY_PRESSURE_WRITE CREDENTIALS_DIRECTORY
 exec /usr/bin/sway
