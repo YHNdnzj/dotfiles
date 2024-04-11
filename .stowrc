@@ -1,6 +1,7 @@
 --target=$HOME
+--dotfiles
 --no-folding
 --verbose
---ignore requirements.txt
---ignore README.md
---ignore .keep
+--ignore=requirements.txt
+--ignore=README.md
+--ignore=.keep
