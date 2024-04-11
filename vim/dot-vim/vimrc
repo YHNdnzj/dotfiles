@@ -6,6 +6,7 @@ set ts=4 sw=4 et
 set viminfofile=~/.local/state/vim/viminfo
 set undodir=~/.local/state/vim/undo
 set undofile
+let g:netrw_home=$HOME."/.local/state/vim"
 
 set ttymouse=sgr
 
