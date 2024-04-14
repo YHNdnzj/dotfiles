@@ -18,15 +18,15 @@ set $web firefox-nightly
 # on the original workspace that the command was run on.
 set $menu env LANG=en_US.UTF-8 j4-dmenu-desktop --dmenu='bemenu -i' --term=$term --wrapper='swaymsg exec --'
 # Workspace names
-set $ws1 1
-set $ws2 2:Web
-set $ws3 3:IM
-set $ws4 4:Mail
-set $ws5 5:Game
-set $ws6 6:Office
-set $ws7 7
-set $ws8 8
-set $ws9 9
+set $ws1  1
+set $ws2  2:Web
+set $ws3  3:IM
+set $ws4  4:Mail
+set $ws5  5:Office
+set $ws6  6:Game
+set $ws7  7
+set $ws8  8
+set $ws9  9
 set $ws10 10:VM/C
 # Cursor theme and size
 set $cursor_theme GoogleDot-Blue
@@ -183,12 +183,12 @@ input type:pointer {
     assign [app_id="org.telegram.desktop"] workspace $ws3
     assign [app_id="nheko"] workspace $ws3
     assign [app_id="evolution"] workspace $ws4
-    assign [app_id="chiaki"] workspace $ws5
-    assign [app_id="org.kde.okular"] workspace $ws6
-    assign [class="ONLYOFFICE Desktop Editors"] workspace $ws6
-    assign [class="wps"] workspace $ws6
-    assign [class="wpspdf"] workspace $ws6
-    assign [app_id="calibre-gui"] workspace $ws6
+    assign [app_id="org.kde.okular"] workspace $ws5
+    assign [class="ONLYOFFICE Desktop Editors"] workspace $ws5
+    assign [class="wps"] workspace $ws5
+    assign [class="wpspdf"] workspace $ws5
+    assign [app_id="calibre-gui"] workspace $ws5
+    assign [app_id="chiaki"] workspace $ws6
     assign [class="VirtualBox"] workspace $ws10
 
     # Change settings for windows
@@ -206,7 +206,7 @@ input type:pointer {
     for_window [app_id="org.twosheds.iwgtk"] floating enable, sticky enable
     for_window [app_id="iwgtk"] floating enable, sticky enable
     for_window [app_id="mpv"] inhibit_idle visible
-    for_window [workspace=$ws5] layout tabbed, floating enable
+    for_window [workspace=$ws6] layout tabbed, floating enable
     for_window [app_id="chiaki"] floating disable, inhibit_idle visible
     for_window [app_id="calibre-gui"] layout tabbed
     for_window [class="wps"] layout tabbed
