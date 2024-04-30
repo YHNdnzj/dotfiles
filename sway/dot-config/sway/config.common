@@ -192,8 +192,10 @@ input type:pointer {
     assign [class="VirtualBox"] workspace $ws10
 
     # Change settings for windows
-    for_window [app_id="Alacritty" workspace=$ws1] layout tabbed, border normal 1
+    for_window [app_id="ssh-askpass"] floating enable, sticky enable
+    for_window [app_id="gcr-prompter"] floating enable, sticky enable
     for_window [app_id="xdg-desktop-portal-lxqt"] floating enable
+    for_window [app_id="Alacritty" workspace=$ws1] layout tabbed, border normal 1
     for_window [app_id="firefox" title="Firefox"] border pixel 3, inhibit_idle fullscreen
     for_window [app_id="firefox" title="^子母畫面$"] floating enable, sticky enable, inhibit_idle visible
     for_window [app_id="firefox" title="^分享指示器$"] floating enable, inhibit_idle open
