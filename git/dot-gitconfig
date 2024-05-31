@@ -3,11 +3,9 @@
     email = me@yhndnzj.com
     signingkey = 22269415549E1602E06DC0716F4C5AF537D3C301
 
-[core]
-    autocrlf = input
-
 [commit]
     gpgsign = true
+    cleanup = scissors
 
 [pull]
     rebase = true
@@ -27,6 +25,9 @@
 
 [submodule]
     recurse = true
+
+[core]
+    autocrlf = input
 
 [color]
     ui = auto
