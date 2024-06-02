@@ -34,7 +34,3 @@
 
 [include]
     path = /home/yhndnzj/.config/git-delta/gitconfig
-
-[http]
-    proxy = http://127.0.0.1:8118
-    postBuffer = 1048576000

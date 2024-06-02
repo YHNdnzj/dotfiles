@@ -4,4 +4,3 @@ mpd-mpris
 
 Services:
 systemd --user: mpd.socket
-HTTP Proxy: listen on 8118

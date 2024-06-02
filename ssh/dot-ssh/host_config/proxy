@@ -1,3 +1,0 @@
-Host github.com aur.archlinux.org
-    ProxyCommand /usr/bin/nc -x 127.0.0.1 -F %h %p
-    ProxyUseFdpass yes

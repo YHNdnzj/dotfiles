@@ -1,5 +1,2 @@
 Packages:
 git-delta
-
-Services:
-HTTP Proxy: listen on 8118
