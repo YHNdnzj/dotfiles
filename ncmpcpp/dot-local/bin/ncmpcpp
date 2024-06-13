@@ -1,0 +1,5 @@
+#!/bin/bash -e
+
+systemctl --user start --no-block mpd-mpris.service
+
+exec /usr/bin/ncmpcpp "$@"
