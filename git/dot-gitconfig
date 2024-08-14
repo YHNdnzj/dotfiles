@@ -29,6 +29,10 @@
 [core]
     autocrlf = input
 
+[sendemail]
+    annotate = true
+    confirm = always
+
 [color]
     ui = auto
 
