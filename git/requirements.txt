@@ -1,2 +1,5 @@
 Packages:
 git-delta
+perl-io-socket-ssl
+perl-authen-sasl
+libsecret

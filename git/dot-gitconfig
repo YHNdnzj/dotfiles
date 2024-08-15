@@ -26,12 +26,23 @@
 [submodule]
     recurse = true
 
-[core]
-    autocrlf = input
+[format]
+    useAutoBase = true
 
 [sendemail]
     annotate = true
     confirm = always
+    smtpServer = 127.0.0.1
+    smtpServerPort = 1025
+    smtpUser = me@yhndnzj.com
+    smtpEncryption = tls
+    smtpSSLCertPath = ''
+
+[credential]
+    helper = /usr/lib/git-core/git-credential-libsecret
+
+[core]
+    autocrlf = input
 
 [color]
     ui = auto
