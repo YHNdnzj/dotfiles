@@ -36,7 +36,7 @@
     smtpServerPort = 1025
     smtpUser = me@yhndnzj.com
     smtpEncryption = tls
-    smtpSSLCertPath = ''
+    smtpSSLCertPath =
 
 [credential]
     helper = /usr/lib/git-core/git-credential-libsecret
