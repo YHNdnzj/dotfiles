@@ -180,7 +180,7 @@ input type:pointer {
     assign [app_id="firefox"] workspace $ws2
     assign [app_id="org.telegram.desktop"] workspace $ws3
     assign [app_id="nheko"] workspace $ws3
-    assign [app_id="evolution"] workspace $ws4
+    assign [app_id="org.gnome.Evolution"] workspace $ws4
     assign [app_id="org.kde.okular"] workspace $ws5
     assign [class="ONLYOFFICE Desktop Editors"] workspace $ws5
     assign [class="wps"] workspace $ws5
@@ -193,25 +193,31 @@ input type:pointer {
     for_window [app_id="ssh-askpass"] floating enable, sticky enable
     for_window [app_id="gcr-prompter"] floating enable, sticky enable
     for_window [app_id="xdg-desktop-portal-lxqt"] floating enable
+    for_window [app_id="org.pulseaudio.pavucontrol"] floating enable, sticky enable
+    for_window [app_id="org.rncbc.qpwgraph"] floating enable, sticky enable
+    for_window [app_id="iwgtk"] floating enable, sticky enable
+    for_window [app_id="authenticator"] floating enable, sticky enable
+
     for_window [app_id="Alacritty" workspace=$ws1] layout tabbed, border normal 1
+    for_window [app_id="mpv"] inhibit_idle visible
+
     for_window [app_id="firefox" title="Firefox"] border pixel 3, inhibit_idle fullscreen
     for_window [app_id="firefox" title="^子母畫面$"] floating enable, sticky enable, inhibit_idle visible
     for_window [app_id="firefox" title="^分享指示器$"] floating enable, inhibit_idle open
+
     for_window [workspace=$ws3] layout tabbed
-    for_window [app_id="evolution"] floating enable
-    for_window [app_id="evolution" title="Evolution$"] floating disable
-    for_window [app_id="pavucontrol"] floating enable, sticky enable
-    for_window [app_id="org.rncbc.qpwgraph"] floating enable, sticky enable
-    for_window [app_id="authenticator"] floating enable, sticky enable
-    for_window [app_id="iwgtk"] floating enable, sticky enable
-    for_window [app_id="mpv"] inhibit_idle visible
-    for_window [workspace=$ws6] layout tabbed, floating enable
-    for_window [app_id="chiaki"] floating disable, inhibit_idle visible
-    for_window [app_id="calibre-gui"] layout tabbed
+
+    for_window [app_id="org.gnome.Evolution"] floating enable
+    for_window [app_id="org.gnome.Evolution" title="Evolution$"] floating disable
+
+    for_window [workspace=$ws6] layout tabbed, inhibit_idle visible
+
+    for_window [workspace=$ws10] layout tabbed, inhibit_idle open, shortcuts_inhibitor enable
+
     for_window [class="wps"] layout tabbed
     for_window [class="wpspdf"] layout tabbed
+    for_window [app_id="calibre-gui"] layout tabbed
     for_window [app_id="org.remmina.Remmina"] shortcuts_inhibitor enable
-    for_window [workspace=$ws10] layout tabbed, inhibit_idle open, shortcuts_inhibitor enable
 #
 # Layout stuff:
 #
