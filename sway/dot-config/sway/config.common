@@ -210,13 +210,14 @@ input type:pointer {
     for_window [app_id="org.gnome.Evolution"] floating enable
     for_window [app_id="org.gnome.Evolution" title="Evolution$"] floating disable
 
+    for_window [class="wps"] layout tabbed
+    for_window [class="wpspdf"] layout tabbed
+    for_window [app_id="calibre-gui"] layout tabbed
+
     for_window [workspace=$ws6] layout tabbed, inhibit_idle visible
 
     for_window [workspace=$ws10] layout tabbed, inhibit_idle open, shortcuts_inhibitor enable
 
-    for_window [class="wps"] layout tabbed
-    for_window [class="wpspdf"] layout tabbed
-    for_window [app_id="calibre-gui"] layout tabbed
     for_window [app_id="org.remmina.Remmina"] shortcuts_inhibitor enable
 #
 # Layout stuff:
