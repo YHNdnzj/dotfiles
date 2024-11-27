@@ -3,3 +3,6 @@ git-delta
 perl-io-socket-ssl
 perl-authen-sasl
 libsecret
+
+Services:
+protonmail-bridge: listen on 1025

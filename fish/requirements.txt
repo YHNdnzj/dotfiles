@@ -9,5 +9,4 @@ rmtrash
 pacman-contrib
 paru
 flatpak
-proxychains-ng
 fontconfig
