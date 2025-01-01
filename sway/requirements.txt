@@ -1,14 +1,15 @@
 Packages:
 sway-git
 wlroots-hidpi-xprop-git
+kanshi
 alacritty
 bemenu
 bemenu-wayland
 j4-dmenu-desktop
 swayidle
 swaylock-effects-git
-i3status-rust-git
-mako-git
+i3status-rust
+mako
 iwgtk
 qt5-wayland
 qt6-wayland
