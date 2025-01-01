@@ -167,9 +167,9 @@ input type:pointer {
 
     # Assign workspace to output
     workspace $ws1 output DP-2 eDP-1
+    workspace $ws4 output eDP-1 DP-2
     workspace $ws2 output DP-2 eDP-1
     workspace $ws3 output DP-2 eDP-1
-    workspace $ws4 output eDP-1 DP-2
 
     # Assign application to workspace
     assign [app_id="firefox"] workspace $ws2
