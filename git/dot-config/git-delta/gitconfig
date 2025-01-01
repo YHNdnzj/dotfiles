@@ -7,9 +7,6 @@
 [interactive]
     diffFilter = delta --color-only
 
-[merge]
-    conflictstyle = diff3
-
 [delta]
     features = gruvmax-fang zebra-dark
 

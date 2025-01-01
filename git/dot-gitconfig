@@ -21,6 +21,7 @@
     autoSetupRemote = true
 
 [merge]
+    conflictStyle = zdiff3
     log = true
 
 [submodule]
