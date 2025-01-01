@@ -2,11 +2,14 @@
 export LANG=zh_TW.UTF-8
 export LANGUAGE=zh_TW:zh_CN:en_US:en:de_DE
 
-locale="zh_CN.UTF-8"
-LC_vars=(LC_ADDRESS LC_IDENTIFICATION LC_MONETARY LC_MEASUREMENT LC_NAME LC_NUMERIC LC_PAPER LC_TELEPHONE LC_TIME)
-for var in "${LC_vars[@]}"
-do
-    export "$var"="$locale"
+DE_vars=(LC_ADDRESS LC_MONETARY LC_NAME LC_PAPER LC_TELEPHONE)
+for var in "${DE_vars[@]}"; do
+    export "$var"="de_DE.UTF-8"
 done
 
-dbus-update-activation-environment --systemd LANG LANGUAGE "${LC_vars[@]}"
+CN_vars=(LC_COLLATE LC_CTYPE LC_MEASUREMENT LC_NUMERIC LC_TIME)
+for var in "${CN_vars[@]}"; do
+    export "$var"="zh_CN.UTF-8"
+done
+
+dbus-update-activation-environment --systemd LANG LANGUAGE "${DE_vars[@]}" "${CN_vars[@]}"
