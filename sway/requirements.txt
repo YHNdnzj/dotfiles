@@ -42,7 +42,7 @@ xdg-desktop-portal-gtk
 firefox-nightly-zh-tw
 telegram-desktop
 nheko
-evolution
+betterbird
 htop
 asusctl
 flatpak

@@ -175,7 +175,7 @@ input type:pointer {
     assign [app_id="firefox"] workspace $ws2
     assign [app_id="org.telegram.desktop"] workspace $ws3
     assign [app_id="nheko"] workspace $ws3
-    assign [app_id="org.gnome.Evolution"] workspace $ws4
+    assign [app_id="eu.betterbird.Betterbird"] workspace $ws4
     assign [app_id="org.kde.okular"] workspace $ws5
     assign [class="ONLYOFFICE Desktop Editors"] workspace $ws5
     assign [class="wps"] workspace $ws5
@@ -199,9 +199,6 @@ input type:pointer {
     for_window [app_id="firefox" title="^分享指示器$"] floating enable, inhibit_idle open
 
     for_window [workspace=$ws3] layout tabbed
-
-    for_window [app_id="org.gnome.Evolution"] floating enable
-    for_window [app_id="org.gnome.Evolution" title="Evolution$"] floating disable
 
     for_window [class="wps"] layout tabbed
     for_window [class="wpspdf"] layout tabbed
