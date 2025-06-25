@@ -177,7 +177,7 @@ input type:pointer {
     assign [app_id="nheko"] workspace $ws3
     assign [app_id="eu.betterbird.Betterbird"] workspace $ws4
     assign [app_id="org.kde.okular"] workspace $ws5
-    assign [class="ONLYOFFICE Desktop Editors"] workspace $ws5
+    assign [class="ONLYOFFICE"] workspace $ws5
     assign [class="wps"] workspace $ws5
     assign [class="wpspdf"] workspace $ws5
     assign [class="VirtualBox"] workspace $ws10
