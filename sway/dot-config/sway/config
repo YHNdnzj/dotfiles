@@ -54,9 +54,9 @@ input type:touchpad {
     pointer_accel 0.13
     middle_emulation enabled
 }
-input type:pointer {
-    left_handed enabled
-}
+#input type:pointer {
+#   left_handed enabled
+#}
 ### Key bindings
 #
 # Basics:
