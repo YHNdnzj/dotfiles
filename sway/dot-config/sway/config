@@ -57,6 +57,9 @@ input type:touchpad {
 input type:pointer {
     left_handed enabled
 }
+input 1149:32980:SlimBlade_Pro {
+    scroll_factor 1.65
+}
 ### Key bindings
 #
 # Basics:
