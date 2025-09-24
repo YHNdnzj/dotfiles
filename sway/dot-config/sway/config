@@ -60,6 +60,10 @@ input type:pointer {
 input 1149:32980:SlimBlade_Pro {
     scroll_factor 1.55
 }
+input type:keyboard {
+    xkb_layout us
+    xkb_variant altgr-intl
+}
 ### Key bindings
 #
 # Basics:
