@@ -6,3 +6,4 @@ noto-fonts-cjk
 ttf-cascadia-code
 ttf-joypixels
 ttf-meslo-nerd-font-powerlevel10k
+ttf-dejavu-emojiless
