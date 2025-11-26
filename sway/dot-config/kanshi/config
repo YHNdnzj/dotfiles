@@ -4,7 +4,7 @@ profile internal {
 
 profile dual {
     output DP-2 mode 3840x2160@120Hz scale 1.75 adaptive_sync on position 0,0
-    output eDP-1 enable scale 2 adaptive_sync on position 2195,335
+    output eDP-1 enable scale 2 adaptive_sync on position 2194,335
 }
 
 profile external {
