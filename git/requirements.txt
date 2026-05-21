@@ -5,4 +5,4 @@ perl-authen-sasl
 libsecret
 
 Services:
-protonmail-bridge: listen on 1025
+protonmail-bridge: running on yurine-tun:25
