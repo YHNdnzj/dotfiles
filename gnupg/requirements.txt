@@ -1,5 +1,2 @@
 Packages:
-pcsclite
-
-Services:
-systemd: pcscd.socket
+pinentry-mac

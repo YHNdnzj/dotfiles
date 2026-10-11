@@ -1,6 +1,2 @@
 Packages:
-seahorse
-openbsd-netcat
-
-Services:
-systemd --user: ssh-agent.service
+theseal/ssh-askpass/ssh-askpass

@@ -30,18 +30,6 @@
 [format]
     useAutoBase = true
 
-[sendemail]
-    annotate = true
-    confirm = always
-    smtpServer = yurine-tun
-    smtpServerPort = 25
-    smtpUser = me@yhndnzj.com
-    smtpEncryption = tls
-    smtpSSLCertPath =
-
-[credential]
-    helper = /usr/lib/git-core/git-credential-libsecret
-
 [core]
     autocrlf = input
 
@@ -49,4 +37,4 @@
     ui = auto
 
 [include]
-    path = /home/yhndnzj/.config/git-delta/gitconfig
+    path = ~/.config/git-delta/gitconfig

@@ -1,2 +1,0 @@
-exec_always systemctl --user set-environment SSH_ASKPASS=/usr/lib/seahorse/ssh-askpass
-exec_always systemctl --user try-restart ssh-agent.service
