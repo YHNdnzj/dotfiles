@@ -1,4 +1,4 @@
-# Defined in /home/yhndnzj/.config/fish/functions/search-and-replace.fish @ line 2
+# Defined in ~/.config/fish/functions/search-and-replace.fish @ line 2
 function search-and-replace
     set -l files (rg --null --files-with-matches -- "$argv[1]" | sort -z | string split0)
     if test (count $files) -eq 0

@@ -1,2 +1,0 @@
-#!/bin/bash
-exec /usr/bin/makechrootpkg -d "$HOME/.ccache:/ccache" "$@"

@@ -1,6 +1,0 @@
-Packages:
-mpd
-mpd-mpris
-
-Services:
-systemd --user: mpd.socket

@@ -1,13 +1,7 @@
 Packages:
+homebrew
+coreutils
 eza
 bat
 bat-extras
-git-delta
-ov
-vim
 ripgrep
-rmtrash
-pacman-contrib
-paru
-flatpak
-fontconfig

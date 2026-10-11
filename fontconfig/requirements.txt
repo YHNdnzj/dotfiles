@@ -1,9 +1,0 @@
-Packages:
-ttf-overpass
-ttf-swei-gothic-git
-noto-fonts
-noto-fonts-cjk
-ttf-cascadia-code
-ttf-joypixels
-ttf-meslo-nerd-font-powerlevel10k
-ttf-dejavu-emojiless
