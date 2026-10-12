@@ -8,6 +8,7 @@
     diffFilter = delta --color-only
 
 [delta]
+    navigate = true
     features = gruvmax-fang zebra-dark
 
 
