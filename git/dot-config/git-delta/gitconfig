@@ -11,4 +11,5 @@
     path = /opt/homebrew/share/git-delta/themes.gitconfig
 
 [delta]
+    navigate = true
     features = gruvmax-fang zebra-dark
