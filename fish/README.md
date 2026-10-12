@@ -6,5 +6,5 @@ $ curl -sL https://git.io/fisher | source && fisher install jorgebucaran/fisher
 
 | Package | Repo                     |
 | ------- | ------------------------ |
-| tide    | `IlanCosman/tide`        |
+| hydro   | `jorgebucaran/hydro`     |
 | done    | `franciscolourenco/done` |
