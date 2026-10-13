@@ -1,5 +1,4 @@
 Packages:
-homebrew
 coreutils
 eza
 bat
