@@ -1,6 +1,4 @@
 Packages:
 coreutils
 eza
-bat
-bat-extras
 ripgrep
