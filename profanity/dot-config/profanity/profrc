@@ -382,7 +382,7 @@ gone=0
 [notifications]
 # Notification reminder interval in seconds (0 to disable).
 # Possible values: Integer (Default: 60)
-remind=90
+remind=0
 
 # Notify on incoming chat room invitation.
 # Possible values: true, false (Default: false)
