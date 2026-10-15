@@ -11,12 +11,12 @@
 #theme=default
 
 # Show active conversation/window title in terminal emulator title.
-# Possible values: true, false (Default: true)
-#wintitle.show=true
+# Possible values: true, false (Default: false)
+wintitle.show=true
 
 # Set terminal window title to "Goodbye" on exit.
-# Possible values: true, false (Default: true)
-#wintitle.goodbye=true
+# Possible values: true, false (Default: false)
+wintitle.goodbye=true
 
 # Beep on message notifications.
 # Possible values: true, false (Default: false)
@@ -385,32 +385,32 @@ gone=0
 remind=90
 
 # Notify on incoming chat room invitation.
-# Possible values: true, false (Default: true)
-#invite=true
+# Possible values: true, false (Default: false)
+invite=true
 
 # Notify on incoming subscription requests.
-# Possible values: true, false (Default: true)
-#sub=true
+# Possible values: true, false (Default: false)
+sub=true
 
 # Notify on incoming 1:1 messages.
-# Possible values: true, false (Default: true)
-#message=true
+# Possible values: true, false (Default: false)
+message=true
 
 # Notify even if the active, focused window receives the message.
-# Possible values: true, false (Default: true)
+# Possible values: true, false (Default: false)
 message.current=false
 
 # Include message content text inside notifications.
-# Possible values: true, false (Default: true)
-#message.text=true
+# Possible values: true, false (Default: false)
+message.text=true
 
 # Notify on any incoming MUC messages.
 # Possible values: true, false (Default: false)
 #room=false
 
 # Notify only when your nickname is mentioned in a MUC.
-# Possible values: true, false (Default: true)
-#room.mention=true
+# Possible values: true, false (Default: false)
+room.mention=true
 
 # Enable strict nickname casing match for mentions.
 # Possible values: true, false (Default: false)
@@ -429,7 +429,7 @@ message.current=false
 #room.offline=true
 
 # Notify even if active focused MUC window receives a message.
-# Possible values: true, false (Default: true)
+# Possible values: true, false (Default: false)
 room.current=false
 
 # Include room message content text inside notifications.
