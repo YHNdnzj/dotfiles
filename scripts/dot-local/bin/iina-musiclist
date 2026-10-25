@@ -1,0 +1,14 @@
+#!/bin/bash -eu
+
+if [[ "$1" == */* ]]; then
+    PLAYLIST_PATH="$1"
+    PLAYLIST_NAME="${1##*/}"
+else
+    PLAYLIST_PATH="$HOME/Music/playlists/$1"
+    PLAYLIST_NAME="$1"
+fi
+
+musiclist_tmp="/tmp/iina-musiclist-${PLAYLIST_NAME// /_}"
+sed "/^#/!s|^|$HOME/Music/library/|" "$PLAYLIST_PATH" > "$musiclist_tmp"
+
+exec iina --music-mode "$musiclist_tmp"
