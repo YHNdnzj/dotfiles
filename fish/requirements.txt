@@ -1,4 +1,5 @@
 Packages:
 coreutils
+gnu-sed
 eza
 ripgrep
