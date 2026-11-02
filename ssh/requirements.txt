@@ -1,2 +1,3 @@
 Packages:
+openssh-sk-provider
 theseal/ssh-askpass/ssh-askpass
