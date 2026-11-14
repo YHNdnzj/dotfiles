@@ -1,6 +1,9 @@
 [submodule "vim/dot-vim/pack/git-blame/start/git-blame.vim"]
 	path = vim/dot-vim/pack/git-blame/start/git-blame.vim
 	url = https://github.com/zivyangll/git-blame.vim.git
+[submodule "vim/dot-vim/pack/vim-better-whitespace/start/vim-better-whitespace"]
+	path = vim/dot-vim/pack/vim-better-whitespace/start/vim-better-whitespace
+	url = https://github.com/ntpeters/vim-better-whitespace.git
 [submodule "vim/dot-vim/pack/fcitx/start/fcitx.vim"]
 	path = vim/dot-vim/pack/fcitx/start/fcitx.vim
 	url = https://github.com/lilydjwg/fcitx.vim.git
