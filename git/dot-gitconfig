@@ -38,3 +38,6 @@
 
 [include]
     path = ~/.config/git-delta/gitconfig
+
+[remote "upstream"]
+    tagOpt = --no-tags
