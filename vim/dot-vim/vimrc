@@ -10,6 +10,7 @@ let g:netrw_home=$HOME."/.local/state/vim"
 
 set ttymouse=sgr
 
+packadd! editorconfig
 let g:EditorConfig_preserve_formatoptions=1
 
 command B GitBlame
